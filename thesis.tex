@@ -72,6 +72,8 @@
 \usepackage{amsfonts}
 \usepackage{url}      %% Hyperlinks
 \usepackage{markdown} %% Lightweight markup
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 \usepackage{listings} %% Source code highlighting
 \lstset{
   basicstyle      = \ttfamily,%
@@ -98,19 +100,87 @@
 Intro
 
 \chapter{Chapter}
-\section{Definition}
+\section{Definitions}
 \subsection{Univariate polynomial}
-A univariate polynomial is a mathematical expression of the form
+A univariate polynomial $f$ over a ring $R$ is a mathematical expression of the form
 \begin{align}
-       a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  &+  a_{0} \label{eq:polynom}
+       f = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  &+  a_{0} \label{eq:polynom}
 \end{align}
-where the $a_{n}, a_{n-1}, \ldots, a_{1}, a_{0}$  are the coefficients of the polynomial and $x$ is called an indeterminate or a variable.  The highest $n \geq 0$ is called the degree of the polynomial (such $n$ exists, since the set $\{i \, | \, f_{i} \neq 0 \}$ is finite) and $a_{n} \neq 0$ is called the leading coefficient \parencite{rosicky07}. 
+where the $a_{n}, a_{n-1}, \ldots, a_{1}, a_{0}$  are the coefficients of the polynomial and elements of $R$, and $x$ is called an indeterminate or a variable.  The highest $n \geq 0$ is called the degree of the polynomial (such $n$ exists, since the set $\{i \, | \, f_{i} \neq 0 \}$ is finite) and $a_{n} \neq 0$ is called the leading coefficient \parencite{rosicky07}. 
 
 \subsection{Roots of a univariate polynomial}
-Let R be a ring, $f = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  +  a_{0}$ a polynomial of $R[x]$, $c \in R$. Then an element $a_{n}c^{n}  +  a_{n-1}c^{n-1} +  \ldots  +  a_{1}c  +  a_{0}$ is called a value of the polynomial and we denote it as $f(c)$.\\
-Using this, we can create a polynomial function by mapping every element of $R$, $x$, to the result of a substitution $f(x) = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  +  a_{0}$ \parencite{polynomialsChina}.
+Let R be a ring, $f = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  +  a_{0}$ a polynomial of $R[x]$, $c \in R$. Then an element $a_{n}c^{n}  +  a_{n-1}c^{n-1} +  \ldots  +  a_{1}c  +  a_{0}$ is called a value of the polynomial and we denote it as $f(c)$.
+
+Using this, we can create a polynomial function by mapping every element $x$ of $R$, to the result of a substitution $f(x) = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  +  a_{0}$ \parencite{polynomialsChina}.
 
 Let $f$ be a polynomial over $R$, $c \in R$. We say that $c$ is a root of the polynomial $f$ if $f(c) = 0$ \parencite{rosicky07}.
+
+\section{Approximation of a root using iterative methods}
+The iterative methods generally require knowledge of one or more initial guesses for the desired root(s) of the polynomial. This often poses a problem itself and there are techniques and methods for finding them. The simplest method for finding a guess is by looking at the plot of the polynomial, which is often not possible (e.g. when dealing with very complex and long polynomials). Some of these methods will be shown later and thus for this section, we will assume we already have a guess.
+
+\subsection{Bisection method}
+The simplest method for finding a better approximation of a root is bisection method \parencite{rootApproxMeth}. Assume that function $f(x)$ is continuous on interval $[a,b]$ and that $f(a)f(a) < 0$. Then according to the intermediate value theorem \parencite{interValue} there must be at least one root in $[a,b]$. The interval may be chosen large enough that there is more than one root, this is not a problem however, since the algorithm will always converge to some root $\alpha$ in $[a,b]$ and a smaller interval containing only one root. Since all polynomial functions are continuous \parencite{polyCont}, we can use this theorem to create an algorithm.
+
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
+\algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
+\begin{algorithm}
+  \caption{Bisection algorithm
+    \label{alg:bisect}}
+  \begin{algorithmic}[1]
+    \Require{$f$ polynomial function, $a$, $b$ interval bounds, $\epsilon$ precision error}
+    \Statex
+    \Function{Bisection}{$f, a, b, \epsilon$}
+      \Let{$c$}{$\frac{a + b}{2}$}
+      \If{$c - a \leq \epsilon$}
+				\Return{$c$}
+			\EndIf
+      \If{$f(a) * f(c) < 0$}
+				\State \Return{\Call{Bisection}{$f, a, c, \epsilon$}}
+				\Else \State \Return{\Call{Bisection}{$f, c, b, \epsilon$}}
+			\EndIf
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\begin{example}
+Find the largest root $\rho$ of 
+\begin{align}
+      2x^{4} - 3x - 2
+\end{align}
+
+with the precision $\epsilon = 0.00005$.
+\end{example}
+
+It is pretty easy to see that the largest root is located between $1 < \rho < 2$, so we will use this interval as our initial guess. The results are shown in the table below.
+
+\begin{table}
+  \begin{tabularx}{\textwidth}{lll}
+    \toprule
+    Iteration & $c_{n}$ & $f(c_{n})$\\
+    \midrule
+    1 & 1.500000 & 8.89063 \\
+    2 & 1.250000 & 1.56470 \\
+    3 & 1.125000 & -0.09771 \\
+    4 & 1.187500 & 0.61665 \\
+    5 & 1.156250 & 0.23327 \\
+    6 & 1.140625 & 0.06158 \\
+    7 & 1.132813 & -0.01957 \\
+    8 & 1.136719 & 0.02062 \\
+    9 & 1.134766 & 0.00043 \\
+    10 & 1.133790 & -0.00959 \\
+    11 & 1.134278 & -0.00458 \\
+    12 & 1.134522 & -0.00208 \\
+    13 & 1.134644 & -0.00082 \\
+    14 & 1.134705 & -0.00020 \\
+    15 & 1.134736 & 0.00012 \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Bisection algorithm on example todo:numbering of examples}
+  \label{tab:bis}
+\end{table}
 
 
 \printbibliography[heading=bibintoc]
