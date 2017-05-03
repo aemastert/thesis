@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1362
-NormalPos.bottom=375
+NormalPos.right=1279
+NormalPos.bottom=359
 Class=LaTeXView
 Document=thesis.tex
 
 [Frame0_View0,0]
-TopLine=185
-Cursor=8411
+TopLine=217
+Cursor=9054
 
 [Frame1]
 Flags=0
@@ -29,14 +29,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1362
-NormalPos.bottom=375
+NormalPos.right=1279
+NormalPos.bottom=359
 Class=LaTeXView
 Document=..\fithesis\fithesis\example\mu\fi-pdflatex.tex
 
 [Frame1_View0,0]
-TopLine=324
-Cursor=12274
+TopLine=629
+Cursor=18916
 
 [Frame2]
 Flags=0
@@ -47,13 +47,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1362
-NormalPos.bottom=375
+NormalPos.right=1279
+NormalPos.bottom=359
 Class=BibTeXView
 Document=bibliothesis.bib
 
 [Frame2_View0,0]
-TopLine=46
+TopLine=26
 Cursor=1272
 
 [SessionInfo]

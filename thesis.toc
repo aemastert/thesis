@@ -16,6 +16,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}\rmfamily Bisection method}{4}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{7}{section*.6}
+\contentsline {subsection}{\numberline {2.2.2}\rmfamily Newton's method}{7}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\bfseries An appendix}{7}{appendix.A}
+\contentsline {chapter}{Bibliography}{9}{chapter*.8}
+\defcounter {refsection}{0}\relax 
+\select@language {czech}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index}{11}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}\bfseries An appendix}{11}{appendix.A}

@@ -92,7 +92,9 @@
     linkcolor=black,
     urlcolor=black
 }
-
+\usepackage{placeins}
+\usepackage{pgfplots}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
 \thesisload
 %%end
 \begin{document}
@@ -146,7 +148,7 @@ The simplest method for finding a better approximation of a root is bisection me
 \theoremstyle{definition}
 \newtheorem{example}{Example}[section]
 \begin{example}
-Find the largest root $\rho$ of 
+Find a root $\rho$ of 
 \begin{align}
       2x^{4} - 3x - 2
 \end{align}
@@ -154,34 +156,111 @@ Find the largest root $\rho$ of
 with the precision $\epsilon = 0.00005$.
 \end{example}
 
-It is pretty easy to see that the largest root is located between $1 < \rho < 2$, so we will use this interval as our initial guess. The results are shown in the table below.
+It is fairly straightforward to show that there is a root located between $1 < \rho < 2$ (), so we will use this interval as our initial guess. The results are shown in the table below.
 
 \begin{table}
   \begin{tabularx}{\textwidth}{lll}
     \toprule
     Iteration & $c_{n}$ & $f(c_{n})$\\
     \midrule
-    1 & 1.500000 & 8.89063 \\
-    2 & 1.250000 & 1.56470 \\
-    3 & 1.125000 & -0.09771 \\
-    4 & 1.187500 & 0.61665 \\
-    5 & 1.156250 & 0.23327 \\
-    6 & 1.140625 & 0.06158 \\
-    7 & 1.132813 & -0.01957 \\
-    8 & 1.136719 & 0.02062 \\
-    9 & 1.134766 & 0.00043 \\
-    10 & 1.133790 & -0.00959 \\
-    11 & 1.134278 & -0.00458 \\
-    12 & 1.134522 & -0.00208 \\
-    13 & 1.134644 & -0.00082 \\
-    14 & 1.134705 & -0.00020 \\
-    15 & 1.134736 & 0.00012 \\
+    1 & 1.50000 & 3.62500 \\
+    2 & 1.25000 & -0.86719 \\
+    3 & 1.37500 & 1.023931 \\
+    4 & 1.31250 & -0.00241 \\
+    5 & 1.34375 & 0.48960 \\
+    6 & 1.32813 & 0.23842 \\
+    7 & 1.32031 & 0.11674 \\
+    8 & 1.31641 & 0.05685 \\
+    9 & 1.31445 & 0.02715 \\
+    10 & 1.31348 & 0.01235 \\
+    11 & 1.31299 & 0.00497 \\
+    12 & 1.31275 & 0.00129 \\
+    13 & 1.31262 & -0.00055 \\
+    14 & 1.31268 & 0.00037 \\
+    15 & 1.31265 & -0.00009 \\
     \bottomrule
   \end{tabularx}
   \caption{Bisection algorithm on example todo:numbering of examples}
   \label{tab:bis}
 \end{table}
 
+\begin{figure}
+\centering
+\def\FunctionF(#1){2*(#1)^4-3*(#1)-2}%
+\begin{tikzpicture}
+\begin{axis}[
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-0.75,
+        xmax=2.25,
+        ymin=-4.5,
+        ymax=1.5,
+        height=8.0cm,
+        width=\linewidth,
+        grid,
+        xtick={-0.5,0,...,2},
+        ytick={-4,...,1},
+    ]
+    \addplot [domain=-0.75:2, samples=50, mark=none, ultra thick, blue] {\FunctionF(x)};
+    \node [left, blue] at (axis cs: 2.2,0.7) {$2x^4-3x-2$};
+		\draw [decorate, thick, decoration={brace, mirror, amplitude=10pt, raise=0pt}](axis cs:1,-0.5) -- (axis cs:2,-0.5);
+		\draw [decorate, thick, decoration={brace, mirror, amplitude=10pt, raise=12pt}](axis cs:1,-0.5) -- (axis cs:1.5,-0.5);
+		\draw [decorate, thick, decoration={brace, mirror, amplitude=5pt, raise=24pt}](axis cs:1.25,-0.5) -- (axis cs:1.5,-0.5);
+		\draw [decorate, thick, decoration={brace, mirror, amplitude=3pt, raise=32pt}](axis cs:1.25,-0.5) -- (axis cs:1.375,-0.5);
+		\draw [decorate, thick, decoration={brace, mirror, amplitude=1pt, raise=37pt}](axis cs:1.25,-0.5) -- (axis cs:1.3125,-0.5);
+\end{axis}
+\end{tikzpicture}
+\caption{First 5 iterations of bisection algorithm on the example} \label{fig:bisp}
+\end{figure}
+%\FloatBarrier
+
+The true solution is
+
+\begin{align}
+      \rho \doteq 1.31265975467417
+\end{align}
+
+The true error is
+
+\begin{align}
+      |\rho - c_{15}| = 0.00000975467417
+\end{align}
+
+which is smaller than the required error bound ($0.00005$). Upon closer inspection, it can be noticed that the algorithm found a solution with enough precision in an earlier iteration already (for example $c_{13}$) and it may seem as the computation could have been stopped right then. However, this fact was not known beforehand, because there is no possibility to predict the accuracy in an earlier iteration during computation.
+
+While every iteration gives a better approximation of the true solution, the algorithm is converging rather slowly. To examine the speed of convergence, we first need to characterize it.
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\begin{definition}
+  A sequence of iterates $\{ x_{n} | n \geq 0\}$ is said to converge with \textit{order $p \geq 1$} to a point $\alpha$ if
+	\begin{align}
+      |\alpha - x_{n + 1}| \leq c |\alpha - x_{n}|^{p}  \tag*{$n \geq 0$} 
+	\end{align}
+	for some $c > 0$. If $p = 1$, the sequence is said to \textit{converge linearly} to $\alpha$. In that case, we require $c < 1$; the constant $c$ is called the \textit{rate of linear convergence} of $x_{n}$ to $\alpha$ \parencite[p.~56]{rootApproxMeth}.
+\end{definition}
+
+
+Let $c_{n}$ denote the $n$th value of $c$ in the algorithm. Then 
+
+\begin{align}
+      \rho = \lim_{n\to\infty} c_{n}
+\end{align}
+
+\begin{align}
+      |\rho - c_{n}| \leq \left[\frac{1}{2}\right]^n (b - a)
+\end{align}
+
+where $b - a$ denotes the length of the original interval input into the algorithm. Using our definition, we can say that the bisection algorithm has linear convergence with a rate of $\frac{1}{2}$. That does not necessarily mean that in every iteration the actual error decreases by a factor of $\frac{1}{2}$, but that the \textit{average} rate of decrease is $\frac{1}{2}$. This means that it takes on average approximately $3.32$ iterations ($\log_2 10$).
+
+The major deficiency of this algorithm is its very slow rate of convergence, specifically compared to other methods described in the following sections.
+
+On the other hand, the \textit{Bisection algorithm} has several advantages. The first of them being that it is guaranteed to converge if the prerequisites are met(i.e. the $f$ is continuous - which is true for all polynomial functions - and $f(a)f(a) < 0$). The second one being a reasonable error bound. This method also provides upper and lower bounds on the root $\rho$ in every iteration and such belongs in class of methods called \textit{enclosure methods} \parencite{rootApproxMeth}.
+
+
+\subsection{Newton's method}
 
 \printbibliography[heading=bibintoc]
 
