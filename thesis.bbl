@@ -88,36 +88,6 @@
       \field{year}{1992}
       \field{dateera}{ce}
     \endentry
-    \entry{rootApproxMeth}{book}{}
-      \name{author}{1}{}{%
-        {{hash=64e7306a70b4703c7fe4686f80f44682}{%
-           family={Atkinson},
-           familyi={A\bibinitperiod},
-           given={Kendall\bibnamedelima E.},
-           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Iowa City}%
-      }
-      \list{publisher}{1}{%
-        {John Wiley \& Sons}%
-      }
-      \strng{namehash}{64e7306a70b4703c7fe4686f80f44682}
-      \strng{fullhash}{64e7306a70b4703c7fe4686f80f44682}
-      \strng{authornamehash}{64e7306a70b4703c7fe4686f80f44682}
-      \strng{authorfullhash}{64e7306a70b4703c7fe4686f80f44682}
-      \field{sortinit}{4}
-      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{2}
-      \field{isbn}{0-471-62489-6}
-      \field{langid}{english}
-      \field{pagetotal}{xvi, 693}
-      \field{title}{An Introduction to Numerical Analysis}
-      \field{year}{1989}
-      \field{dateera}{ce}
-    \endentry
     \entry{interValue}{book}{}
       \name{author}{1}{}{%
         {{hash=db4b5e47b5a5923f9b9051241bc14602}{%
@@ -136,8 +106,8 @@
       \strng{fullhash}{db4b5e47b5a5923f9b9051241bc14602}
       \strng{authornamehash}{db4b5e47b5a5923f9b9051241bc14602}
       \strng{authorfullhash}{db4b5e47b5a5923f9b9051241bc14602}
-      \field{sortinit}{5}
-      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780521288828}
@@ -155,8 +125,8 @@
       \list{publisher}{1}{%
         {The University of California, Berkeley}%
       }
-      \field{sortinit}{6}
-      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
       \field{labeltitlesource}{title}
       \field{endyear}{2014}
       \field{langid}{english}
@@ -171,6 +141,36 @@
       \verb{url}
       \verb https://math.berkeley.edu/~kmill/math1afa2014/poly.pdf
       \endverb
+    \endentry
+    \entry{rootApproxMeth}{book}{}
+      \name{author}{1}{}{%
+        {{hash=64e7306a70b4703c7fe4686f80f44682}{%
+           family={Atkinson},
+           familyi={A\bibinitperiod},
+           given={Kendall\bibnamedelima E.},
+           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Iowa City}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{64e7306a70b4703c7fe4686f80f44682}
+      \strng{fullhash}{64e7306a70b4703c7fe4686f80f44682}
+      \strng{authornamehash}{64e7306a70b4703c7fe4686f80f44682}
+      \strng{authorfullhash}{64e7306a70b4703c7fe4686f80f44682}
+      \field{sortinit}{6}
+      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{isbn}{0-471-62489-6}
+      \field{langid}{english}
+      \field{pagetotal}{xvi, 693}
+      \field{title}{An Introduction to Numerical Analysis}
+      \field{year}{1989}
+      \field{dateera}{ce}
     \endentry
   \endsortlist
 \endrefsection

@@ -121,7 +121,7 @@ Let $f$ be a polynomial over $R$, $c \in R$. We say that $c$ is a root of the po
 The iterative methods generally require knowledge of one or more initial guesses for the desired root(s) of the polynomial. This often poses a problem itself and there are techniques and methods for finding them. The simplest method for finding a guess is by looking at the plot of the polynomial, which is often not possible (e.g. when dealing with very complex and long polynomials). Some of these methods will be shown later and thus for this section, we will assume we already have a guess.
 
 \subsection{Bisection method}
-The simplest method for finding a better approximation of a root is bisection method \parencite{rootApproxMeth}. Assume that function $f(x)$ is continuous on interval $[a,b]$ and that $f(a)f(a) < 0$. Then according to the intermediate value theorem \parencite{interValue} there must be at least one root in $[a,b]$. The interval may be chosen large enough that there is more than one root, this is not a problem however, since the algorithm will always converge to some root $\alpha$ in $[a,b]$ and a smaller interval containing only one root. Since all polynomial functions are continuous \parencite{polyCont}, we can use this theorem to create an algorithm.
+The simplest method for finding a better approximation to a root is \textbf{bisection method}. Assume that function $f(x)$ is continuous on interval $[a,b]$ and that $f(a)f(a) < 0$. Then according to the intermediate value theorem \parencite{interValue} there must be at least one root in $[a,b]$. The interval may be chosen large enough that there is more than one root, this is not a problem however, since the algorithm will always converge to some root $\alpha$ in $[a,b]$ and a smaller interval containing only one root. Since all polynomial functions are continuous \parencite{polyCont}, we can use this theorem to create an algorithm.
 
 \newcommand*\Let[2]{\State #1 $\gets$ #2}
 \algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
@@ -152,12 +152,10 @@ Find a root $\rho$ of
 \begin{align}
       2x^{4} - 3x - 2
 \end{align}
-
 with the precision $\epsilon = 0.00005$.
 \end{example}
-
-It is fairly straightforward to show that there is a root located between $1 < \rho < 2$ (), so we will use this interval as our initial guess. The results are shown in the table below.
-
+It is fairly straightforward to show that there is a root located between $1 < \rho < 2$, so we will use this interval as our initial guess. The results are shown in the table below.
+%vysvetlit preco je to straightforward
 \begin{table}
   \begin{tabularx}{\textwidth}{lll}
     \toprule
@@ -216,17 +214,13 @@ It is fairly straightforward to show that there is a root located between $1 < \
 %\FloatBarrier
 
 The true solution is
-
 \begin{align}
       \rho \doteq 1.31265975467417
 \end{align}
-
 The true error is
-
 \begin{align}
       |\rho - c_{15}| = 0.00000975467417
 \end{align}
-
 which is smaller than the required error bound ($0.00005$). Upon closer inspection, it can be noticed that the algorithm found a solution with enough precision in an earlier iteration already (for example $c_{13}$) and it may seem as the computation could have been stopped right then. However, this fact was not known beforehand, because there is no possibility to predict the accuracy in an earlier iteration during computation.
 
 While every iteration gives a better approximation of the true solution, the algorithm is converging rather slowly. To examine the speed of convergence, we first need to characterize it.
@@ -244,23 +238,90 @@ While every iteration gives a better approximation of the true solution, the alg
 
 
 Let $c_{n}$ denote the $n$th value of $c$ in the algorithm. Then 
-
 \begin{align}
       \rho = \lim_{n\to\infty} c_{n}
 \end{align}
-
 \begin{align}
       |\rho - c_{n}| \leq \left[\frac{1}{2}\right]^n (b - a)
 \end{align}
+where $b - a$ denotes the length of the original interval input into the algorithm. Using our definition, we can say that the bisection algorithm has linear convergence with a rate of $\frac{1}{2}$. That does not necessarily mean that in every iteration the actual error decreases by a factor of $\frac{1}{2}$, but that the \textit{average} rate of decrease is $\frac{1}{2}$. This means that it takes on average approximately $3.32$ iterations ($\log_2 10$) to compute a single digit.
 
-where $b - a$ denotes the length of the original interval input into the algorithm. Using our definition, we can say that the bisection algorithm has linear convergence with a rate of $\frac{1}{2}$. That does not necessarily mean that in every iteration the actual error decreases by a factor of $\frac{1}{2}$, but that the \textit{average} rate of decrease is $\frac{1}{2}$. This means that it takes on average approximately $3.32$ iterations ($\log_2 10$).
-
-The major deficiency of this algorithm is its very slow rate of convergence, specifically compared to other methods described in the following sections.
+The major drawback of this algorithm is its very slow rate of convergence, specifically compared to other methods described in the following sections.
 
 On the other hand, the \textit{Bisection algorithm} has several advantages. The first of them being that it is guaranteed to converge if the prerequisites are met(i.e. the $f$ is continuous - which is true for all polynomial functions - and $f(a)f(a) < 0$). The second one being a reasonable error bound. This method also provides upper and lower bounds on the root $\rho$ in every iteration and such belongs in class of methods called \textit{enclosure methods} \parencite{rootApproxMeth}.
 
 
 \subsection{Newton's method}
+\textbf{Newton's method} (sometimes also called \textbf{Newton-Raphson method}), named after Isaac Newton and Joseph Raphson, is another method for finding better approximations to a root of a real polynomial function (or in general, any real-valued function). The basic idea of the method is based on the fact that given a starting point $x_{0}$, that is sufficiently close to the root, one can approximate the function by computing its tangent line at the point $(x_{0}, f(x_{0}))$. Then, one can use the $x$-intercept of the tangent line, which typically provides a better approximation, and repeat this process ad infinitum \parencite{rootApproxMeth} (or until sufficient precision is reached). 
+
+Assume that real-valued function $f(x)$ is differentiable on interval $[a,b]$ and that we have an initial approximation $x_{0}$. Then, using calculus, we can derive the formula for a better approximation $x_{1}$.
+
+%obrazok s grafom a dotycnicou
+
+To compute the better approximation $x_{1}$ we need to use the formula that describes the slope $m$ of our tangent line
+\begin{align}
+      m = \frac{f(x_{1}) - f(x_{0})}{x_{1} - x_{0}}
+\end{align}
+Substituting $f(x_{1})$ by $0$ and manipulating the equation, we obtain
+\begin{align}
+      x_{1} = x_{0} - \frac{f(x_{0})}{m}
+\end{align}
+And since the slope $m$ of the tangent line is the derivative of the function $f$ at the point $x_{0}$, we obtain our desired formula 
+\begin{align}
+      x_{1} = x_{0} - \frac{f(x_{0})}{f'(x_{0})}
+\end{align}
+The general formula is obtained by iterating the process, by replacing $x_{0}$ with $x_{1}$, ad infinitum, which gives us 
+\begin{align}
+      x_{n+1} = x_{n} - \frac{f(x_{n})}{f'(x_{n})} \label{eq:newt}
+\end{align}
+%pridat zdroj/proof ze polynomy su d.
+Since all polynomial are differentiable, we can apply this formula to our problem. Newton's method is exceptionally powerful and one of the most well known techniques for finding the roots, since its rather easy to implement and converges very quickly. 
+
+\newtheorem{theorem}{Theorem}[section] %% The numbering of theorems will be reset after each section.
+\begin{theorem}
+  Assume that $f(x), f'(x)$, and $f''(x)$ are all continuous for every $x$ in some neighbourhood $I = [\alpha - \epsilon, \alpha + \epsilon]$ of $\alpha$, $\alpha$ is a root of $f$, and $f'(x) \neq 0, \forall x \in I$. Then if $x_{0}$ is chosen sufficiently close to $\alpha$, the iterates $x_{n}, n \geq 0$ of \eqref{eq:newt} will converge to $\alpha$ \parencite[p.~60]{rootApproxMeth}. 
+\end{theorem}
+Furthermore, we will show that the convergence is quadratic.
+\begin{proof}
+First, since $f$ is twice continuously differentiable around the root $\alpha$, we can use a Taylor series expansion to second order about a point close to $\alpha$, $x_{n}$, to represent $f(\alpha)$. The expansion of $f(\alpha)$ about $x_{n}$ is 
+\begin{align}
+	f(\alpha) = f(x_{n}) + f'(x_{n})(\alpha - x_{n}) + \frac{f''(\xi_{n})}{2!}(\alpha - x_{n})^2
+\end{align}
+where $\xi_{n}$ is between $x$ and $\alpha$. Since $\alpha$ is root, we can replace $f(\alpha)$ with $0$ and by manipulating the equation we get
+\begin{align}
+  -\alpha + x_{n}	- \frac{f(x_{n})}{f'(x_{n})} = \frac{f''(\xi_{n})}{2f'(x_{n})}(\alpha - x_{n})^2
+\end{align}
+where we can use the definition of $x_{n+1}$ from \eqref{eq:newt} and multiply the equation by $-1$ to get
+\begin{align}
+  \alpha - x_{n+1} = -(\alpha - x_{n})^2 \frac{f''(\xi_{n})}{2f'(x_{n})}
+\end{align}
+In progr.
+%pick a sufficiently small interval $I = [\alpha - \epsilon, \alpha + \epsilon]$ on which $f'(x) \neq 0$ (which exists since $f'(x)$ is continuous) and then . \parencite{rootApproxMeth}
+\end{proof}
+
+However, this method has several deficiencies.
+Firstly, just by observing the equation, we can see that if the iteration point is stationary, then $x_{n+1}$ is undefined, since $f'(x_{n}) = 0$ (which means the tangent line is parallel to the $x$-axis). 
+%obrazok, example
+Secondly, for some polynomial functions, the method may enter an infinite cycle. This happens if, for example, $x_{1}$ produces $x_{2} = x_{0}$ as output, causing the method to alternate between these two results infinitely.
+%obrazok, example, vyriesi sa pridanim max.pocet iteracii
+Thirdly, if the initial guess is not close enough or the first derivative does not behave well in the neighbourhood of a specific root, the method may skip this root as the tangent line will intercept the $x$-axis close to another root. This may pose a problem, if someone is looking for a root located specifically in an interval $[a,b]$, but does not pose a problem if one is simply looking for any root of a polynomial function.
+%obrazok, example, neskor sa vyriesi
+Lastly,%problem s pomalsou konvergenciou
+
+%Using this an algorithm.
+
+%\begin{algorithm}
+%  \caption{Newton's algorithm
+%    \label{alg:newton}}
+%  \begin{algorithmic}[1]
+%    \Require{$f$ polynomial function, $a$, $b$ interval %bounds, $\epsilon$ precision error}
+%    \Statex
+%    \Function{Newton}{$f, a, b, \epsilon$}
+%      \Let{$c$}{$\frac{a + b}{2}$}
+%      
+%    \EndFunction
+%  \end{algorithmic}
+%\end{algorithm}
 
 \printbibliography[heading=bibintoc]
 
