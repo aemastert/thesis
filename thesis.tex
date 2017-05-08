@@ -234,9 +234,8 @@ While every iteration gives a better approximation of the true solution, the alg
       |\alpha - x_{n + 1}| \leq c |\alpha - x_{n}|^{p}  \tag*{$n \geq 0$} 
 	\end{align}
 	for some $c > 0$. If $p = 1$, the sequence is said to \textit{converge linearly} to $\alpha$. In that case, we require $c < 1$; the constant $c$ is called the \textit{rate of linear convergence} of $x_{n}$ to $\alpha$ \parencite[p.~56]{rootApproxMeth}.
+	\label{def:converg}
 \end{definition}
-
-
 Let $c_{n}$ denote the $n$th value of $c$ in the algorithm. Then 
 \begin{align}
       \rho = \lim_{n\to\infty} c_{n}
@@ -252,7 +251,7 @@ On the other hand, the \textit{Bisection algorithm} has several advantages. The 
 
 
 \subsection{Newton's method}
-\textbf{Newton's method} (sometimes also called \textbf{Newton-Raphson method}), named after Isaac Newton and Joseph Raphson, is another method for finding better approximations to a root of a real polynomial function (or in general, any real-valued function). The basic idea of the method is based on the fact that given a starting point $x_{0}$, that is sufficiently close to the root, one can approximate the function by computing its tangent line at the point $(x_{0}, f(x_{0}))$. Then, one can use the $x$-intercept of the tangent line, which typically provides a better approximation, and repeat this process ad infinitum \parencite{rootApproxMeth} (or until sufficient precision is reached). 
+\textbf{Newton's method}(sometimes also called \textbf{Newton-Raphson method}), named after Isaac Newton and Joseph Raphson, is another method for finding better approximations to a root of a real polynomial function (or in general, any real-valued function). The basic idea of the method is based on the fact that given a starting point $x_{0}$, that is sufficiently close to the root, one can approximate the function by computing its tangent line at the point $(x_{0}, f(x_{0}))$. Then, one can use the $x$-intercept of the tangent line, which typically provides a better approximation, and repeat this process ad infinitum \parencite{rootApproxMeth} (or until sufficient precision is reached). 
 
 Assume that real-valued function $f(x)$ is differentiable on interval $[a,b]$ and that we have an initial approximation $x_{0}$. Then, using calculus, we can derive the formula for a better approximation $x_{1}$.
 
@@ -281,9 +280,9 @@ Since all polynomial are differentiable, we can apply this formula to our proble
 \begin{theorem}
   Assume that $f(x), f'(x)$, and $f''(x)$ are all continuous for every $x$ in some neighbourhood $I = [\alpha - \epsilon, \alpha + \epsilon]$ of $\alpha$, $\alpha$ is a root of $f$, and $f'(x) \neq 0, \forall x \in I$. Then if $x_{0}$ is chosen sufficiently close to $\alpha$, the iterates $x_{n}, n \geq 0$ of \eqref{eq:newt} will converge to $\alpha$ \parencite[p.~60]{rootApproxMeth}. 
 \end{theorem}
-Furthermore, we will show that the convergence is quadratic.
+Furthermore, Atkinson\cite{rootApproxMeth} shows that the convergence is quadratic.
 \begin{proof}
-First, since $f$ is twice continuously differentiable around the root $\alpha$, we can use a Taylor series expansion to second order about a point close to $\alpha$, $x_{n}$, to represent $f(\alpha)$. The expansion of $f(\alpha)$ about $x_{n}$ is 
+First, since $f$ is twice continuously differentiable around the root $\alpha$, we can use a Taylor series expansion\parencite[p.~59]{rootApproxMeth} to second order about a point close to $\alpha$, $x_{n}$, to represent $f(\alpha)$. The expansion of $f(\alpha)$ about $x_{n}$ is 
 \begin{align}
 	f(\alpha) = f(x_{n}) + f'(x_{n})(\alpha - x_{n}) + \frac{f''(\xi_{n})}{2!}(\alpha - x_{n})^2
 \end{align}
@@ -293,20 +292,71 @@ where $\xi_{n}$ is between $x$ and $\alpha$. Since $\alpha$ is root, we can repl
 \end{align}
 where we can use the definition of $x_{n+1}$ from \eqref{eq:newt} and multiply the equation by $-1$ to get
 \begin{align}
-  \alpha - x_{n+1} = -(\alpha - x_{n})^2 \frac{f''(\xi_{n})}{2f'(x_{n})}
+  \alpha - x_{n+1} = \frac{-f''(\xi_{n})}{2f'(x_{n})}(\alpha - x_{n})^2 
 \end{align}
-In progr.
-%pick a sufficiently small interval $I = [\alpha - \epsilon, \alpha + \epsilon]$ on which $f'(x) \neq 0$ (which exists since $f'(x)$ is continuous) and then . \parencite{rootApproxMeth}
+Taking the absolute value of both sides of the equation we get
+\begin{align}
+  \left|\alpha - x_{n+1}\right| = \frac{\left|f''(\xi_{n})\right|}{\left|2f'(x_{n})\right|}\left|\alpha - x_{n}\right|^2 
+	\label{eq:newtcp}
+\end{align}
+Now we pick the sufficiently small interval $I = [\alpha - \epsilon, \alpha + \epsilon]$ on which $f'(x) \neq 0$ (which exists since $f'(x)$ is continuous) and then let
+\begin{align}
+  M = sup_{x\in I}\frac{\left|f''(x)\right|}{\left|2f'(x)\right|}
+\end{align}
+Pick $x_{0}$, such that $\left|\alpha-x_{0}\right| \leq \epsilon$ and $M\left|\alpha-x_{0}\right| < 1$\parencite[p.~61]{rootApproxMeth}. Then $M\left|\alpha - x_{1}\right| < 1$ and $M\left|\alpha - x_{1}\right| \leq M\left|\alpha - x_{0}\right|$. Using induction we can apply this argument for every $n \geq 1$, showing that $\left|\alpha-x_{n}\right| \leq \epsilon$ and $M\left|\alpha-x_{n}\right| < 1$ for all $n \geq 1$.
+This, in combination with \eqref{eq:newtcp}, gives us
+\begin{align}
+  \left|\alpha - x_{n+1}\right| &\leq M\left|\alpha - x_{n}\right|^2 \\
+	M\left|\alpha - x_{n+1}\right| &\leq (M\left|\alpha - x_{n}\right|)^2 
+\end{align}
+and
+\begin{align}
+  M\left|\alpha - x_{n}\right| &\leq (M\left|\alpha - x_{0}\right|)^{2^n} \\
+	M\left|\alpha - x_{n}\right| &\leq \frac{1}{M}(M\left|\alpha - x_{0}\right|)^{2^n}
+\end{align}
+Since $M\left|\alpha-x_{0}\right| < 1$, this shows that $x_{n}\rightarrow\alpha$ as $n\rightarrow\infty$.
+The aforementioned point $\xi_{n}$ is between $x_{n}$ and $\alpha$, which implies that $\xi_{n}\rightarrow\alpha$ as $n\rightarrow\infty$. Thus \parencite[p.~61]{rootApproxMeth}
+\begin{align}
+ \lim_{n\to\infty} \frac{\alpha - x_{n+1}}{(\alpha - x_{n})^2} = -\lim_{n\to\infty} \frac{f''(\xi_{n})}{2f'(x_{n})} = \frac{-f''(\alpha)}{2f'(\alpha)}
+\end{align}
 \end{proof}
-
+%reworknut proof
 However, this method has several deficiencies.
+
 Firstly, just by observing the equation, we can see that if the iteration point is stationary, then $x_{n+1}$ is undefined, since $f'(x_{n}) = 0$ (which means the tangent line is parallel to the $x$-axis). 
 %obrazok, example
+
 Secondly, for some polynomial functions, the method may enter an infinite cycle. This happens if, for example, $x_{1}$ produces $x_{2} = x_{0}$ as output, causing the method to alternate between these two results infinitely.
 %obrazok, example, vyriesi sa pridanim max.pocet iteracii
+
 Thirdly, if the initial guess is not close enough or the first derivative does not behave well in the neighbourhood of a specific root, the method may skip this root as the tangent line will intercept the $x$-axis close to another root. This may pose a problem, if someone is looking for a root located specifically in an interval $[a,b]$, but does not pose a problem if one is simply looking for any root of a polynomial function.
 %obrazok, example, neskor sa vyriesi
-Lastly,%problem s pomalsou konvergenciou
+
+Lastly, if the root of the polynomial function has a multiplicity greater than one(i.e. the first derivative of the root is also zero), then the convergence to this root is only linear.
+\begin{proof}
+Let $f(x)$ be a polynomial function with a root $\alpha$ of multiplicity $m$, $m > 1$, i.e. $f(x) = (x-\alpha)^{m}g(x)$. Assume that $x_{0}$ is sufficiently close to $\alpha$. Then
+\begin{align}
+x_{n+1} &= x_{n} - \frac{(x_{n} - \alpha)^{m}g(x_{n})}{m(x_{n}-\alpha)^{m-1}g(x_{n}) + (x_{n}-\alpha)^{m}g'(x_{n})} \\
+&= x_{n} - \frac{(x_{n} - \alpha)g(x_{n})}{mg(x_{n}) + (x_{n}-\alpha)g'(x_{n})} \\
+&= \frac{x_{n}(mg(x_{n}) + (x_{n}-\alpha)g'(x_{n})) - (x_{n} - \alpha)g(x_{n})}{mg(x_{n}) + (x_{n}-\alpha)g'(x_{n})} \\
+&= \frac{x_{n}(m - 1)g(x_{n}) + x_{n}(x_{n}-\alpha)g'(x_{n}) + {\alpha}g(x_{n})}{mg(x_{n}) + (x_{n}-\alpha)g'(x_{n})}
+\end{align}
+which, as we get closer to the root, i.e. $x_{n} \doteq \alpha$, gives us
+\begin{align}
+x_{n+1} &\doteq x_{n}\frac{(m - 1)}{m}+\frac{\alpha}{m}
+\end{align}
+or put differently
+\begin{align}
+x_{n+1} &\doteq (x_{n}-\alpha)\frac{(m - 1)}{m}+\alpha
+\end{align}
+from which we can conclude
+\begin{align}
+\left|\alpha - x_{n+1}\right| \leq \frac{(m - 1)}{m}\left|\alpha-x_{n}\right|
+\end{align}
+which by the definition \ref{def:converg} proves the linear convergence.
+\end{proof}
+
+%pridat error bound, potom pseudokod, example, napisat ze je ovela rychlejsi nez bisect, napisat ze patri medzi householder.
 
 %Using this an algorithm.
 
