@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  12 MAY 2017 10:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  12 MAY 2017 10:45
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -2065,7 +2065,7 @@ Underfull \hbox (badness 10000) in alignment at lines 460--460
  []
 
 [14]
-Overfull \hbox (8.17285pt too wide) in paragraph at lines 471--471
+Overfull \hbox (8.17285pt too wide) in paragraph at lines 473--473
 []\T1/qpl/m/n/12 (-20) BINMORE, K.G. \T1/qpl/m/it/12 Mat-he-ma-ti-cal Ana-ly-sis: A Straig-ht-for-ward Ap-pro-ach\T1/qpl
 /m/n/12 (-20) . Cam-|
  []
@@ -2082,11 +2082,11 @@ Appendix A.
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 485.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 485.
  (thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 483.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 485.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 485.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
@@ -2110,7 +2110,7 @@ ype1/public/lm/lmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 )/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplr.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplri.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 /urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (31 pages, 246293 bytes).
+Output written on thesis.pdf (31 pages, 246971 bytes).
 PDF statistics:
  171 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

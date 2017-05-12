@@ -362,7 +362,7 @@ x_{n+1} &\doteq (x_{n}-\alpha)\frac{(m - 1)}{m}+\alpha
 \end{align}
 from which we can conclude
 \begin{align}
-\left|\alpha - x_{n+1}\right| \leq \frac{(m - 1)}{m}\left|\alpha-x_{n}\right|
+\lim_{n\to\infty}\frac{\left|\alpha - x_{n+1}\right|}{\left|\alpha-x_{n}\right|} = \frac{(m - 1)}{m}
 \end{align}
 which by the definition \ref{def:converg} proves the linear convergence.
 \end{proof}
@@ -461,6 +461,8 @@ The initial interval is same as in Bisection algorithm to make results comparabl
   \caption{Newton's algorithm on example}
   \label{tab:newt}
 \end{table}
+
+With correct approximation being $\alpha \doteq 1.31265975467417$, the error of the final iteration is $|\alpha - x_{4}|\doteq0.00000024532583$ which is within the allowed precision error.
 
 While the algorithm solves some of it's deficiencies mentioned before, some remain. The method might sometimes fail (when the first derivative of $x_{n}$ is zero) and the convergence for the roots of higher multiplicity is only linear.
 
