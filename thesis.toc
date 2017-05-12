@@ -16,7 +16,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}\rmfamily Bisection method}{4}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\rmfamily Speed of convergence}{6}{section*.6}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}\rmfamily Newton's method}{7}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\rmfamily Speed of convergence}{8}{section*.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\rmfamily Error bounds}{11}{section*.8}
 \defcounter {refsection}{0}\relax 

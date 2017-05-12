@@ -110,6 +110,7 @@ A univariate polynomial $f$ is a mathematical expression of the form
        f = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  &+  a_{0} \label{eq:polynom}
 \end{align}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
 where the $a_{n}, a_{n-1}, \ldots, a_{1}, a_{0}$  are the coefficients of the polynomial, $n$ is any nonnegative integer and $x$ is called an indeterminate or a variable.  The highest $n \geq 0$ is called the degree of the polynomial (such $n$ exists, since the set $\{i \, | \, f_{i} \neq 0 \}$ is finite) and $a_{n} \neq 0$ is called the leading coefficient. If every $a_{k}$, $0\leq{k}\leq{n}$, is a real number, we say that $f$ is polynomial over $\R$ or simply real polynomial.
 
 \subsection{Roots of a univariate polynomial}
@@ -138,13 +139,13 @@ This is called the \textbf{intermediate value theorem}\parencite{interValue}. No
     \Require{$f$ polynomial function, $a$, $b$ interval bounds, $\epsilon$ precision error}
     \Statex
     \Function{Bisection}{$f, a, b, \epsilon$}
-      \Let{$c$}{$\frac{a + b}{2}$}
-      \If{$c - a \leq \epsilon$}
+      \Let{$x$}{$\frac{a + b}{2}$}
+      \If{$x - a \leq \epsilon$}
 				\State\Return{$c$}
 			\EndIf
-      \If{$f(a) * f(c) < 0$}
-				\State \Return{\Call{Bisection}{$f, a, c, \epsilon$}}
-				\Else \State \Return{\Call{Bisection}{$f, c, b, \epsilon$}}
+      \If{$f(a) * f(x) < 0$}
+				\State \Return{\Call{Bisection}{$f, a, x, \epsilon$}}
+				\Else \State \Return{\Call{Bisection}{$f, x, b, \epsilon$}}
 			\EndIf
     \EndFunction
   \end{algorithmic}
@@ -163,7 +164,7 @@ It is fairly straightforward to show that there is a root located between $1 < \
 \begin{table}
   \begin{tabularx}{\textwidth}{lll}
     \toprule
-    Iteration & $c_{n}$ & $f(c_{n})$\\
+    Iteration & $x_{n}$ & $f(x_{n})$\\
     \midrule
     1 & 1.50000 & 3.62500 \\
     2 & 1.25000 & -0.86719 \\
@@ -223,31 +224,34 @@ The correct approximation is
 \end{align}
 The error of the final iteration is
 \begin{align}
-      |\alpha - c_{15}| \doteq 0.00000975467417
+      |\alpha - x_{15}| \doteq 0.00000975467417
 \end{align}
-which is smaller than the required error bound ($0.00005$). Upon closer inspection, it can be noticed that the algorithm found a solution with enough precision in an earlier iteration already (for example $c_{13}$) and it may seem as the computation could have been stopped right then. However, this fact was not known beforehand, because there is no possibility to predict the accuracy in an earlier iteration during computation.
+which is smaller than the required error bound ($0.00005$). Upon closer inspection, it can be noticed that the algorithm found a solution with enough precision in an earlier iteration already (for example $x_{13}$) and it may seem as the computation could have been stopped right then. However, this fact was not known beforehand, because there is no possibility to predict the accuracy in an earlier iteration during computation.
 
+\paragraph{Speed of convergence}
 While every iteration gives a better approximation of the true solution, the algorithm is converging rather slowly. To examine the speed of convergence, we first need to characterize it.
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 
 \begin{definition}
-  A sequence of iterates $\{ x_{n} | n \geq 0\}$ is said to converge with \textit{order $p \geq 1$} to a point $\alpha$ if
+  Suppose we have a sequence of real numbers $x_{0}, x_{1}\ldots$ and a real number $\alpha$ such that for every $\epsilon\in\R$, there exists $k\in\N$ such that $\left|x_{k}-\alpha\right|<\epsilon$. Then the sequence is said to converge to a point $\alpha$, written as $\lim_{k\to\infty}x_{k}=\alpha$. The sequence is said to \textit{converge linearly} if
 	\begin{align}
-      |\alpha - x_{n + 1}| \leq c |\alpha - x_{n}|^{p}  \tag*{$n \geq 0$} 
+      \lim_{n\to\infty}\frac{|\alpha - x_{n + 1}|}{|\alpha - x_{n}|} = c 
 	\end{align}
-	for some $c > 0$. If $p = 1$, the sequence is said to \textit{converge linearly} to $\alpha$. In that case, we require $c < 1$; the constant $c$ is called the \textit{rate of linear convergence} of $x_{n}$ to $\alpha$ \parencite[p.~56]{rootApproxMeth}.
+	for some $0 < c < 1$. The constant $c$ is called the \textit{rate of linear convergence} of $x_{n}$ to $\alpha$.
+	The sequence is said to converge with \textit{order p > 1} if \begin{align}
+      \lim_{n\to\infty}\frac{|\alpha - x_{n + 1}|}{|\alpha - x_{n}|^{p}} > 0.
+	\end{align}
 	\label{def:converg}
 \end{definition}
-Let $c_{n}$ denote the $n$th value of $c$ in the algorithm. Then 
+Let $x_{n}$ denote the $n$th value of $x$ in the algorithm. Then 
 \begin{align}
-      \alpha = \lim_{n\to\infty} c_{n}
+	\alpha &= \lim_{n\to\infty} x_{n} \\
+	|\alpha - x_{n}| &\leq \left[\frac{1}{2}\right]^n \left|b - a\right| \\
+			\lim_{n\to\infty}\frac{\left|\alpha - x_{n+1}\right|}{\left|\alpha - x_{n}\right|} &= \lim_{n\to\infty}\frac{2^{-\left(n+1\right)}\left|b - a\right|}{2^{-n}\left|b - a\right|} = \frac{1}{2}
 \end{align}
-\begin{align}
-      |\alpha - c_{n}| \leq \left[\frac{1}{2}\right]^n (b - a)
-\end{align}
-where $b - a$ denotes the length of the original interval input into the algorithm. Using our definition, we can say that the bisection algorithm has linear convergence with a rate of $\frac{1}{2}$. That does not necessarily mean that in every iteration the actual error decreases by a factor of $\frac{1}{2}$, but that the \textit{average} rate of decrease is $\frac{1}{2}$. This means that it takes on average approximately $3.32$ iterations ($\log_2 10$) to compute a single digit.
+where $\left|b - a\right|$ denotes the length of the original interval input into the algorithm. Using our definition, we can say that the bisection algorithm has linear convergence with a rate of $\frac{1}{2}$. That does not necessarily mean that in every iteration the actual error decreases by a factor of $\frac{1}{2}$, but that the \textit{average} rate of decrease is $\frac{1}{2}$. This means that it takes on average approximately $3.32$ iterations ($\log_2 10$) to compute a single digit.
 
 The major drawback of this algorithm is its very slow rate of convergence, specifically compared to other methods described in the following sections.
 
@@ -279,8 +283,7 @@ The general formula is obtained by iterating the process, by replacing $x_{0}$ w
 \end{align}
 %pridat zdroj/proof ze polynomy su d.
 Since all polynomial functions are differentiable, we can apply this formula to our problem. Newton's method is exceptionally powerful and one of the most well known techniques for finding the roots, since its rather easy to implement and converges very quickly. 
-
-
+\paragraph{Speed of convergence}
 \begin{theorem}[{\parencite[p.~60]{rootApproxMeth}}]
   Assume that $f(x), f'(x)$, and $f''(x)$ are all continuous for every $x$ in some neighbourhood $I = [\alpha - \epsilon, \alpha + \epsilon]$ of $\alpha$, $\alpha$ is a root of $f$, and $f'(x) \neq 0, \forall x \in I$. Then if $x_{0}$ is chosen sufficiently close to $\alpha$, the iterates $x_{n}, n \geq 0$ of \eqref{eq:newt} will converge to $\alpha$. 
 Furthermore,
