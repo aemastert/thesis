@@ -19,36 +19,6 @@
 
 \refsection{0}
   \sortlist[entry]{none/global/}
-    \entry{rosicky07}{book}{}
-      \name{author}{1}{}{%
-        {{hash=476c804db97ea01dc928504f3e662a2d}{%
-           family={Rosický},
-           familyi={R\bibinitperiod},
-           given={Jiří},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Brno}%
-      }
-      \list{publisher}{1}{%
-        {Masarykova univerzita}%
-      }
-      \strng{namehash}{476c804db97ea01dc928504f3e662a2d}
-      \strng{fullhash}{476c804db97ea01dc928504f3e662a2d}
-      \strng{authornamehash}{476c804db97ea01dc928504f3e662a2d}
-      \strng{authorfullhash}{476c804db97ea01dc928504f3e662a2d}
-      \field{sortinit}{1}
-      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{4}
-      \field{isbn}{978-80-210-2964-4}
-      \field{langid}{czech}
-      \field{pagetotal}{vi, 133}
-      \field{title}{Algebra}
-      \field{year}{2007}
-      \field{dateera}{ce}
-    \endentry
     \entry{polynomialsChina}{book}{}
       \name{author}{3}{}{%
         {{hash=2830bbc110254fb9b4f61ab3bcf36502}{%
@@ -77,8 +47,8 @@
       \strng{fullhash}{1f133dde89a0c0f29301204114b27f7f}
       \strng{authornamehash}{1f133dde89a0c0f29301204114b27f7f}
       \strng{authorfullhash}{1f133dde89a0c0f29301204114b27f7f}
-      \field{sortinit}{2}
-      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{962-209-271-3}
@@ -86,6 +56,36 @@
       \field{pagetotal}{viii, 232}
       \field{title}{Polynomials and Equations}
       \field{year}{1992}
+      \field{dateera}{ce}
+    \endentry
+    \entry{rosicky07}{book}{}
+      \name{author}{1}{}{%
+        {{hash=476c804db97ea01dc928504f3e662a2d}{%
+           family={Rosický},
+           familyi={R\bibinitperiod},
+           given={Jiří},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Brno}%
+      }
+      \list{publisher}{1}{%
+        {Masarykova univerzita}%
+      }
+      \strng{namehash}{476c804db97ea01dc928504f3e662a2d}
+      \strng{fullhash}{476c804db97ea01dc928504f3e662a2d}
+      \strng{authornamehash}{476c804db97ea01dc928504f3e662a2d}
+      \strng{authorfullhash}{476c804db97ea01dc928504f3e662a2d}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{isbn}{978-80-210-2964-4}
+      \field{langid}{czech}
+      \field{pagetotal}{vi, 133}
+      \field{title}{Algebra}
+      \field{year}{2007}
       \field{dateera}{ce}
     \endentry
     \entry{interValue}{book}{}
@@ -106,8 +106,8 @@
       \strng{fullhash}{db4b5e47b5a5923f9b9051241bc14602}
       \strng{authornamehash}{db4b5e47b5a5923f9b9051241bc14602}
       \strng{authorfullhash}{db4b5e47b5a5923f9b9051241bc14602}
-      \field{sortinit}{4}
-      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780521288828}
@@ -125,8 +125,8 @@
       \list{publisher}{1}{%
         {The University of California, Berkeley}%
       }
-      \field{sortinit}{5}
-      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
       \field{labeltitlesource}{title}
       \field{endyear}{2014}
       \field{langid}{english}
@@ -160,8 +160,8 @@
       \strng{fullhash}{64e7306a70b4703c7fe4686f80f44682}
       \strng{authornamehash}{64e7306a70b4703c7fe4686f80f44682}
       \strng{authorfullhash}{64e7306a70b4703c7fe4686f80f44682}
-      \field{sortinit}{6}
-      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -171,6 +171,213 @@
       \field{title}{An Introduction to Numerical Analysis}
       \field{year}{1989}
       \field{dateera}{ce}
+    \endentry
+    \entry{halley}{article}{}
+      \name{author}{2}{}{%
+        {{hash=dadef2404d7eaafb6d32a36214c929de}{%
+           family={Scavo},
+           familyi={S\bibinitperiod},
+           given={T.R.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=924331a2ff33c6491548b81e9c0bdc4d}{%
+           family={Thoo},
+           familyi={T\bibinitperiod},
+           given={J.B.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{24776f4e33a411c15d5312a74e155daa}
+      \strng{fullhash}{24776f4e33a411c15d5312a74e155daa}
+      \strng{authornamehash}{24776f4e33a411c15d5312a74e155daa}
+      \strng{authorfullhash}{24776f4e33a411c15d5312a74e155daa}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00029890}
+      \field{journaltitle}{American Mathematical Monthly}
+      \field{langid}{english}
+      \field{number}{5}
+      \field{title}{On the Geometry of Halley's Method}
+      \field{urlday}{30}
+      \field{urlmonth}{4}
+      \field{urlyear}{2017}
+      \field{volume}{102}
+      \field{year}{1995}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb http://www.jstor.org/stable/pdf/2975033.pdf
+      \endverb
+    \endentry
+    \entry{halleyCnvg}{online}{}
+      \name{author}{1}{}{%
+        {{hash=27efae93749b9de34609cc8708010bfe}{%
+           family={Mathews},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{27efae93749b9de34609cc8708010bfe}
+      \strng{fullhash}{27efae93749b9de34609cc8708010bfe}
+      \strng{authornamehash}{27efae93749b9de34609cc8708010bfe}
+      \strng{authorfullhash}{27efae93749b9de34609cc8708010bfe}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Theory and Proof for Halley's Method}
+      \field{urlday}{1}
+      \field{urlmonth}{5}
+      \field{urlyear}{2017}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb http://mathfaculty.fullerton.edu/mathews/n2003/Halley'sMethodProof.html
+      \endverb
+    \endentry
+    \entry{10.2307/2975033}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f5d4ebb1444272f5475c993b5cebe007}{%
+           family={Scavo},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi R.},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=59f0cb16db4e83cea705693d5f137923}{%
+           family={Thoo},
+           familyi={T\bibinitperiod},
+           given={J.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mathematical Association of America}%
+      }
+      \strng{namehash}{33dece75e68bccb0140c399729939c24}
+      \strng{fullhash}{33dece75e68bccb0140c399729939c24}
+      \strng{authornamehash}{33dece75e68bccb0140c399729939c24}
+      \strng{authorfullhash}{33dece75e68bccb0140c399729939c24}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00029890, 19300972}
+      \field{journaltitle}{The American Mathematical Monthly}
+      \field{number}{5}
+      \field{title}{On the Geometry of Halley's Method}
+      \field{volume}{102}
+      \field{year}{1995}
+      \field{pages}{417\bibrangedash 426}
+      \range{pages}{10}
+      \verb{url}
+      \verb http://www.jstor.org/stable/2975033
+      \endverb
+    \endentry
+    \entry{horner}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e726f17a8d1f7d9f0fce91158d5eb4ee}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Lianghuo},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e726f17a8d1f7d9f0fce91158d5eb4ee}
+      \strng{fullhash}{e726f17a8d1f7d9f0fce91158d5eb4ee}
+      \strng{authornamehash}{e726f17a8d1f7d9f0fce91158d5eb4ee}
+      \strng{authorfullhash}{e726f17a8d1f7d9f0fce91158d5eb4ee}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0217-2976}
+      \field{journaltitle}{Mathematical Medle}
+      \field{number}{1}
+      \field{title}{A Generalization of Synthetic Division and A General Theorem of Division of Polynomials}
+      \field{volume}{30}
+      \field{year}{2003}
+      \field{pages}{30\bibrangedash 37}
+      \range{pages}{8}
+      \verb{url}
+      \verb https://eprints.soton.ac.uk/168861/1/FLH_article_on_polynomial_division.pdf
+      \endverb
+    \endentry
+    \entry{sturmWik}{online}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Sturm's theorem --- {W}ikipedia{,} The Free Encyclopedia}
+      \field{urlday}{6}
+      \field{urlmonth}{5}
+      \field{urlyear}{2017}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Sturm%27s_theorem
+      \endverb
+    \endentry
+    \entry{vigklasphd}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=2477a229d4c20f011c507da7b9e06258}{%
+           family={Vigklas},
+           familyi={V\bibinitperiod},
+           given={Panagiotis\bibnamedelima S.},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Thessaly}%
+      }
+      \list{location}{1}{%
+        {Volos}%
+      }
+      \strng{namehash}{2477a229d4c20f011c507da7b9e06258}
+      \strng{fullhash}{2477a229d4c20f011c507da7b9e06258}
+      \strng{authornamehash}{2477a229d4c20f011c507da7b9e06258}
+      \strng{authorfullhash}{2477a229d4c20f011c507da7b9e06258}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Upper bounds on the values of the positive roots of polynomials}
+      \field{type}{phdthesis}
+      \field{urlday}{6}
+      \field{urlmonth}{5}
+      \field{urlyear}{2017}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://www.e-ce.uth.gr/cced/wp-content/uploads/formidable/phd_thesis_vigklas.pdf
+      \endverb
+    \endentry
+    \entry{sturmGeneral}{online}{}
+      \name{author}{1}{}{%
+        {{hash=1bdc98993b36ea025d61fcecaa9b93d6}{%
+           family={Bartlett},
+           familyi={B\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{1bdc98993b36ea025d61fcecaa9b93d6}
+      \strng{fullhash}{1bdc98993b36ea025d61fcecaa9b93d6}
+      \strng{authornamehash}{1bdc98993b36ea025d61fcecaa9b93d6}
+      \strng{authorfullhash}{1bdc98993b36ea025d61fcecaa9b93d6}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Finding All the Roots: Sturm’s Theorem}
+      \field{urlday}{6}
+      \field{urlmonth}{5}
+      \field{urlyear}{2017}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb http://web.math.ucsb.edu/~padraic/mathcamp_2013/root_find_alg/Mathcamp_2013_Root-Finding_Algorithms_Day_2.pdf
+      \endverb
     \endentry
   \endsortlist
 \endrefsection

@@ -2145,6 +2145,14 @@
     <bcf:citekey order="8">rootApproxMeth</bcf:citekey>
     <bcf:citekey order="9">rootApproxMeth</bcf:citekey>
     <bcf:citekey order="10">rootApproxMeth</bcf:citekey>
+    <bcf:citekey order="11">halley</bcf:citekey>
+    <bcf:citekey order="12">halley</bcf:citekey>
+    <bcf:citekey order="13">halleyCnvg</bcf:citekey>
+    <bcf:citekey order="14">10.2307/2975033</bcf:citekey>
+    <bcf:citekey order="15">horner</bcf:citekey>
+    <bcf:citekey order="16">sturmWik</bcf:citekey>
+    <bcf:citekey order="17">vigklasphd</bcf:citekey>
+    <bcf:citekey order="18">sturmGeneral</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global/" type="entry" sortscheme="none" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

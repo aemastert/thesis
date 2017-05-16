@@ -4,7 +4,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}\bfseries Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}\bfseries Chapter}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}\bfseries Approximation of a single root}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}\slshape Definitions}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
@@ -18,17 +18,43 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\rmfamily Speed of convergence}{6}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}\rmfamily Newton's method}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}\rmfamily Newton's method}{8}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily Speed of convergence}{8}{section*.7}
+\contentsline {paragraph}{\rmfamily Speed of convergence}{9}{section*.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\rmfamily Error bounds}{11}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{\rmfamily Mean value theorem}{11}{section*.9}
+\contentsline {subparagraph}{\rmfamily Mean value theorem}{12}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily The Newton algorithm}{12}{section*.10}
+\contentsline {paragraph}{\rmfamily The Newton algorithm}{14}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{15}{chapter*.11}
+\contentsline {subsection}{\numberline {2.2.3}\rmfamily Halley's method}{15}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\rmfamily Speed of convergence}{16}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\rmfamily Halley's algorithm}{17}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}\bfseries Finding multiple roots}{19}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}\slshape Finding all roots}{19}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.1}\rmfamily Ruffini-Horner's method}{19}{subsection.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}\slshape Isolation of roots in a selected interval}{21}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}\rmfamily Isolation of roots using Sturm's theorem}{21}{subsection.3.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}\rmfamily Isolation of roots using Vincent's theorem}{25}{subsection.3.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}\bfseries Implementation}{27}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}\bfseries Experiments}{29}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{31}{chapter*.13}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
 \defcounter {refsection}{0}\relax 
 \select@language {czech}
 \defcounter {refsection}{0}\relax 
@@ -50,6 +76,22 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{17}{section*.12}
+\select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\bfseries An appendix}{17}{appendix.A}
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index}{33}{section*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}\bfseries An appendix}{33}{appendix.A}

@@ -99,10 +99,11 @@
 %%end
 \begin{document}
 \newtheorem{theorem}{Theorem}[section] %% The numbering of theorems will be reset after each section.
+\newtheorem{corollary}[theorem]{Corollary}
 \chapter{Introduction}
 Intro
 
-\chapter{Chapter}
+\chapter{Approximation of a single root}
 \section{Definitions}
 \subsection{Univariate polynomial}
 A univariate polynomial $f$ is a mathematical expression of the form
@@ -111,12 +112,12 @@ A univariate polynomial $f$ is a mathematical expression of the form
 \end{align}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
-where the $a_{n}, a_{n-1}, \ldots, a_{1}, a_{0}$  are the coefficients of the polynomial, $n$ is any nonnegative integer and $x$ is called an indeterminate or a variable.  The highest $n \geq 0$ is called the degree of the polynomial (such $n$ exists, since the set $\{i \, | \, f_{i} \neq 0 \}$ is finite) and $a_{n} \neq 0$ is called the leading coefficient. If every $a_{k}$, $0\leq{k}\leq{n}$, is a real number, we say that $f$ is polynomial over $\R$ or simply real polynomial.
+where the $a_{n}, a_{n-1}, \ldots, a_{1}, a_{0}$  are the coefficients of the polynomial, $n$ is any nonnegative integer and $x$ is called an indeterminate or a variable.  The highest $n \geq 0$ is called the degree of the polynomial (such $n$ exists, since the set $\{i \, | \, a_{i} \neq 0 \}$ is finite) and $a_{n} \neq 0$ is called the leading coefficient. If every $a_{k}$, $0\leq{k}\leq{n}$, is a real number, we say that $f$ is polynomial over $\R$ or simply real polynomial.
 
 \subsection{Roots of a univariate polynomial}
-Let $f = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  +  a_{0}$ be a real polynomial, $c\in\R$. Then an element $a_{n}c^{n}  +  a_{n-1}c^{n-1} +  \ldots  +  a_{1}c  +  a_{0}$ is called a value of the polynomial and we denote it as $f(c)$.
+Let $f = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  +  a_{0}$ be a real polynomial and $c\in\R$. Then an element $a_{n}c^{n}  +  a_{n-1}c^{n-1} +  \ldots  +  a_{1}c  +  a_{0}$ is called a value of the polynomial and we denote it as $f(c)$.
 
-Using this, we can create a polynomial function by mapping every element $x\in\R$, to the result of a substitution $f(x) = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  +  a_{0}$ \parencite{polynomialsChina}.
+Using this, we can create a polynomial function by mapping every element $x\in\R$, to the result of $f(x) = a_{n}x^{n}  +  a_{n-1}x^{n-1} +  \ldots  +  a_{1}x  +  a_{0}$ \parencite{polynomialsChina}.
 
 Let $f$ be a polynomial over $R$, $c\in\R$. We say that $c$ is a root of the polynomial $f$ if $f(c) = 0$ \parencite{rosicky07}.
 
@@ -125,10 +126,10 @@ The iterative methods generally require knowledge of one or more initial guesses
 
 \subsection{Bisection method}
 The simplest method for finding a better approximation to a root is \textbf{bisection method}. 
-\begin{theorem}
-Let $f$ be a function on $\R$. Consider an interval $I=[a,b]$ in $f$ such that $f$ is continuous on $I$ and $\lambda\in\R$ such that $\lambda$ lies between $f(a)$ and $f(b)$. Then there exists a $\gamma$, $\gamma\in[a,b]$, such that $f(\gamma)=\lambda$.
+\begin{theorem}[Intermediate value theorem]
+Let $f$ be a function on $\R$. Consider an interval $I=[a,b]$ such that $f$ is continuous on $I$ and $\lambda\in\R$ such that $\lambda$ lies between $f(a)$ and $f(b)$. Then there exists a $\gamma$, $\gamma\in[a,b]$, such that $f(\gamma)=\lambda$.
 \end{theorem}
-This is called the \textbf{intermediate value theorem}\parencite{interValue}. Now, assume a function $f(x)$ that is continuous on interval $[a,b]$ and that $f(a)f(b)<0$. Then according to the intermediate value theorem there must be at least one root in $[a,b]$. The interval may be chosen large enough that there is more than one root, this is not a problem however, since the algorithm will always converge to some root $\alpha$ in $[a,b]$ and a smaller interval containing only one root. Since all polynomial functions are continuous \parencite{polyCont}, we can use this theorem to create an algorithm.
+Now, assume a function $f(x)$ that is continuous on interval $[a,b]$ and that $f(a)\cdot f(b)<0$. Then according to the intermediate value theorem \parencite{interValue} there must be at least one root in $[a,b]$. The interval may be chosen large enough that there is more than one root, this is not a problem however, since the bisection algorithm will always converge to some root $\alpha$ in $[a,b]$ and a smaller interval containing only one root. Since all polynomial functions are continuous \parencite{polyCont}, we can use this theorem to create an algorithm.
 \newcommand*\Let[2]{\State #1 $\gets$ #2}
 \algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
 \algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
@@ -143,7 +144,7 @@ This is called the \textbf{intermediate value theorem}\parencite{interValue}. No
       \If{$x - a \leq \epsilon$}
 				\State\Return{$c$}
 			\EndIf
-      \If{$f(a) * f(x) < 0$}
+      \If{$f(a) \cdot f(x) < 0$}
 				\State \Return{\Call{Bisection}{$f, a, x, \epsilon$}}
 				\Else \State \Return{\Call{Bisection}{$f, x, b, \epsilon$}}
 			\EndIf
@@ -152,38 +153,43 @@ This is called the \textbf{intermediate value theorem}\parencite{interValue}. No
 \end{algorithm}
 \theoremstyle{definition}
 \newtheorem{example}{Example}[section]
-\begin{example}
+\begin{example}\label{exampleBis}
 Find a root $\alpha$ of 
 \begin{align}
       2x^{4} - 3x - 2
 \end{align}
-with the precision $\epsilon = 0.00005$.
+with the precision $\epsilon = 0.000001$.
 \end{example}
-It is fairly straightforward to show that there is a root located between $1 < \alpha < 2$, so we will use this interval as our initial guess. The results are shown in the table below.
+It is fairly straightforward to show that there is a root located between $1 < \alpha < 2$, so we will use this interval as our initial guess. The iterations of the bisection algorithm are shown in the table \ref{tab:bis}.
 %vysvetlit preco je to straightforward
 \begin{table}
   \begin{tabularx}{\textwidth}{lll}
     \toprule
     Iteration & $x_{n}$ & $f(x_{n})$\\
     \midrule
-    1 & 1.50000 & 3.62500 \\
-    2 & 1.25000 & -0.86719 \\
-    3 & 1.37500 & 1.023931 \\
-    4 & 1.31250 & -0.00241 \\
-    5 & 1.34375 & 0.48960 \\
-    6 & 1.32813 & 0.23842 \\
-    7 & 1.32031 & 0.11674 \\
-    8 & 1.31641 & 0.05685 \\
-    9 & 1.31445 & 0.02715 \\
-    10 & 1.31348 & 0.01235 \\
-    11 & 1.31299 & 0.00497 \\
-    12 & 1.31275 & 0.00129 \\
-    13 & 1.31262 & -0.00055 \\
-    14 & 1.31268 & 0.00037 \\
-    15 & 1.31265 & -0.00009 \\
+		1 & 1.500000 & 3.625000 \\
+		2 & 1.250000 & -0.867188 \\
+		3 & 1.375000 & 1.023926 \\
+		4 & 1.312500 & -0.002411 \\
+		5 & 1.343750 & 0.489595 \\
+		6 & 1.328125 & 0.238424 \\
+		7 & 1.320313 & 0.116730 \\
+		8 & 1.316406 & 0.056843 \\
+		9 & 1.314453 & 0.027138 \\
+		10 & 1.313477 & 0.012344 \\
+		11 & 1.312988 & 0.004961 \\
+		12 & 1.312744 & 0.001275 \\
+		13 & 1.312622 & -0.000568 \\
+		14 & 1.312683 & 0.000354 \\
+		15 & 1.312653 & -0.000106 \\
+		16 & 1.312668 & 0.000124 \\
+		17 & 1.312660 & 0.000010 \\
+		18 & 1.312657 & -0.000048 \\
+		19 & 1.312659 & -0.000019 \\
+		20 & 1.312660 & -0.000004 \\
     \bottomrule
   \end{tabularx}
-  \caption{Bisection algorithm on example}
+  \caption{Bisection algorithm on Example \ref{exampleBis}}
   \label{tab:bis}
 \end{table}
 
@@ -224,18 +230,18 @@ The correct approximation is
 \end{align}
 The error of the final iteration is
 \begin{align}
-      |\alpha - x_{15}| \doteq 0.00000975467417
+      |\alpha - x_{20}| \doteq 0.00000024532583
 \end{align}
-which is smaller than the required error bound ($0.00005$). Upon closer inspection, it can be noticed that the algorithm found a solution with enough precision in an earlier iteration already (for example $x_{13}$) and it may seem as the computation could have been stopped right then. However, this fact was not known beforehand, because there is no possibility to predict the accuracy in an earlier iteration during computation.
+which is smaller than the required error bound ($0.000001$). Upon closer inspection, it can be noticed that the algorithm already found a solution with enough precision in an earlier iteration (for example $x_{19}$) and it may seem as the computation could have been stopped right then. However, this fact was not known beforehand, because there is no possibility to predict the accuracy in an earlier iteration during computation.
 
 \paragraph{Speed of convergence}
 While every iteration gives a better approximation of the true solution, the algorithm is converging rather slowly. To examine the speed of convergence, we first need to characterize it.
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[section]
 
 \begin{definition}
-  Suppose we have a sequence of real numbers $x_{0}, x_{1}\ldots$ and a real number $\alpha$ such that for every $\epsilon\in\R$, there exists $k\in\N$ such that $\left|x_{k}-\alpha\right|<\epsilon$. Then the sequence is said to converge to a point $\alpha$, written as $\lim_{k\to\infty}x_{k}=\alpha$. The sequence is said to \textit{converge linearly} if
+  Suppose we have a sequence of real numbers $x_{0}, x_{1}\ldots$ and a real number $\alpha$ such that for every $\epsilon\in\R$, $\epsilon>0$ there exists $k\in\N$ such that $\left|x_{k}-\alpha\right|<\epsilon$. Then the sequence is said to converge to a point $\alpha$, written as $\lim_{k\to\infty}x_{k}=\alpha$. The sequence is said to \textit{converge linearly} if
 	\begin{align}
       \lim_{n\to\infty}\frac{|\alpha - x_{n + 1}|}{|\alpha - x_{n}|} = c 
 	\end{align}
@@ -245,31 +251,30 @@ While every iteration gives a better approximation of the true solution, the alg
 	\end{align}
 	\label{def:converg}
 \end{definition}
-Let $x_{n}$ denote the $n$th value of $x$ in the algorithm. Then 
+Let $x_{n}$ denote the $n$th value of $x$ in the Algorithm \ref{alg:bisect}. Then 
 \begin{align}
 	\alpha &= \lim_{n\to\infty} x_{n} \\
 	|\alpha - x_{n}| &\leq \left[\frac{1}{2}\right]^n \left|b - a\right| \\
 			\lim_{n\to\infty}\frac{\left|\alpha - x_{n+1}\right|}{\left|\alpha - x_{n}\right|} &= \lim_{n\to\infty}\frac{2^{-\left(n+1\right)}\left|b - a\right|}{2^{-n}\left|b - a\right|} = \frac{1}{2}
 \end{align}
-where $\left|b - a\right|$ denotes the length of the original interval input into the algorithm. Using our definition, we can say that the bisection algorithm has linear convergence with a rate of $\frac{1}{2}$. That does not necessarily mean that in every iteration the actual error decreases by a factor of $\frac{1}{2}$, but that the \textit{average} rate of decrease is $\frac{1}{2}$. This means that it takes on average approximately $3.32$ iterations ($\log_2 10$) to compute a single digit.
+where $\left|b - a\right|$ denotes the length of the original interval input into the algorithm. Using Definition \ref{def:converg}, we can say that the bisection algorithm has linear convergence with a rate of $\frac{1}{2}$. That does not necessarily mean that in every iteration the actual error decreases by a factor of $\frac{1}{2}$, but that the \textit{average} rate of decrease is $\frac{1}{2}$. This means that it takes on average approximately $3.32$ iterations ($\log_2 10$) to compute a single digit.
 
 The major drawback of this algorithm is its very slow rate of convergence, specifically compared to other methods described in the following sections.
 
-On the other hand, the \textit{Bisection algorithm} has several advantages. The first of them being that it is guaranteed to converge if the prerequisites are met(i.e. the $f$ is continuous - which is true for all polynomial functions - and $f(a)f(b) < 0$). The second one being a reasonable error bound. This method also provides upper and lower bounds on the root $\alpha$ in every iteration and such belongs in class of methods called \textit{enclosure methods} \parencite{rootApproxMeth}.
+On the other hand, the \textit{Bisection algorithm} has several advantages. The first of them being that it is guaranteed to converge if the prerequisites are met(i.e. the $f$ is continuous - which is true for all polynomial functions - and $f(a)\cdot f(b) < 0$). The second one is the existence of a reasonable error bound. This method also provides upper and lower bounds on the root $\alpha$ in every iteration and such belongs in class of methods called \textit{enclosure methods} \parencite{rootApproxMeth}.
 
 
 \subsection{Newton's method}
 \textbf{Newton's method} (sometimes also called \textbf{Newton-Raphson method}), named after Isaac Newton and Joseph Raphson, is another method for finding better approximations to a root of a real polynomial function (or in general, any real-valued function). The basic idea of the method is based on the fact that given a starting point $x_{0}$, that is sufficiently close to the root, one can approximate the function by computing its tangent line at the point $(x_{0}, f(x_{0}))$. Then, one can use the $x$-intercept of the tangent line, which typically provides a better approximation, and repeat this process ad infinitum \parencite{rootApproxMeth} (or until sufficient precision is reached). 
 
-Assume that real-valued function $f(x)$ is differentiable on interval $[a,b]$ and that we have an initial approximation $x_{0}$. Then, using calculus, we can derive the formula for a better approximation $x_{1}$.
-
-%obrazok s grafom a dotycnicou
+Assume that real-valued function $f(x)$ is differentiable on interval $[a,b]$ and that we have an initial approximation $x_{0}$. Then, using calculus, we can derive the formula for a better approximation $x_{1}$ as follows.
 
 To compute the better approximation $x_{1}$, we need to use the formula that describes the slope $m$ of our tangent line
 \begin{align}
       m = \frac{f(x_{1}) - f(x_{0})}{x_{1} - x_{0}}.
 \end{align}
-Substituting $f(x_{1})$ by $0$ and manipulating the equation, we obtain
+
+Since we are interested in finding where the tangent line intersects the x-axis, we substitute $f(x_{1})$ by $0$ and manipulating the equation, we obtain
 \begin{align}
       x_{1} = x_{0} - \frac{f(x_{0})}{m}.
 \end{align}
@@ -288,16 +293,16 @@ Since all polynomial functions are differentiable, we can apply this formula to 
   Assume that $f(x), f'(x)$, and $f''(x)$ are all continuous for every $x$ in some neighbourhood $I = [\alpha - \epsilon, \alpha + \epsilon]$ of $\alpha$, $\alpha$ is a root of $f$, and $f'(x) \neq 0, \forall x \in I$. Then if $x_{0}$ is chosen sufficiently close to $\alpha$, the iterates $x_{n}, n \geq 0$ of \eqref{eq:newt} will converge to $\alpha$. 
 Furthermore,
 \begin{align} 
- \lim_{n\to\infty} \frac{\alpha - x_{n+1}}{(\alpha - x_{n})^2} = \frac{-f''(\alpha)}{2f'(\alpha)}
+ \lim_{n\to\infty} \frac{\alpha - x_{n+1}}{(\alpha - x_{n})^2} = \frac{-f''(\alpha)}{2f'(\alpha)} > 0
 \end{align}
 proving that the convergence is quadratic.
 \end{theorem}
 \begin{proof}
-\textit{(Skecth)} First, since $f$ is twice continuously differentiable around the root $\alpha$, we can use a Taylor series expansion\parencite[p.~59]{rootApproxMeth} to second order about a point close to $\alpha$, $x_{n}$, to represent $f(\alpha)$. The expansion of $f(\alpha)$ about $x_{n}$ is 
+\textit{(Skecth)} First, since $f$ is twice continuously differentiable around the root $\alpha$, we can use a Taylor series expansion \parencite[p.~59]{rootApproxMeth} of second order about a point close to $\alpha$, $x_{n}$, to represent $f(\alpha)$. The expansion of $f(\alpha)$ about $x_{n}$ is 
 \begin{align}
-	f(\alpha) = f(x_{n}) + f'(x_{n})(\alpha - x_{n}) + \frac{f''(\xi_{n})}{2!}(\alpha - x_{n})^2
+	f(\alpha) = f(x_{n}) + f'(x_{n})(\alpha - x_{n}) + \frac{f''(\xi_{n})}{2!}(\alpha - x_{n})^2 \label{eq:taylor1}
 \end{align}
-where $\xi_{n}$ is between $x$ and $\alpha$. Since $\alpha$ is root, we can replace $f(\alpha)$ with $0$ and by manipulating the equation we get
+where $\xi_{n}$ is between $x$ and $\alpha$. Since $\alpha$ is root, we can replace $f(\alpha)$ with $0$ and by rewriting the equation we get
 \begin{align}
   -\alpha + x_{n}	- \frac{f(x_{n})}{f'(x_{n})} = \frac{f''(\xi_{n})}{2f'(x_{n})}(\alpha - x_{n})^2
 \end{align}
@@ -307,7 +312,7 @@ where we can use the definition of $x_{n+1}$ from \eqref{eq:newt} and multiply t
 \end{align}
 Taking the absolute value of both sides of the equation we get
 \begin{align}
-  \left|\alpha - x_{n+1}\right| = \frac{\left|f''(\xi_{n})\right|}{\left|2f'(x_{n})\right|}\left|\alpha - x_{n}\right|^2 
+  \left|\alpha - x_{n+1}\right| = \frac{\left|f''(\xi_{n})\right|}{\left|2f'(x_{n})\right|}\left(\alpha - x_{n}\right)^2 
 	\label{eq:newtcp}
 \end{align}
 Now we pick the sufficiently small interval $I = [\alpha - \epsilon, \alpha + \epsilon]$ on which $f'(x) \neq 0$ (which exists since $f'(x)$ is continuous) and then let
@@ -323,7 +328,7 @@ This, in combination with \eqref{eq:newtcp}, gives us
 and
 \begin{align}
   M\left|\alpha - x_{n}\right| &\leq (M\left|\alpha - x_{0}\right|)^{2^n} \\
-	M\left|\alpha - x_{n}\right| &\leq \frac{1}{M}(M\left|\alpha - x_{0}\right|)^{2^n}
+	\left|\alpha - x_{n}\right| &\leq \frac{1}{M}(M\left|\alpha - x_{0}\right|)^{2^n}
 \end{align}
 Since $M\left|\alpha-x_{0}\right| < 1$, this shows that $x_{n}\rightarrow\alpha$ as $n\rightarrow\infty$.
 The aforementioned point $\xi_{n}$ is between $x_{n}$ and $\alpha$, which implies that $\xi_{n}\rightarrow\alpha$ as $n\rightarrow\infty$. Thus \parencite[p.~61]{rootApproxMeth}
@@ -337,13 +342,13 @@ However, this method has several deficiencies.
 Firstly, just by observing the equation, we can see that if the iteration point is stationary, then $x_{n+1}$ is undefined, since $f'(x_{n}) = 0$ (which means the tangent line is parallel to the $x$-axis). 
 %obrazok, example
 
-Secondly, for some polynomial functions, the method may enter an infinite cycle. This happens if, for example, $x_{1}$ produces $x_{2} = x_{0}$ as output, causing the method to alternate between these two results infinitely.
+Secondly, for some polynomial functions, the method may enter an infinite cycle. This happens if, for example, $x_{1}$ produces $x_{1} = x_{0}$ as output, causing the method to alternate between these two results infinitely.
 %obrazok, example, vyriesi sa pridanim max.pocet iteracii
 
 Thirdly, if the initial guess is not close enough or the first derivative does not behave well in the neighbourhood of a specific root, the method may skip this root as the tangent line will intercept the $x$-axis close to another root. This may pose a problem, if someone is looking for a root located specifically in an interval $[a,b]$, but does not pose a problem if one is simply looking for any root of a polynomial function.
 %obrazok, example, neskor sa vyriesi
 
-Lastly, if the root of the polynomial function has a multiplicity greater than one(i.e. the first derivative of the root is also zero), then the convergence to this root is only linear.
+Lastly, if the root (of the polynomial function) has a multiplicity greater than one(i.e. the first derivative of the root is also zero), then the convergence to this root is only linear.
 \begin{proof}
 Let $f(x)$ be a polynomial function with a root $\alpha$ of multiplicity $m$, $m > 1$, i.e. $f(x) = (x-\alpha)^{m}g(x)$. Assume that $x_{0}$ is sufficiently close to $\alpha$. Then
 \begin{align}
@@ -375,17 +380,17 @@ Let $f$ be a real-valued polynomial function and $a, b$ real numbers, such that 
 f'(c) = \frac{f(b) - f(a)}{b - a}.
 \end{align}
 \end{theorem}%pridat odkaz na zdroj na proof
-Roughly speaking, it states that given a curve, which starts at point $a$ and ends in point $b$, there is at least one point at which the tangent to the arc is parallel to the secant connecting the two points.
+Roughly speaking, it states that given a curve, which starts at point $a$ and ends in point $b$, there is at least one point at which the tangent to the curve is parallel to the secant connecting the two points.
 %vlozit obrazok
 Using this theorem on a polynomial function $f$ with a root $\alpha$ and an approximation $x_{n}$, $\alpha < x_{n}$ we get 
 \begin{align}
 f'(\xi_n) = \frac{f(x_{n}-f(\alpha))}{x_{n}-\alpha}
 \end{align}
-where $\xi_{n}$ being between $\alpha$ and $x_{n}$. Since $\alpha$ is the root of $f$, then we can remove $f(\alpha)$ and manipulating we get
+where $\xi_{n}$ being between $\alpha$ and $x_{n}$. Since $\alpha$ is the root of $f$, then we can remove $f(\alpha)$ and simplifying we get
 \begin{align}
 \alpha - x_{n} = \frac{-f(x_{n})}{f'(\xi_n)}.
 \end{align}
-If $x_{n} < \alpha$, we arrive to the same conclusion. If $f'(x)$ is not changing rapidly between $x_{n}$ and $\alpha$, then $f'(\xi_{n}) \doteq f'(x_{n})$. Combining this with the definition of Newton's method we get
+Similarly, if $x_{n} < \alpha$, we arrive to the same formula. If $f'(x)$ is not changing rapidly between $x_{n}$ and $\alpha$, then $f'(\xi_{n}) \doteq f'(x_{n})$. Combining this with the definition of Newton's method we get
 \begin{align}
 \alpha - x_{n} \doteq \frac{-f(x_{n})}{f'(x_{n})} = x_{n+1} - x_{n}.
 \end{align}
@@ -430,45 +435,250 @@ Using the Newton formula \eqref{eq:newt} and the error estimates \eqref{eq:newta
     \EndFunction
   \end{algorithmic}
 \end{algorithm}
-The $max$ variable serves as a countermeasure against the case when the method oscillates between two points and does not converge (meaning there is no root located in the interval $(a,b)$). However, in the case that the function iterates through the maximum amount of iterations $max$ and returns no root (i.e. $i = max$ and $success$ is false), but one knows the root of the $f$ is located in $(a,b)$, one may try to increase the $max$ or narrow the interval $(a,b)$ (e.g. using bisection) and try running the algorithm again.
+The $max$ variable rules out the possibility of getting stuck in an endless loop, when the method oscillates between two points and does not converge (meaning there is no root located in the interval $(a,b)$). However, in the case that the function iterates through the maximum amount of iterations $max$ and returns no root (i.e. $i = max$ and $err$ is 1), but one knows the root of the $f$ is located in $(a,b)$, one may try to increase the $max$ or narrow the interval $(a,b)$ (e.g. using bisection) and try running the algorithm again.
  
-The lines 12 to 13 serve as a prevention against the case of overshooting the root. These lines may be omitted if one does not have particular interest in finding the root from the specific interval. As in previous case, if the algorithm ends prematurely because of the latest iteration being outside of the interval, but one is certain that the root is located inside the interval, one may try narrowing the interval (thus giving a better starting point).
+The lines 12 to 13 serve as a prevention against the case of overshooting the root. These lines may be omitted if one does not have particular interest in finding the root from the specific interval (in this case, input interval $a,b$ may be switched for a single starting point $x_{0}$). As in previous case, if the algorithm ends prematurely because of the latest iteration being outside of the interval, but one is certain that the root is located inside the interval, one may try narrowing the interval (thus giving a better starting point).
 
-The termination condition is a combination of the error bounds, both absolute and relative. The reason for this choice is that while relative error works well in small magnitude and worse when the root is large in magnitude, the opposite is true for absolute error. That is because for error $\epsilon = 10^{-e}$ the relative error gives at least $e-1$ correct digits. This means that for an approximation in the floating point representation at least $e-1$ digits of the significand are correct. Whereas the absolute error provides at least $e-1$ correct digits after the decimal point, when the number is not in the floating point representation. 
+The termination condition is a combination of the error bounds, both absolute and relative. The reason for this choice is that while relative error works well in small magnitude and worse when the root is large in magnitude, the opposite is true for absolute error. That is because for error $\epsilon = 10^{-e}$ the relative error of \eqref{eq:newtreler} gives at least $e-1$ correct digits. This means that for an approximation in the floating point representation at least $e-1$ digits of the significand are correct. Whereas the absolute error of \eqref{eq:newtabser} provides at least $e-1$ correct digits after the decimal point, when the number is not in the floating point representation. 
 
-E.g. Let $f(x)=x^3-100x^2+x-100$, which has root $\alpha=100$ and set $\epsilon=0.1$. Then, using only relative error bound and setting $a=0, b=2000$, the algorithm returns as a result $x=101.5$ after 7 iterations, ending too early. Using absolute error bound, the algorithm ends after 9 iterations with the desired result $x=100.0$. 
-Now let $f(x)=x^3-0.0001x^2+x-0.0001$ which has root $\alpha=0.0001$ and set $\epsilon=0.00001$. Then, using only absolute error bound and setting $a=0, b=100$, the algorithm returns as a result $=x0.000104$ after 13 iterations. Then, using only relative error bound and setting $a=0, b=100$, the algorithm returns as a result $x=0.0001000$ after 14 iterations. While both results are within the precision error, the relative error gives more precise result. Thus the best results are achieved combining both bounds.
+E.g. Let $f(x)=x^3-100x^2+x-100$, which has a root $\alpha=100$ and set $\epsilon=0.1$. Then, using only the relative error bound and setting $a=0, b=2000$, the algorithm returns as a result $x=101.5$ after 7 iterations, ending too early. Using the absolute error bound, the algorithm ends after 9 iterations with the desired result $x=100.0$. 
+Now let $f(x)=x^3-0.0001x^2+x-0.0001$ which has a root $\alpha=0.0001$ and set $\epsilon=0.00001$. Then, using only the absolute error bound and setting $a=0, b=100$, the algorithm returns as a result $=x0.000104$ after 13 iterations. Then, using only the relative error bound and setting $a=0, b=100$, the algorithm returns as a result $x=0.0001000$ after 14 iterations. While both results are within the precision error, the relative error gives a more precise result. Thus the best results are achieved combining both bounds.
 \begin{example}
+\label{exampleNewt}
 Find a root $\alpha$ of 
 \begin{align}
       2x^{4} - 3x - 2
 \end{align}
-with the precision $\epsilon = 0.00005$.
+with the precision $\epsilon = 0.000001$.
 \end{example}
-The initial interval is same as in Bisection algorithm to make results comparable.
+The initial interval is the same as in bisection algorithm to make results comparable.
 \FloatBarrier
 \begin{table}[H]
   \begin{tabularx}{\textwidth}{lll}
     \toprule
     Iteration & $c_{n}$ & $f(c_{n})$\\
     \midrule
-		1 & 1.50000 & 3.62500 \\
-		2 & 1.34896 & 0.57565 \\
-		3 & 1.31436 & 0.02569 \\
-		4 & 1.31266 & 0.00006 \\
+			1 & 1.500000 & 3.625000 \\
+			2 & 1.348958 & 0.575658 \\
+			3 & 1.314358 & 0.025697 \\
+			4 & 1.312664 & 0.000060 \\
+			5 & 1.312660 & 0.000001 \\
     \bottomrule
   \end{tabularx}
-  \caption{Newton's algorithm on example}
+  \caption{Newton's algorithm on Example \ref{exampleNewt}}
   \label{tab:newt}
 \end{table}
 
-With correct approximation being $\alpha \doteq 1.31265975467417$, the error of the final iteration is $|\alpha - x_{4}|\doteq0.00000024532583$ which is within the allowed precision error.
+With correct approximation being $\alpha \doteq 1.31265975467417$, the error of the final iteration is $|\alpha - x_{5}|\doteq0.00000024532583$ which is within the allowed precision error.
 
-While the algorithm solves some of it's deficiencies mentioned before, some remain. The method might sometimes fail (when the first derivative of $x_{n}$ is zero) and the convergence for the roots of higher multiplicity is only linear.
+While the algorithm solves some of the deficiencies of the method mentioned before, some remain. The method might sometimes fail (when the first derivative of $x_{n}$ is zero) and the convergence for the roots of higher multiplicity is only linear.
 
-On the other hand, as we can see from the table, the algorithm converges much faster than the previous method, finding the sufficient approximation in only 4 iterations. This makes Newton's method superior to the bisection method in most of the cases.
+On the other hand, as we can see from the table, the algorithm converges much faster than the previous method, finding the sufficient approximation in only 5 iterations. This makes Newton's method superior to the bisection method in most of the cases.
 
-%napisat ze patri medzi householder.
+\subsection{Halley's method}
+\textbf{Halley's method}, named after its creator Edmond Halley, is a method that in addition to first derivative uses a second derivative of the function as well. While Newton's method could be geometrically expressed as a series of tangent lines which roots (x-intercepts) converge to the root of function, there is no such obvious interpretation for Halley's method. However, as Newton's method can be derived via a first order Taylor polynomial, Halley's method can be derived via a second order Taylor polynomial \parencite{halley},
+\begin{align}
+y(x)=f(x_{n})+f'(x_{n})(x-x_{n})+\frac{f''(x_{n})}{2!}(x-x_{n})^{2},
+\end{align}
+where $x_{n}$ is an approximation of $x$, such that $f(x) = 0$. As the objective is to calculate a point $x_{n+1}$ where the $y$ function intersects x-axis, we set $y(x)=0$ and the objective is then solving the equation
+\begin{align}
+0=f(x_{n})+f'(x_{n})(x_{n+1}-x_{n})+\frac{f''(x_{n})}{2}(x_{n+1}-x_{n})^{2}
+\end{align}
+for $x_{n+1}$. Following \cite{halley} and simplifying the equation to express $x_{n+1}$ on the left side we obtain
+\begin{align}
+x_{n+1}=x_{n}-\frac{f(x_{n})}{f'(x_{n})+\frac{f''(x_{n})}{2}(x_{n+1}-x_{n})}.
+\end{align}
+Substituting the difference $x_{n+1}-x_{n}$ with $-\frac{f(x_{n})}{f'(x_{n})}$ defined in \eqref{eq:newt}, we obtain
+\begin{align}
+x_{n+1}=x_{n}-\frac{2f(x_{n})f'(x_{n})}{2f'(x_{n})^{2}-f(x_{n})f''(x_{n})},
+\end{align}
+known as Halley's method.
+\paragraph{Speed of convergence}
+The Halley's method converges to the root cubically \parencite{halleyCnvg}, \parencite{10.2307/2975033} compared to Newton's quadratic convergence. The proof of cubic convergence follows similar fashion as Newton's, using Taylor series expansion. Despite the fact that the method converges faster than Newton's method, this is offset by the fact that the computation needed in every step is more complex than in Newton's method. If the computation of the derivatives is complicated (e.g. the polynomial has very high degree) or evaluation of $f(x), f'(x)$ and $f''(x)$ takes significant amount of time, the total amount of time may be similar or even higher to Newton's method.
+In addition, if the second derivative is close to or exactly $0$ then the convergence speed is very similar to Newton's method.
+\paragraph{Halley's algorithm}
+The Halley's algorithm has similar structure to Newton's algorithm \ref{alg:newton}, only replacing lines 5 and 9 with the new equation.
+\begin{example}
+Find a root $\alpha$ of 
+\begin{align}
+      2x^{4} - 3x - 2
+\end{align}
+with the precision $\epsilon = 0.000001$.
+\end{example}
+The initial interval remains the same as in the previous algorithms to make the results comparable.
+\FloatBarrier
+\begin{table}[H]
+  \begin{tabularx}{\textwidth}{lll}
+    \toprule
+    Iteration & $c_{n}$ & $f(c_{n})$\\
+    \midrule
+				1 & 1.318039 & 0.081800 \\
+				2 & 1.312660 & 0.000001 \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Halley's algorithm on example}
+  \label{tab:hall}
+\end{table}
+The algorithm finishes with the same result as the result provided by the bisection algorithm \ref{tab:bis} and Newton's algorithm \ref{tab:newt} while ending in only 2 iterations, as opposed to 21 in \ref{tab:bis} and 5 in \ref{tab:newt}.
+The Halley's algorithm has the same disadvantages as Newton's algorithm, while providing a higher speed of convergence, at the cost of higher computation time in every iteration. Therefore it is preferable when the degree of the polynomial is rather low, but at higher degrees or when second derivative is very close to 0 (with respect to error tolerance), it doesn't provide significant advantage over Newton's method (and may even result in higher total time).
+
+\chapter{Finding multiple roots}
+While the previous chapter focused on getting better approximation of a single root, this chapter focuses on finding multiple roots.
+\section{Finding all roots}
+\subsection{Ruffini-Horner's method}
+The \textbf{Ruffini-Horner's} method relies on what is known as \textit{fundamental theorem of algebra}.
+\begin{theorem}[Fundamental theorem of algebra]
+Given any positive integer $n \geq 1$ and any univariate polynomial $f$ with complex coefficients such that the degree of $f$ is $n$, the polynomial $f$ has at least 1 complex root.
+\end{theorem}
+This theorem has few important corollaries.
+\begin{corollary}
+Every univariate polynomial $f$ of degree $n \geq 1$ has exactly $n$ complex roots.
+\end{corollary}
+\begin{corollary}
+Any univariate polynomial $f$ of degree $n \geq 1$ can be factored as $f=(x-z_{1})(x-z_{2})\ldots(x-z_{n})$, where $z_{1},\ldots,z_{n}$ are the complex roots.
+\end{corollary}
+\begin{corollary}
+Any real univariate polynomial $f$ of degree $n \geq 1$ can be factored as $f=(x-z_{1})(x-z_{2})\ldots(x-z_{m})g(x)$, where $z_{1},\ldots,z_{m}$ are the real roots of $f$, $m\leq n$ and $g(x)$ is irreducible in $\R$.
+\end{corollary}
+The implication of this corollary is that we can start by finding any root $\alpha$ of $f(x)$, then divide $f(x)$ by factor $(x-\alpha)$ to obtain $f_{1}(x)$ such that $f(x)=(x-\alpha)f_{1}(x)$ and repeat the process for $f_{1}(x)$ until we reach $f_{m}(x)$ such that it is irreducible in $\R$ (i.e. has no real roots).
+
+Because in each step we are dividing $f_{i}(x)$, $0 \leq i < m$ by a linear monic polynomial, we can use the efficient technique for the division known as \textit{Ruffini's rule} or \textit{Horner's method}, described in \parencite{horner}. This gives us a simple algorithm.
+
+\begin{algorithm}
+  \caption{Ruffini-Horner's algorithm
+    \label{alg:rhn}}
+  \begin{algorithmic}[1]
+    \Require{$f$ polynomial function, $x_0$ initial guess, $\epsilon$ precision error, $max$ max amount of iter. for Newton}
+    \Statex
+    \Function{RuffiniHorner}{$f, x_0, \epsilon, max$}
+			\Let{$roots$}{$\emptyset$}
+			\Let{$f_{0}$}{$f$}
+			\Let{$remainder$}{0}
+			\Let{$error$}{0}
+			\While{remainder = 0 \& error = 0}
+				\Let{$error,root$}{$Newton(f_{0},f'_{0},x_{0},\epsilon,max)$}
+				\If{$error = 0$}
+						\Let{$roots$}{$roots \cup root$}
+						\Let{$f_{1}, remainder$}{$f_{0} / (x-root)$} \hspace{0.2cm} using Ruffini/Horner rule
+				\EndIf
+				\If{$f_{1} = 1$}
+					\State\Return{$roots$}
+				\EndIf
+				\Let{$f_{0}$}{$f_{1}$}
+			\EndWhile
+		\Return{$roots$}
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+The positives of this algorithm are the efficiency of the division and simplicity, which in combination with Newton's method result in fast algorithm.
+
+On the other hand, the division in each step produces a slight error in precision, which accumulates over the iterations and could cause larger discrepancy in the latter roots than desired.
+
+\section{Isolation of roots in a selected interval}
+In this section, I present 3 algorithms which goal is to isolate the roots in a selected interval into smaller separate intervals, each containing exactly one root. Then, using the combination of algorithms presented in the previous chapter, approximate the roots to the allowed tolerance, thus achieving the desired result.
+\subsection{Isolation of roots using Sturm's theorem}
+\begin{definition}
+A \textit{Sturm chain} or \textit{Sturm sequence} of a polynomial $f$ is a finite sequence of polynomials $f = f_{0}, f_{1},\ldots f_{m}$ of decreasing degree with following properties:
+\begin{itemize}
+  \item $f$ has simple roots
+  \item if $f(\alpha)=0$, then $sgn(f_{1}(\alpha))=sgn(f'(\alpha))$
+	\item if $f_{i}(\alpha)=0$ for $0 < i < m$, then $sgn(f_{i-1}(\alpha))=-sgn(f_{i+1}(\alpha))$
+	\item $sgn(f_{m}(x))$ is constant for all $x$.
+\end{itemize}
+\end{definition}
+The Sturm chain of $f$ can be created by applying Euclid's algorithm to $f(x)$ and $f'(x)$ \parencite{sturmWik}\parencite{vigklasphd}:
+\begin{align*}
+ f_{0}(x)&=f(x), \\
+ f_{1}(x)&=f'(x), \\
+ f_{2}(x)&=-r(f_{0},f_{1})=f_{1}(x)q_{0}(x)-f_{0}(x), \\
+ f_{3}(x)&=-r(f_{1},f_{2})=f_{2}(x)q_{1}(x)-f_{1}(x), \\
+ \vdots \\
+ f_{m}(x)&=-r(f_{m-2},f_{m-1})=f_{m-1}(x)q_{m-2}(x)-f_{1}(x), \\
+0&=-r(f_{m-1},f_{m}).
+\end{align*}
+The $r(f_{i},f_{i+1})$ represents the remainder and the $q_{i}$ represents the quotient of the polynomial long division $\frac{f_{i}}{f_{i+1}}=q_{i}(x)f_{i}(x)+r(f_{i},f_{i+1})$ for every $0 \leq i < m$. As the degree of the remainder $deg(r(f_{i},f_{i+1}))$ is at most $deg(f_{i+1})-1$, the maximum length of the chain is $m \leq deg(f_{0})$.
+
+To provide the Sturm's theorem, let $\sigma(f,\xi)$ represent the number of sign changes (change to or from $0$ excluded) in the sequence $f_{0}(\xi), f_{1}(\xi),\ldots,f_{m}(\xi)$, where $f_{0}, f_{1},\ldots,f_{m}$ is Sturm chain of $f$.
+
+\begin{theorem}[Sturm]
+Assume $f(x)$ is a real polynomial without a root of multiplicity greater than one and $a, b$ are real numbers such that $a<b, f(a)\neq{0}$, $f(b)\neq{0}$. Then the number of real roots in interval $(a,b]$ is equal to $\sigma(f,a) - \sigma(f,b)$.
+\end{theorem}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\begin{remark}
+  The theorem can be strengthened(as proven in \cite{sturmGeneral}) to any polynomial, including the ones with roots with higher multiplicity. Then the difference of sign changes $\sigma(f,a) - \sigma(f,b)$ provides the number of \textit{distinct} roots in $(a,b]$.
+\end{remark}
+Using this theorem and combining it with Newton's method and bisection, I created the following algorithm.
+\begin{algorithm}
+  \caption{Sturm's algorithm
+    \label{alg:sturm}}
+  \begin{algorithmic}[1]
+    \Require{$f, f'$ polynomial function and its first derivative, $a, b$ interval bounds}
+    \Statex
+    \Function{Sturm}{$f, f', a, b$}
+			\Let{$\sigma(a)$}{0}
+			\Let{$\sigma(b)$}{0}
+			\Let{$f_{0}$}{$f$}
+			\Let{$f_{1}$}{$f'$}
+			\If{$sgn(f_{0}(a)) \neq sgn(f_1(a))$}
+				\Let{$\sigma(a)$}{$\sigma(a)+1$}
+			\EndIf
+			\If{$sgn(f_{0}(b)) \neq sgn(f_1(b))$}
+				\Let{$\sigma(b)$}{$\sigma(b)+1$}
+			\EndIf
+		\While{$f_1 \neq 0$}
+			\Let{$r$}{$f_{0} \hspace{0.2cm} mod \hspace{0.2cm} f_{1}$}
+			\Let{$f_{0}$}{$f_{1}$}
+			\Let{$f_{1}$}{$-r$}
+			\If{$sgn(f_{0}(a)) \neq sgn(f_1(a))$}
+				\Let{$\sigma(a)$}{$\sigma(a)+1$}
+			\EndIf
+			\If{$sgn(f_{0}(b)) \neq sgn(f_1(b))$}
+				\Let{$\sigma(b)$}{$\sigma(b)+1$}
+			\EndIf
+		\EndWhile
+		\State\Return{$\sigma(a)-\sigma(b)$}
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+\begin{algorithm}
+  \caption{Root-finding(sturm) algorithm
+    \label{alg:rfs}}
+  \begin{algorithmic}[1]
+    \Require{$f, f'$ polynomial and its derivative, $a$, $b$ interval bounds, $\epsilon$ precision error, $max$ number of maximum iterations}
+    \Statex
+    \Function{RootFindingSturm}{$f, f', a, b, \epsilon, max$}
+			\Let{$roots$}{$\emptyset$}
+			\Let{$root\_count$}{$Sturm(f, a, b)$}
+			\If{$root\_count > 0$}
+				\If{$root\_count = 1$}
+					\Let{$error,root$}{$Newton(f,f',a,b,\epsilon,max)$}
+					\If{$error = 0$}
+						\Let{$roots$}{$roots \cup root$}
+						\State\Return{$roots$}
+					\EndIf
+				\EndIf
+				\Let{$c$}{$\frac{a+b}{2}$} 
+				\Let{$roots$}{$roots \cup RootFindingSturm(f, f', a, c, \epsilon, max)$}
+				\Let{$roots$}{$roots \cup RootFindingSturm(f, f', c, b, \epsilon, max)$}
+			\EndIf
+			\Return{$roots$}
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+%\begin{example}
+%
+%\end{example}
+\FloatBarrier
+The algorithm has several deficiencies.
+
+The major flaw of this algorithm is that while creating the Sturm's chain, depending on the implementation, if an error is introduced during the polynomial long division, this leads to snowball effect in the subsequent divisions, which may result in a different number of the polynomials in the chain computed than the actual number of the polynomials in chain. This may happen if the coefficients are represented as floating-point numbers with set precision, instead of representing them as fractions of integers (which is often impractical). This can result into the number of sign changes $\sigma(\xi)$ being incorrect, leading to the number of roots located in the interval $(a,b]$ being wrong and causing some roots not being found.
+
+Another deficiency is the time complexity of computing the chain (which can be done only once, if we create a class representing the chain instead of calling the function $Sturm$ on line 3 of algorithm \ref{alg:rfs} and computing it every time the function is called) and evaluating the chain in points $a$ and $b$ to calculate the difference in sign changes.
+
+\subsection{Isolation of roots using Vincent's theorem}
+\chapter{Implementation}
+\chapter{Experiments}
 
 \printbibliography[heading=bibintoc]
 

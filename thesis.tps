@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=thesis.tex
 
 [Frame0_View0,0]
-TopLine=528
-Cursor=27879
+TopLine=627
+Cursor=33687
 
 [Frame1]
 Flags=0
@@ -35,8 +35,8 @@ Class=LaTeXView
 Document=..\fithesis\fithesis\example\mu\fi-pdflatex.tex
 
 [Frame1_View0,0]
-TopLine=149
-Cursor=4980
+TopLine=163
+Cursor=6610
 
 [Frame2]
 Flags=0
@@ -53,8 +53,8 @@ Class=BibTeXView
 Document=bibliothesis.bib
 
 [Frame2_View0,0]
-TopLine=47
-Cursor=314
+TopLine=118
+Cursor=3567
 
 [SessionInfo]
 FrameCount=3
