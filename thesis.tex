@@ -29,13 +29,10 @@
   main=english, %% By using `czech` or `slovak` as the main locale
                 %% instead of `english`, you can typeset the thesis
                 %% in either Czech or Slovak, respectively.
-  german, russian, czech, slovak %% The additional keys allow
+   czech, slovak %% The additional keys allow
 ]{babel}        %% foreign texts to be typeset as follows:
 %%
-%%   \begin{otherlanguage}{german}  ... \end{otherlanguage}
-%%   \begin{otherlanguage}{russian} ... \end{otherlanguage}
-%%   \begin{otherlanguage}{czech}   ... \end{otherlanguage}
-%%   \begin{otherlanguage}{slovak}  ... \end{otherlanguage}
+
 %%
 %% For non-Latin scripts, it may be necessary to load additional
 %% fonts:
@@ -48,11 +45,11 @@
     university    = mu,
     faculty       = fi,
     type          = mgr,
-    author        = Adrian,
+    author        = {Adri{\'a}n Elgy{\"u}tt},
     gender        = m,
-    advisor       = John Smith,
-    title         = {Thesis title},
-    TeXtitle      = {Thesis title},
+    advisor       = {RNDr. Vojt{\v e}ch {\v R}eh{\'a}k, Ph.D},
+    title         = {Root Isolation of High-Degree Polynomials},
+    TeXtitle      = {Root Isolation of High-Degree Polynomials},
     keywords      = {keyword1, keyword2, ...},
     TeXkeywords   = {keyword1, keyword2, \ldots},
     abstract      = {This is the abstract of my thesis, which can
@@ -84,6 +81,9 @@
   stringstyle     = \color{teal},%
   commentstyle    = \itshape\color{magenta}}
 %%begin, pridane
+\usepackage{placeins}
+\usepackage{pgfplots}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -92,9 +92,7 @@
     linkcolor=black,
     urlcolor=black
 }
-\usepackage{placeins}
-\usepackage{pgfplots}
-\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\hypersetup{final=true}
 \thesisload
 %%end
 \begin{document}
@@ -238,7 +236,7 @@ which is smaller than the required error bound ($0.000001$). Upon closer inspect
 While every iteration gives a better approximation of the true solution, the algorithm is converging rather slowly. To examine the speed of convergence, we first need to characterize it.
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
+\newtheorem{definition}[theorem]{Definition}
 
 \begin{definition}
   Suppose we have a sequence of real numbers $x_{0}, x_{1}\ldots$ and a real number $\alpha$ such that for every $\epsilon\in\R$, $\epsilon>0$ there exists $k\in\N$ such that $\left|x_{k}-\alpha\right|<\epsilon$. Then the sequence is said to converge to a point $\alpha$, written as $\lim_{k\to\infty}x_{k}=\alpha$. The sequence is said to \textit{converge linearly} if
@@ -298,7 +296,7 @@ Furthermore,
 proving that the convergence is quadratic.
 \end{theorem}
 \begin{proof}
-\textit{(Skecth)} First, since $f$ is twice continuously differentiable around the root $\alpha$, we can use a Taylor series expansion \parencite[p.~59]{rootApproxMeth} of second order about a point close to $\alpha$, $x_{n}$, to represent $f(\alpha)$. The expansion of $f(\alpha)$ about $x_{n}$ is 
+\textit{(Sketch)} First, since $f$ is twice continuously differentiable around the root $\alpha$, we can use a Taylor series expansion \parencite[p.~59]{rootApproxMeth} of second order about a point close to $\alpha$, $x_{n}$, to represent $f(\alpha)$. The expansion of $f(\alpha)$ about $x_{n}$ is 
 \begin{align}
 	f(\alpha) = f(x_{n}) + f'(x_{n})(\alpha - x_{n}) + \frac{f''(\xi_{n})}{2!}(\alpha - x_{n})^2 \label{eq:taylor1}
 \end{align}
@@ -484,7 +482,7 @@ where $x_{n}$ is an approximation of $x$, such that $f(x) = 0$. As the objective
 \begin{align}
 0=f(x_{n})+f'(x_{n})(x_{n+1}-x_{n})+\frac{f''(x_{n})}{2}(x_{n+1}-x_{n})^{2}
 \end{align}
-for $x_{n+1}$. Following \cite{halley} and simplifying the equation to express $x_{n+1}$ on the left side we obtain
+for $x_{n+1}$. Following \cite{10.2307/2975033} and simplifying the equation to express $x_{n+1}$ on the left side we obtain
 \begin{align}
 x_{n+1}=x_{n}-\frac{f(x_{n})}{f'(x_{n})+\frac{f''(x_{n})}{2}(x_{n+1}-x_{n})}.
 \end{align}
@@ -522,10 +520,9 @@ The initial interval remains the same as in the previous algorithms to make the 
 The algorithm finishes with the same result as the result provided by the bisection algorithm \ref{tab:bis} and Newton's algorithm \ref{tab:newt} while ending in only 2 iterations, as opposed to 21 in \ref{tab:bis} and 5 in \ref{tab:newt}.
 The Halley's algorithm has the same disadvantages as Newton's algorithm, while providing a higher speed of convergence, at the cost of higher computation time in every iteration. Therefore it is preferable when the degree of the polynomial is rather low, but at higher degrees or when second derivative is very close to 0 (with respect to error tolerance), it doesn't provide significant advantage over Newton's method (and may even result in higher total time).
 
-\chapter{Finding multiple roots}
-While the previous chapter focused on getting better approximation of a single root, this chapter focuses on finding multiple roots.
-\section{Finding all roots}
-\subsection{Ruffini-Horner's method}
+\chapter{Solving polynomials}
+While the previous chapter focused on getting better approximation of a single root, this chapter focuses on solving polynomial functions and isolating the roots.
+\section{Ruffini-Horner's method}
 The \textbf{Ruffini-Horner's} method relies on what is known as \textit{fundamental theorem of algebra}.
 \begin{theorem}[Fundamental theorem of algebra]
 Given any positive integer $n \geq 1$ and any univariate polynomial $f$ with complex coefficients such that the degree of $f$ is $n$, the polynomial $f$ has at least 1 complex root.
@@ -574,8 +571,8 @@ The positives of this algorithm are the efficiency of the division and simplicit
 
 On the other hand, the division in each step produces a slight error in precision, which accumulates over the iterations and could cause larger discrepancy in the latter roots than desired.
 
-\section{Isolation of roots in a selected interval}
-In this section, I present 3 algorithms which goal is to isolate the roots in a selected interval into smaller separate intervals, each containing exactly one root. Then, using the combination of algorithms presented in the previous chapter, approximate the roots to the allowed tolerance, thus achieving the desired result.
+\section{Isolation of the roots}
+In this section, I present 3 algorithms which goal is to isolate the roots into smaller separate intervals, each containing exactly one root. Then, using the combination of algorithms presented in the previous chapter, approximate the roots to the allowed tolerance, thus achieving the desired result.
 \subsection{Isolation of roots using Sturm's theorem}
 \begin{definition}
 A \textit{Sturm chain} or \textit{Sturm sequence} of a polynomial $f$ is a finite sequence of polynomials $f = f_{0}, f_{1},\ldots f_{m}$ of decreasing degree with following properties:
@@ -586,7 +583,7 @@ A \textit{Sturm chain} or \textit{Sturm sequence} of a polynomial $f$ is a finit
 	\item $sgn(f_{m}(x))$ is constant for all $x$.
 \end{itemize}
 \end{definition}
-The Sturm chain of $f$ can be created by applying Euclid's algorithm to $f(x)$ and $f'(x)$ \parencite{sturmWik}\parencite{vigklasphd}:
+The Sturm chain of $f$ can be created by applying Euclid's algorithm to $f(x)$ and $f'(x)$ \parencite{sturm}\parencite{vigklasphd}:
 \begin{align*}
  f_{0}(x)&=f(x), \\
  f_{1}(x)&=f'(x), \\
@@ -598,9 +595,17 @@ The Sturm chain of $f$ can be created by applying Euclid's algorithm to $f(x)$ a
 \end{align*}
 The $r(f_{i},f_{i+1})$ represents the remainder and the $q_{i}$ represents the quotient of the polynomial long division $\frac{f_{i}}{f_{i+1}}=q_{i}(x)f_{i}(x)+r(f_{i},f_{i+1})$ for every $0 \leq i < m$. As the degree of the remainder $deg(r(f_{i},f_{i+1}))$ is at most $deg(f_{i+1})-1$, the maximum length of the chain is $m \leq deg(f_{0})$.
 
-To provide the Sturm's theorem, let $\sigma(f,\xi)$ represent the number of sign changes (change to or from $0$ excluded) in the sequence $f_{0}(\xi), f_{1}(\xi),\ldots,f_{m}(\xi)$, where $f_{0}, f_{1},\ldots,f_{m}$ is Sturm chain of $f$.
+\begin{definition}\label{def:signvar}
+Let $\lambda_{0}, \lambda_{1}, \lambda_{2},\ldots$ be a finite or infinite sequence of real numbers. Suppose $a < b$; $a, b\in\N$ and the following condition holds
+\begin{align}
+	sgn(\lambda_{a}) = -sgn(\lambda_{b}) \land \forall i, a < i < b: \lambda_{i} = 0.
+\end{align}
+Then this is called a \textit{sign variation} or \textit{sign chance} between $\lambda_{a}$ and $\lambda_{b}$.
+\end{definition}
 
-\begin{theorem}[Sturm]
+To provide the Sturm's theorem, let $\sigma(f,\xi)$ represent the number of sign changes in the sequence $f_{0}(\xi), f_{1}(\xi),\ldots,f_{m}(\xi)$, where $f_{0}, f_{1},\ldots,f_{m}$ is Sturm chain of $f$.
+
+\begin{theorem}[Sturm{\parencite{sturm}}]
 Assume $f(x)$ is a real polynomial without a root of multiplicity greater than one and $a, b$ are real numbers such that $a<b, f(a)\neq{0}$, $f(b)\neq{0}$. Then the number of real roots in interval $(a,b]$ is equal to $\sigma(f,a) - \sigma(f,b)$.
 \end{theorem}
 \theoremstyle{remark}
@@ -608,7 +613,7 @@ Assume $f(x)$ is a real polynomial without a root of multiplicity greater than o
 \begin{remark}
   The theorem can be strengthened(as proven in \cite{sturmGeneral}) to any polynomial, including the ones with roots with higher multiplicity. Then the difference of sign changes $\sigma(f,a) - \sigma(f,b)$ provides the number of \textit{distinct} roots in $(a,b]$.
 \end{remark}
-Using this theorem and combining it with Newton's method and bisection, I created the following algorithm.
+Using this theorem and combining it with Newton's method and bisection, I created the algorithm \ref{alg:rfs}.
 \begin{algorithm}
   \caption{Sturm's algorithm
     \label{alg:sturm}}
@@ -642,7 +647,7 @@ Using this theorem and combining it with Newton's method and bisection, I create
   \end{algorithmic}
 \end{algorithm}
 \begin{algorithm}
-  \caption{Root-finding(sturm) algorithm
+  \caption{Root finding (sturm) algorithm
     \label{alg:rfs}}
   \begin{algorithmic}[1]
     \Require{$f, f'$ polynomial and its derivative, $a$, $b$ interval bounds, $\epsilon$ precision error, $max$ number of maximum iterations}
@@ -670,14 +675,151 @@ Using this theorem and combining it with Newton's method and bisection, I create
 %
 %\end{example}
 \FloatBarrier
+
 The algorithm has several deficiencies.
 
-The major flaw of this algorithm is that while creating the Sturm's chain, depending on the implementation, if an error is introduced during the polynomial long division, this leads to snowball effect in the subsequent divisions, which may result in a different number of the polynomials in the chain computed than the actual number of the polynomials in chain. This may happen if the coefficients are represented as floating-point numbers with set precision, instead of representing them as fractions of integers (which is often impractical). This can result into the number of sign changes $\sigma(\xi)$ being incorrect, leading to the number of roots located in the interval $(a,b]$ being wrong and causing some roots not being found.
+The major deficiency of this algorithm is the time complexity of and evaluating the polynomials of the chain in points $a$ and $b$ to calculate the difference in sign changes. Since there can be up to $n$ polynomials in the chain, where $n$ is the degree of $f$, this can result up to $O(n^2)$ multiplications and additions in every iteration of bisection.
 
-Another deficiency is the time complexity of computing the chain (which can be done only once, if we create a class representing the chain instead of calling the function $Sturm$ on line 3 of algorithm \ref{alg:rfs} and computing it every time the function is called) and evaluating the chain in points $a$ and $b$ to calculate the difference in sign changes.
+Another issue is that while creating the Sturm's chain, depending on the implementation, if an error is introduced during the polynomial long division, this leads to snowball effect in the subsequent divisions, which may result in a different number of the polynomials in the chain computed than the actual number of the polynomials in chain. This may happen if the coefficients are represented as floating-point numbers with set precision, instead of representing them as fractions of integers (which is often impractical). This can result into the number of sign changes $\sigma(\xi)$ being incorrect, leading to the number of roots located in the interval $(a,b]$ being wrong and causing some roots not being found. However, this can be avoided by sufficiently reducing the tolerance of error.
 
 \subsection{Isolation of roots using Vincent's theorem}
+Vincent published his theorem \parencite{vincentT1}\parencite{vincentT2} in 19th century, but because of the appearance of Sturm's theorem, it was forgotten until the end of 20th century, when it was brought back by \parencite{akritasphd}. This led to the creation of a second version of the theorem in \parencite{vincentBis}.
+\begin{theorem}[Vincent(continued fractions version) \parencite{vincentT1}\parencite{vincentT2}]
+\label{theor:v1}
+Given a polynomial function $f(x)$ with rational coefficients and without multiple roots, if one sequentially performs replacements of the form
+\begin{align}
+x\leftarrow \alpha_{1} + \frac{1}{x}, x\leftarrow \alpha_{2} + \frac{1}{x}, x\leftarrow \alpha_{3} + \frac{1}{x},\ldots,
+\end{align}
+where $\alpha_{1}\geq 0$ is an arbitrary nonnegative integer and $\alpha_{2}, \alpha_{3},\ldots$ are arbitrary positive integers, $\alpha_{i} > 0, i > 1$, then the resulting polynomial has either zero sign variations (\ref{def:signvar}) or one sign variation. In the former case, there are no positive roots, whereas in the latter case, the equation has exactly one positive root, which is represented by the continued fraction
+\begin{align}
+\alpha_{1}+\frac{1}{\alpha_{2}+\frac{1}{\alpha_{3}\frac{1}{\ddots}}}.
+\end{align}
+\end{theorem}
+The negative root can be treated the same way, by simply performing substitution $x \leftarrow -x$ on $f(x)$.
+The requirement that the polynomial function $f(x)$ has no multiple roots (i.e. roots with multiplicity higher than one) does not restrict the generality of the theorem, because in the case that polynomial contains multiple roots, we can first apply square-free factorization and then isolate the roots of the square-free factor \parencite{vincentA}.
+
+\begin{theorem}[Vincent(bisection version) \parencite{vincentBis}]
+\label{theor:v2}
+Let $f(x)$ be a real polynomial of degree $n$ which has only simple roots. It is possible to determine a positive quantity $\delta$ so that for every pair of positive real numbers $a, b$ with $\left|b - a\right| < \delta$, every transformed polynomial of the form
+\begin{align}
+\phi(x) = (1 + x)^{n} f\left(\frac{a + bx}{1 + x}\right)
+\end{align}
+has exactly 0 or 1 sign variations. The second case is possible if and only if $f(x)$ has a single root within $(a,b)$.
+\end{theorem}
+As in the previous case, the negative roots can be handled by substituting $x \leftarrow -x$ and the condition of $f(x)$ only containing simple roots can be resolved by applying square-free factorization.
+
+Using this theorem, we can create a simple test that gives us the upper bound on the positive roots inside the interval $(a,b)$:
+\begin{equation}
+\sigma_{\left(a,b\right)}(f) = \sigma\left((1 + x)^{n} f\left(\frac{a + bx}{1 + x}\right)\right) = \sigma_{\left(b,a\right)}(f),
+\label{eq:a_b_test}
+\end{equation}
+where $\sigma(\xi)$ is the number of sign variations of the sequence of coefficients $a_{0}, a_{1},ldots,a_{n}$.
+
+Here are presented the two major algorithms, each based on the different version of the theorem.
+\subsubsection{\textbf{Vincent–Akritas–Strzeboński (VAS)} \parencite{vas}}
+Let the \textit{M{\"o}bius transformation} \parencite{mobius}
+\begin{equation}
+M = \frac{ax+b}{cx+d} \tag*{$a,b,c,d\in\N;ad-bd\neq 0$}
+\label{eq:mobius}
+\end{equation}
+represent the finite continuous fraction that substitutes $x$ in $f(x)$ such that the substitution results in the transformed polynomial 
+\begin{equation}
+\label{eq:mobius2}
+g(x)=(cx+d)^{deg(f)}f\left(\frac{ax+b}{cx+d}\right)
+\end{equation} with one sign change. Then the positive root of $f(x)$ (located in $(0,\infty)$) corresponds to the root of $g(x)$ in $(min(\frac{a}{c},\frac{b}{d}), max(\frac{a}{c},\frac{b}{d}))$. Thus, to isolate the positive roots, one needs to compute $a,b,c,d$ such that they result in the polynomial \eqref{eq:mobius2} with one sign change.
+The Descartes' rule of signs \parencite{descart}, states that the number of positive roots of $f(x)$ is equal to the number of sign changes of the coefficients $\sigma(f)$ or less than it by an even number. We can use this simple test to determine (line 2 and 4) if the $f$ has exactly 0 or 1 positive root or if it has more. If there are more, we first transform the polynomial by moving the lowest positive closer to 0 and then we split the polynomial into two transformed ones - the first representing the interval between $(0,1)$ and the second representing the interval $(0,\infty)$. Every time we perform substitution, we perform corresponding substitution on M. This allows us to retroactively compute the corresponding interval in the original polynomial.
+
+Thus the algorithm (\ref{alg:vas}) returns intervals such each contains exactly 1 positive root. To isolate the negative intervals, we simply substitute $x\leftarrow -x$, execute the algorithm again and then unite the sets of intervals. Then we can use one of the approximation algorithms (e.g. Newton's algorithm (\ref{alg:newton})) and approximate the root in every interval.
+
+The lower bound ($lb$) of $f$ can be computed by computing upper bound ($ub$) of $g(x)=x^{deg(f)}f(\frac{1}{x})$ and then $lb_{f} = \frac{1}{ub_{g}}$, as shown \parencite{vigklasphd}. \parencite{vigklasphd} also provides 2 efficient upper bounds.
+
+\begin{algorithm}
+  \caption{VAS
+    \label{alg:vas}}
+  \begin{algorithmic}[1]
+    \Require{$f$ polynomial function, $M$ m{\"o}bius transformation}
+    \Statex
+    \Function{VAS}{$f, \epsilon$}
+			\If{$\sigma(f) = 0$}
+				\State\Return{$\emptyset$}
+			\EndIf
+			\If{$\sigma(f) = 1$}
+				\Let{$a$}{$min(M(0), M(\infty))$} where $M(\infty)=\frac{a}{c}$ if $c\neq 0$
+				\Let{$b$}{$max(M(0), M(\infty))$} and if $c=0$ then $M(\infty)=$an upper bound on the positive roots
+				\State\Return{$\{(a,b)\}$}
+			\EndIf
+			\Let{$lb$}{a lower bound on the positive roots of $f(x)$}
+			\If{$lb \geq 1$}
+				\Let{$f$}{$f(x+lb)$}
+				\Let{$M$}{$M(x+lb)$}
+			\EndIf
+			\Let{$f_{01}$}{$(x+1)^{deg(f)}f(\frac{1}{x+1})$}
+			\Let{$M_{01}$}{$M(\frac{1}{x+1})$}
+			\Let{$f_{1\infty}$}{$f(x+1)$}
+			\Let{$M_{1\infty}$}{$M(x+1)$}
+			\Let{$m$}{$M(1)$}
+			\If{$f(1)\neq 0$}
+				\State\Return{$VAS(f_{01},M_{01})\cup VAS(f_{1\infty},M_{1\infty})$}
+			\Else
+				\State\Return{$VAS(f_{01},M_{01})\cup VAS(f_{1\infty},M_{1\infty})\cup \{(m,m)\}$}
+			\EndIf
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{\textbf{Vincent–Collins–Akritas (VCA)} \parencite{vca}}
+While the previous algorithm required computing the upper and lower bound on the positive roots, this algorithm allows the user to enter the desired search interval $(a,b)$. This was not possible in the previous case, as the Descartes' rule gives upper bound on all positive roots. However, using the test \eqref{eq:a_b_test} (or rather a special case of it called Budan's test \parencite{budan}) allows us to specify the interval we are interested in locating the roots.
+
+The Budan's test \parencite{budan} is a version of the test \eqref{eq:a_b_test} where $a=0, b=1$, which results in
+\begin{equation}
+\sigma_{\left(0,1\right)}(f) = \sigma\left((1 + x)^{deg(f)} f\left(\frac{1}{1 + x}\right)\right).
+\label{eq:0_1_test}
+\end{equation}
+If $\sigma_{\left(0,1\right)}(f)$ is equal to 0, there is no root located within $(0,1)$, while if $\sigma_{\left(0,1\right)}(f) = 1$, there is precisely 1 root. Any number higher than 1 gives upper bound on the roots located within the interval $(0,1)$ such that the exact number is equal to the $\sigma_{\left(0,1\right)}(f)$ or less by an even number (multiplicities counted), meaning if the upper bound is equal to even number, they may be zero roots in the interval.
+
+The first step is then to make sure that all roots of $f(x)$ we want to isolate are within the entered interval $(a,b)$. To do this, we first perform a substitution $x\leftarrow x+a$ on $f$ to obtain $f_{a}$. Then we perform a substitution $x\leftarrow x*(b-a)$ on $f_{a}$ to obtain $f_{ab}$. This gives us a bijection of the interval $(a,b)$ of $f$ on $(0,1)$ of $f_{ab}$. We use this as the initial input of \ref{alg:vca}, along with $a, b$.
+
+Afterwards we perform the Budan's test \eqref{eq:0_1_test} on the transformed polynomial $f_{ab}$. If there is 0 or 1 root, we can finish the search. Otherwise we split the $f_{ab}$ into two polynomials, $f_{0\frac{1}{2}}$ and $f_{\frac{1}{2}1}$ such that there is bijection between the intervals $(0,\frac{1}{2})$ and $(\frac{1}{2},1)$ of $f_{ab}$ and the intervals $(0,1)$ of $f_{0\frac{1}{2}}$ and $f_{\frac{1}{2}1}$, respectively. Then we can use these new polynomials recursively.
+
+If the original polynomial $f$ is not square-free, this, in theory, will cause an endless recursion of the algorithm, since the Budan's test will always return a number greater than one. However, there are 2 solutions to this problem:
+\begin{enumerate}
+	\item perform a square free factorization on $f$,
+	\item select a tolerance $\epsilon$ such that if $\left|a-b\right|<\epsilon$ algorithm ends.
+\end{enumerate}
+Since the second solution is much simpler and in line with the fact that we are approximating the roots to a certain precision, we apply it to obtain the algorithm \ref{alg:vca}. If the upper bound is odd, there are either multiple roots or a single root with odd multiplicity. If there are multiple roots, then this does not influence the result, since they are closer to each other than the desired tolerance and thus we are unable to distinguish them. If the upper bound is even, then there is no guarantee that the interval contains root. This does not effect the final result, however, since afterwards we execute Newton's algorithm \ref{alg:newton} in every interval, which gives us the desired approximation only if the root is located within the interval.
+
+\begin{algorithm}
+  \caption{VCA
+    \label{alg:vca}}
+  \begin{algorithmic}[1]
+    \Require{$f$ polynomial function, $a,b$ searched interval, $\epsilon$ tolerance}
+    \Statex
+    \Function{VCA}{$f, a, b, \epsilon$}
+			\Let{$bud$}{$\sigma\left((1 + x)^{deg(f)} f\left(\frac{1}{1 + x}\right)\right)$}
+			\If{$bud = 0$}
+				\State\Return{$\emptyset$}
+			\EndIf
+			\If{$bud = 1$}
+				\State\Return{$\{(a,b)\}$}
+			\EndIf
+			\If{$\left|a-b\right|<\epsilon$}
+				\State\Return{$\{(a,b)\}$}
+			\EndIf
+			\Let{$f_{0\frac{1}{2}}$}{$(2)^{deg(f)}f(\frac{x}{2})$}
+			\Let{$f_{\frac{1}{2}1}$}{$(2)^{deg(f)}f(\frac{x+1}{2})$}
+			\If{$f(\frac{1}{2})\neq 0$}
+				\State\Return{$VCA(f_{0\frac{1}{2}}, a, \frac{a+b}{2}, \epsilon)\cup VCA(f_{\frac{1}{2}1}, b, \epsilon)$}
+			\Else
+				\State\Return{$VCA(f_{0\frac{1}{2}}, a, \frac{a+b}{2}, \epsilon)\cup VCA(f_{\frac{1}{2}1}, b, \epsilon) \cup \{[\frac{a+b}{2},\frac{a+b}{2}]\}$}
+			\EndIf
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
 \chapter{Implementation}
+The computing the chain can be done only once, if we create a class representing the chain instead of calling the function $Sturm$ on line 3 of algorithm \ref{alg:rfs} and computing it every time the function is called).
+ake boundy som pouzil na VAS
+spomenut ze substitucie sa daju robit otocenim koeficientov
 \chapter{Experiments}
 
 \printbibliography[heading=bibintoc]

@@ -66,8 +66,6 @@
       <file>slovak.lbx</file>
       <file>czech-iso.lbx</file>
       <file>czech.lbx</file>
-      <file>russian.lbx</file>
-      <file>german.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">

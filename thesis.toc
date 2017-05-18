@@ -34,23 +34,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\rmfamily Halley's algorithm}{17}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}\bfseries Finding multiple roots}{19}{chapter.3}
+\contentsline {chapter}{\numberline {3}\bfseries Solving polynomials}{19}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}\slshape Finding all roots}{19}{section.3.1}
+\contentsline {section}{\numberline {3.1}\slshape Ruffini-Horner's method}{19}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}\rmfamily Ruffini-Horner's method}{19}{subsection.3.1.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}\slshape Isolation of roots in a selected interval}{21}{section.3.2}
+\contentsline {section}{\numberline {3.2}\slshape Isolation of the roots}{21}{section.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.1}\rmfamily Isolation of roots using Sturm's theorem}{21}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}\rmfamily Isolation of roots using Vincent's theorem}{25}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}\bfseries Implementation}{27}{chapter.4}
+\contentsline {subsubsection}{\rmfamily \textbf {Vincent\IeC {\textendash }Akritas\IeC {\textendash }Strzebo\IeC {\'n}ski (VAS)} \parencite {vas}}{26}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}\bfseries Experiments}{29}{chapter.5}
+\contentsline {subsubsection}{\rmfamily \textbf {Vincent\IeC {\textendash }Collins\IeC {\textendash }Akritas (VCA)} \parencite {vca}}{28}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{31}{chapter*.13}
+\contentsline {chapter}{\numberline {4}\bfseries Implementation}{31}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}\bfseries Experiments}{33}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{35}{chapter*.16}
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
@@ -88,10 +90,6 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\select@language {english}
+\contentsline {chapter}{Index}{39}{section*.17}
 \defcounter {refsection}{0}\relax 
-\select@language {english}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{33}{section*.14}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\bfseries An appendix}{33}{appendix.A}
+\contentsline {chapter}{\numberline {A}\bfseries An appendix}{39}{appendix.A}

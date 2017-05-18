@@ -2146,13 +2146,30 @@
     <bcf:citekey order="9">rootApproxMeth</bcf:citekey>
     <bcf:citekey order="10">rootApproxMeth</bcf:citekey>
     <bcf:citekey order="11">halley</bcf:citekey>
-    <bcf:citekey order="12">halley</bcf:citekey>
+    <bcf:citekey order="12">10.2307/2975033</bcf:citekey>
     <bcf:citekey order="13">halleyCnvg</bcf:citekey>
     <bcf:citekey order="14">10.2307/2975033</bcf:citekey>
     <bcf:citekey order="15">horner</bcf:citekey>
-    <bcf:citekey order="16">sturmWik</bcf:citekey>
+    <bcf:citekey order="16">sturm</bcf:citekey>
     <bcf:citekey order="17">vigklasphd</bcf:citekey>
-    <bcf:citekey order="18">sturmGeneral</bcf:citekey>
+    <bcf:citekey order="18">sturm</bcf:citekey>
+    <bcf:citekey order="19">sturmGeneral</bcf:citekey>
+    <bcf:citekey order="20">vincentT1</bcf:citekey>
+    <bcf:citekey order="21">vincentT2</bcf:citekey>
+    <bcf:citekey order="22">akritasphd</bcf:citekey>
+    <bcf:citekey order="23">vincentBis</bcf:citekey>
+    <bcf:citekey order="24">vincentT1</bcf:citekey>
+    <bcf:citekey order="25">vincentT2</bcf:citekey>
+    <bcf:citekey order="26">vincentA</bcf:citekey>
+    <bcf:citekey order="27">vincentBis</bcf:citekey>
+    <bcf:citekey order="28">vas</bcf:citekey>
+    <bcf:citekey order="29">mobius</bcf:citekey>
+    <bcf:citekey order="30">descart</bcf:citekey>
+    <bcf:citekey order="31">vigklasphd</bcf:citekey>
+    <bcf:citekey order="32">vigklasphd</bcf:citekey>
+    <bcf:citekey order="33">vca</bcf:citekey>
+    <bcf:citekey order="34">budan</bcf:citekey>
+    <bcf:citekey order="35">budan</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global/" type="entry" sortscheme="none" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

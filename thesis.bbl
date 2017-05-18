@@ -21,21 +21,21 @@
   \sortlist[entry]{none/global/}
     \entry{polynomialsChina}{book}{}
       \name{author}{3}{}{%
-        {{hash=2830bbc110254fb9b4f61ab3bcf36502}{%
+        {{hash=4b786d0b522059ca242901f58e40ea84}{%
            family={Leung},
            familyi={L\bibinitperiod},
-           given={K.T.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=025dcefe245a40813aa1553302bd89f0}{%
+           given={K.\bibnamedelimi T.},
+           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=b76e89dbe912961e2ee6ca124f79a228}{%
            family={Mok},
            familyi={M\bibinitperiod},
-           given={I.A.C.},
-           giveni={I\bibinitperiod}}}%
-        {{hash=4403106607914328be58ccddc693785c}{%
+           given={I.\bibnamedelimi A.\bibnamedelimi C.},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=c758f3aa340438ef692862af80d07989}{%
            family={Suen},
            familyi={S\bibinitperiod},
-           given={S.N.},
-           giveni={S\bibinitperiod}}}%
+           given={S.\bibnamedelimi N.},
+           giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Hong Kong}%
@@ -43,10 +43,10 @@
       \list{publisher}{1}{%
         {Hong Kong University Press}%
       }
-      \strng{namehash}{1f133dde89a0c0f29301204114b27f7f}
-      \strng{fullhash}{1f133dde89a0c0f29301204114b27f7f}
-      \strng{authornamehash}{1f133dde89a0c0f29301204114b27f7f}
-      \strng{authorfullhash}{1f133dde89a0c0f29301204114b27f7f}
+      \strng{namehash}{589e98f26cec3738817b2871606e09a5}
+      \strng{fullhash}{589e98f26cec3738817b2871606e09a5}
+      \strng{authornamehash}{589e98f26cec3738817b2871606e09a5}
+      \strng{authorfullhash}{589e98f26cec3738817b2871606e09a5}
       \field{sortinit}{1}
       \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
       \field{labelnamesource}{author}
@@ -60,10 +60,10 @@
     \endentry
     \entry{rosicky07}{book}{}
       \name{author}{1}{}{%
-        {{hash=476c804db97ea01dc928504f3e662a2d}{%
+        {{hash=2fa71b1c7a777506fd7d0f26ba04a7ff}{%
            family={Rosický},
            familyi={R\bibinitperiod},
-           given={Jiří},
+           given={J.},
            giveni={J\bibinitperiod}}}%
       }
       \list{location}{1}{%
@@ -72,10 +72,10 @@
       \list{publisher}{1}{%
         {Masarykova univerzita}%
       }
-      \strng{namehash}{476c804db97ea01dc928504f3e662a2d}
-      \strng{fullhash}{476c804db97ea01dc928504f3e662a2d}
-      \strng{authornamehash}{476c804db97ea01dc928504f3e662a2d}
-      \strng{authorfullhash}{476c804db97ea01dc928504f3e662a2d}
+      \strng{namehash}{2fa71b1c7a777506fd7d0f26ba04a7ff}
+      \strng{fullhash}{2fa71b1c7a777506fd7d0f26ba04a7ff}
+      \strng{authornamehash}{2fa71b1c7a777506fd7d0f26ba04a7ff}
+      \strng{authorfullhash}{2fa71b1c7a777506fd7d0f26ba04a7ff}
       \field{sortinit}{2}
       \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
       \field{labelnamesource}{author}
@@ -90,11 +90,11 @@
     \endentry
     \entry{interValue}{book}{}
       \name{author}{1}{}{%
-        {{hash=db4b5e47b5a5923f9b9051241bc14602}{%
+        {{hash=76fc1513e24e5983e497b539a1eb6020}{%
            family={Binmore},
            familyi={B\bibinitperiod},
-           given={K.G.},
-           giveni={K\bibinitperiod}}}%
+           given={K.\bibnamedelimi G.},
+           giveni={K\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Cambridge}%
@@ -102,10 +102,10 @@
       \list{publisher}{1}{%
         {Cambridge University Press}%
       }
-      \strng{namehash}{db4b5e47b5a5923f9b9051241bc14602}
-      \strng{fullhash}{db4b5e47b5a5923f9b9051241bc14602}
-      \strng{authornamehash}{db4b5e47b5a5923f9b9051241bc14602}
-      \strng{authorfullhash}{db4b5e47b5a5923f9b9051241bc14602}
+      \strng{namehash}{76fc1513e24e5983e497b539a1eb6020}
+      \strng{fullhash}{76fc1513e24e5983e497b539a1eb6020}
+      \strng{authornamehash}{76fc1513e24e5983e497b539a1eb6020}
+      \strng{authorfullhash}{76fc1513e24e5983e497b539a1eb6020}
       \field{sortinit}{3}
       \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
       \field{labelnamesource}{author}
@@ -131,23 +131,19 @@
       \field{endyear}{2014}
       \field{langid}{english}
       \field{title}{Polynomials are continuous functions}
-      \field{urlday}{3}
-      \field{urlmonth}{3}
-      \field{urlyear}{2017}
       \field{year}{2014}
       \field{enddateera}{ce}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \verb{url}
       \verb https://math.berkeley.edu/~kmill/math1afa2014/poly.pdf
       \endverb
     \endentry
     \entry{rootApproxMeth}{book}{}
       \name{author}{1}{}{%
-        {{hash=64e7306a70b4703c7fe4686f80f44682}{%
+        {{hash=1aee766019798cc6113a3dcb8f90e0d9}{%
            family={Atkinson},
            familyi={A\bibinitperiod},
-           given={Kendall\bibnamedelima E.},
+           given={K.\bibnamedelimi E.},
            giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
       \list{location}{1}{%
@@ -156,10 +152,10 @@
       \list{publisher}{1}{%
         {John Wiley \& Sons}%
       }
-      \strng{namehash}{64e7306a70b4703c7fe4686f80f44682}
-      \strng{fullhash}{64e7306a70b4703c7fe4686f80f44682}
-      \strng{authornamehash}{64e7306a70b4703c7fe4686f80f44682}
-      \strng{authorfullhash}{64e7306a70b4703c7fe4686f80f44682}
+      \strng{namehash}{1aee766019798cc6113a3dcb8f90e0d9}
+      \strng{fullhash}{1aee766019798cc6113a3dcb8f90e0d9}
+      \strng{authornamehash}{1aee766019798cc6113a3dcb8f90e0d9}
+      \strng{authorfullhash}{1aee766019798cc6113a3dcb8f90e0d9}
       \field{sortinit}{5}
       \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
       \field{labelnamesource}{author}
@@ -171,70 +167,6 @@
       \field{title}{An Introduction to Numerical Analysis}
       \field{year}{1989}
       \field{dateera}{ce}
-    \endentry
-    \entry{halley}{article}{}
-      \name{author}{2}{}{%
-        {{hash=dadef2404d7eaafb6d32a36214c929de}{%
-           family={Scavo},
-           familyi={S\bibinitperiod},
-           given={T.R.},
-           giveni={T\bibinitperiod}}}%
-        {{hash=924331a2ff33c6491548b81e9c0bdc4d}{%
-           family={Thoo},
-           familyi={T\bibinitperiod},
-           given={J.B.},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{24776f4e33a411c15d5312a74e155daa}
-      \strng{fullhash}{24776f4e33a411c15d5312a74e155daa}
-      \strng{authornamehash}{24776f4e33a411c15d5312a74e155daa}
-      \strng{authorfullhash}{24776f4e33a411c15d5312a74e155daa}
-      \field{sortinit}{1}
-      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{00029890}
-      \field{journaltitle}{American Mathematical Monthly}
-      \field{langid}{english}
-      \field{number}{5}
-      \field{title}{On the Geometry of Halley's Method}
-      \field{urlday}{30}
-      \field{urlmonth}{4}
-      \field{urlyear}{2017}
-      \field{volume}{102}
-      \field{year}{1995}
-      \field{urldateera}{ce}
-      \verb{url}
-      \verb http://www.jstor.org/stable/pdf/2975033.pdf
-      \endverb
-    \endentry
-    \entry{halleyCnvg}{online}{}
-      \name{author}{1}{}{%
-        {{hash=27efae93749b9de34609cc8708010bfe}{%
-           family={Mathews},
-           familyi={M\bibinitperiod},
-           given={John\bibnamedelima H.},
-           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-      }
-      \strng{namehash}{27efae93749b9de34609cc8708010bfe}
-      \strng{fullhash}{27efae93749b9de34609cc8708010bfe}
-      \strng{authornamehash}{27efae93749b9de34609cc8708010bfe}
-      \strng{authorfullhash}{27efae93749b9de34609cc8708010bfe}
-      \field{sortinit}{1}
-      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{title}{Theory and Proof for Halley's Method}
-      \field{urlday}{1}
-      \field{urlmonth}{5}
-      \field{urlyear}{2017}
-      \field{year}{2003}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{url}
-      \verb http://mathfaculty.fullerton.edu/mathews/n2003/Halley'sMethodProof.html
-      \endverb
     \endentry
     \entry{10.2307/2975033}{article}{}
       \name{author}{2}{}{%
@@ -272,18 +204,42 @@
       \verb http://www.jstor.org/stable/2975033
       \endverb
     \endentry
+    \entry{halleyCnvg}{online}{}
+      \name{author}{1}{}{%
+        {{hash=271980a2e0015d10c1ca3e025150c8e6}{%
+           family={Mathews},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{271980a2e0015d10c1ca3e025150c8e6}
+      \strng{fullhash}{271980a2e0015d10c1ca3e025150c8e6}
+      \strng{authornamehash}{271980a2e0015d10c1ca3e025150c8e6}
+      \strng{authorfullhash}{271980a2e0015d10c1ca3e025150c8e6}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Theory and Proof for Halley's Method}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \verb{url}
+      \verb http://mathfaculty.fullerton.edu/mathews/n2003/Halley'sMethodProof.html
+      \endverb
+    \endentry
     \entry{horner}{article}{}
       \name{author}{1}{}{%
-        {{hash=e726f17a8d1f7d9f0fce91158d5eb4ee}{%
+        {{hash=f7470d4b0e1ac5c8b0a7e6b83ca3d1a2}{%
            family={Fan},
            familyi={F\bibinitperiod},
-           given={Lianghuo},
+           given={L.},
            giveni={L\bibinitperiod}}}%
       }
-      \strng{namehash}{e726f17a8d1f7d9f0fce91158d5eb4ee}
-      \strng{fullhash}{e726f17a8d1f7d9f0fce91158d5eb4ee}
-      \strng{authornamehash}{e726f17a8d1f7d9f0fce91158d5eb4ee}
-      \strng{authorfullhash}{e726f17a8d1f7d9f0fce91158d5eb4ee}
+      \strng{namehash}{f7470d4b0e1ac5c8b0a7e6b83ca3d1a2}
+      \strng{fullhash}{f7470d4b0e1ac5c8b0a7e6b83ca3d1a2}
+      \strng{authornamehash}{f7470d4b0e1ac5c8b0a7e6b83ca3d1a2}
+      \strng{authorfullhash}{f7470d4b0e1ac5c8b0a7e6b83ca3d1a2}
       \field{sortinit}{1}
       \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
       \field{labelnamesource}{author}
@@ -300,28 +256,35 @@
       \verb https://eprints.soton.ac.uk/168861/1/FLH_article_on_polynomial_division.pdf
       \endverb
     \endentry
-    \entry{sturmWik}{online}{}
+    \entry{sturm}{article}{}
+      \name{author}{1}{}{%
+        {{hash=25f4c9f0a6921653a6d7bf5ebafee781}{%
+           family={Sturm},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi C.\bibnamedelimi F.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{25f4c9f0a6921653a6d7bf5ebafee781}
+      \strng{fullhash}{25f4c9f0a6921653a6d7bf5ebafee781}
+      \strng{authornamehash}{25f4c9f0a6921653a6d7bf5ebafee781}
+      \strng{authorfullhash}{25f4c9f0a6921653a6d7bf5ebafee781}
       \field{sortinit}{1}
       \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{title}{Sturm's theorem --- {W}ikipedia{,} The Free Encyclopedia}
-      \field{urlday}{6}
-      \field{urlmonth}{5}
-      \field{urlyear}{2017}
-      \field{year}{2017}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{url}
-      \verb https://en.wikipedia.org/wiki/Sturm%27s_theorem
-      \endverb
+      \field{journaltitle}{Bulletin des Sciences de Férussac}
+      \field{title}{Mémoire sur la résolution des équations numériques}
+      \field{volume}{11}
+      \field{year}{1829}
+      \field{pages}{419\bibrangedash 425}
+      \range{pages}{7}
     \endentry
     \entry{vigklasphd}{thesis}{}
       \name{author}{1}{}{%
-        {{hash=2477a229d4c20f011c507da7b9e06258}{%
+        {{hash=62173476c722dcf982dbd3d5dfe2fd1e}{%
            family={Vigklas},
            familyi={V\bibinitperiod},
-           given={Panagiotis\bibnamedelima S.},
+           given={P.\bibnamedelimi S.},
            giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
       }
       \list{institution}{1}{%
@@ -330,10 +293,10 @@
       \list{location}{1}{%
         {Volos}%
       }
-      \strng{namehash}{2477a229d4c20f011c507da7b9e06258}
-      \strng{fullhash}{2477a229d4c20f011c507da7b9e06258}
-      \strng{authornamehash}{2477a229d4c20f011c507da7b9e06258}
-      \strng{authorfullhash}{2477a229d4c20f011c507da7b9e06258}
+      \strng{namehash}{62173476c722dcf982dbd3d5dfe2fd1e}
+      \strng{fullhash}{62173476c722dcf982dbd3d5dfe2fd1e}
+      \strng{authornamehash}{62173476c722dcf982dbd3d5dfe2fd1e}
+      \strng{authorfullhash}{62173476c722dcf982dbd3d5dfe2fd1e}
       \field{sortinit}{1}
       \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
       \field{labelnamesource}{author}
@@ -341,12 +304,8 @@
       \field{langid}{english}
       \field{title}{Upper bounds on the values of the positive roots of polynomials}
       \field{type}{phdthesis}
-      \field{urlday}{6}
-      \field{urlmonth}{5}
-      \field{urlyear}{2017}
       \field{year}{2010}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \verb{url}
       \verb https://www.e-ce.uth.gr/cced/wp-content/uploads/formidable/phd_thesis_vigklas.pdf
       \endverb
@@ -369,17 +328,283 @@
       \field{labeltitlesource}{title}
       \field{langid}{english}
       \field{title}{Finding All the Roots: Sturm’s Theorem}
-      \field{urlday}{6}
-      \field{urlmonth}{5}
-      \field{urlyear}{2017}
       \field{year}{2013}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \verb{url}
       \verb http://web.math.ucsb.edu/~padraic/mathcamp_2013/root_find_alg/Mathcamp_2013_Root-Finding_Algorithms_Day_2.pdf
       \endverb
     \endentry
+    \entry{vincentT1}{article}{}
+      \name{author}{1}{}{%
+        {{hash=03b4b9beb4f5334fe2333c979ef7131f}{%
+           family={Vincent},
+           familyi={V\bibinitperiod},
+           given={A.\bibnamedelimi J.\bibnamedelimi H.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{03b4b9beb4f5334fe2333c979ef7131f}
+      \strng{fullhash}{03b4b9beb4f5334fe2333c979ef7131f}
+      \strng{authornamehash}{03b4b9beb4f5334fe2333c979ef7131f}
+      \strng{authorfullhash}{03b4b9beb4f5334fe2333c979ef7131f}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mémoires de la Société Royale des Sciences, de l' Agriculture et des Arts, de Lille}
+      \field{title}{Mémoire sur la résolution des équations numériques}
+      \field{year}{1834}
+      \field{pages}{1\bibrangedash 34}
+      \range{pages}{34}
+      \verb{url}
+      \verb http://gallica.bnf.fr/ark:/12148/bpt6k57787134/f4.image.r=Agence%20Rol.langEN
+      \endverb
+    \endentry
+    \entry{vincentT2}{article}{}
+      \name{author}{1}{}{%
+        {{hash=03b4b9beb4f5334fe2333c979ef7131f}{%
+           family={Vincent},
+           familyi={V\bibinitperiod},
+           given={A.\bibnamedelimi J.\bibnamedelimi H.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{03b4b9beb4f5334fe2333c979ef7131f}
+      \strng{fullhash}{03b4b9beb4f5334fe2333c979ef7131f}
+      \strng{authornamehash}{03b4b9beb4f5334fe2333c979ef7131f}
+      \strng{authorfullhash}{03b4b9beb4f5334fe2333c979ef7131f}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal de Mathématiques Pures et Appliquées}
+      \field{title}{Sur la résolution des équations numériques}
+      \field{volume}{1}
+      \field{year}{1834}
+      \field{pages}{341\bibrangedash 372}
+      \range{pages}{32}
+    \endentry
+    \entry{akritasphd}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=2efeac4f8b26ea9b43e991cd1d0fa1ec}{%
+           family={Akritas},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi G.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {North Carolina State University}%
+      }
+      \list{location}{1}{%
+        {Raleigh}%
+      }
+      \strng{namehash}{2efeac4f8b26ea9b43e991cd1d0fa1ec}
+      \strng{fullhash}{2efeac4f8b26ea9b43e991cd1d0fa1ec}
+      \strng{authornamehash}{2efeac4f8b26ea9b43e991cd1d0fa1ec}
+      \strng{authorfullhash}{2efeac4f8b26ea9b43e991cd1d0fa1ec}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Vincent's theorem in algebraic manipulation}
+      \field{type}{phdthesis}
+      \field{year}{1978}
+      \field{dateera}{ce}
+    \endentry
+    \entry{vincentBis}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c1f85a5e24895bc8f8b62c58fb0f7c33}{%
+           family={Alesina},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4d8147155a5134931f87f57311aa4b25}{%
+           family={Galuzzi},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e3c64c831f278fd9430ccb043d80a1ef}
+      \strng{fullhash}{e3c64c831f278fd9430ccb043d80a1ef}
+      \strng{authornamehash}{e3c64c831f278fd9430ccb043d80a1ef}
+      \strng{authorfullhash}{e3c64c831f278fd9430ccb043d80a1ef}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Rendiconti del Circolo Matematico di Palermo, Serie II}
+      \field{number}{64}
+      \field{title}{Vincent's Theorem from a Modern Point of View}
+      \field{year}{2000}
+      \field{pages}{179\bibrangedash 191}
+      \range{pages}{13}
+      \verb{url}
+      \verb http://inf-server.inf.uth.gr/~akritas/Alessina_Galuzzi_b.pdf
+      \endverb
+    \endentry
+    \entry{vincentA}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2efeac4f8b26ea9b43e991cd1d0fa1ec}{%
+           family={Akritas},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi G.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2efeac4f8b26ea9b43e991cd1d0fa1ec}
+      \strng{fullhash}{2efeac4f8b26ea9b43e991cd1d0fa1ec}
+      \strng{authornamehash}{2efeac4f8b26ea9b43e991cd1d0fa1ec}
+      \strng{authorfullhash}{2efeac4f8b26ea9b43e991cd1d0fa1ec}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Sciences}
+      \field{number}{3}
+      \field{title}{Vincent's Theorem from a Modern Point of View}
+      \field{volume}{168}
+      \field{year}{2010}
+      \field{pages}{309\bibrangedash 325}
+      \range{pages}{17}
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s10958-010-9982-1
+      \endverb
+    \endentry
+    \entry{vas}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2efeac4f8b26ea9b43e991cd1d0fa1ec}{%
+           family={Akritas},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi G.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=b9ed27741aedce1298c0742944f87308}{%
+           family={Strzebonski},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{73c295794cc0957ccfaea47462c5d4dd}
+      \strng{fullhash}{73c295794cc0957ccfaea47462c5d4dd}
+      \strng{authornamehash}{73c295794cc0957ccfaea47462c5d4dd}
+      \strng{authorfullhash}{73c295794cc0957ccfaea47462c5d4dd}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nonlinear Analysis: Modelling and Control}
+      \field{number}{4}
+      \field{title}{Vincent's Theorem from a Modern Point of View}
+      \field{volume}{10}
+      \field{year}{2005}
+      \field{pages}{297\bibrangedash 304}
+      \range{pages}{8}
+      \verb{url}
+      \verb http://www.lana.lt/journal/19/Akritas.pdf
+      \endverb
+    \endentry
+    \entry{mobius}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7b52e81f35962e8b9dbd6dad3b68bf6f}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b52e81f35962e8b9dbd6dad3b68bf6f}
+      \strng{fullhash}{7b52e81f35962e8b9dbd6dad3b68bf6f}
+      \strng{authornamehash}{7b52e81f35962e8b9dbd6dad3b68bf6f}
+      \strng{authorfullhash}{7b52e81f35962e8b9dbd6dad3b68bf6f}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Theoretical Computer Science}
+      \field{title}{Complexity of real root isolation using continued fractions}
+      \field{volume}{409}
+      \field{year}{2008}
+      \field{pages}{292\bibrangedash 310}
+      \range{pages}{19}
+      \verb{url}
+      \verb https://people.mpi-inf.mpg.de/~mehlhorn/ftp/VikramContinuedFractions.pdf
+      \endverb
+    \endentry
+    \entry{descart}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c2dad93fee909905f0caa92a7c0639ef}{%
+           family={Descartes},
+           familyi={D\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c2dad93fee909905f0caa92a7c0639ef}
+      \strng{fullhash}{c2dad93fee909905f0caa92a7c0639ef}
+      \strng{authornamehash}{c2dad93fee909905f0caa92a7c0639ef}
+      \strng{authorfullhash}{c2dad93fee909905f0caa92a7c0639ef}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{La Géométrie}
+      \field{year}{1637}
+      \field{dateera}{ce}
+    \endentry
+    \entry{vca}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e3f12af6b1c557b97139f8e5c7807889}{%
+           family={Rouilliera},
+           familyi={R\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=946d5c22ab8266f3866636e0c1bd554c}{%
+           family={Zimmermannb},
+           familyi={Z\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{0cb8fd17af8f666b93adbf07a3c0b6f5}
+      \strng{fullhash}{0cb8fd17af8f666b93adbf07a3c0b6f5}
+      \strng{authornamehash}{0cb8fd17af8f666b93adbf07a3c0b6f5}
+      \strng{authorfullhash}{0cb8fd17af8f666b93adbf07a3c0b6f5}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational and Applied Mathematics}
+      \field{number}{1}
+      \field{title}{Efficient isolation of polynomial’s real roots}
+      \field{volume}{162}
+      \field{year}{2004}
+      \field{pages}{33\bibrangedash 50}
+      \range{pages}{18}
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0377042703007271
+      \endverb
+    \endentry
+    \entry{budan}{book}{}
+      \name{author}{1}{}{%
+        {{hash=46c5ebff475cf48760e51cf975c43ae9}{%
+           family={Budan},
+           familyi={B\bibinitperiod},
+           given={F.\bibnamedelimi D.},
+           giveni={F\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Paris}%
+      }
+      \strng{namehash}{46c5ebff475cf48760e51cf975c43ae9}
+      \strng{fullhash}{46c5ebff475cf48760e51cf975c43ae9}
+      \strng{authornamehash}{46c5ebff475cf48760e51cf975c43ae9}
+      \strng{authorfullhash}{46c5ebff475cf48760e51cf975c43ae9}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{pagetotal}{100}
+      \field{title}{Nouvelle méthode pour la résolution des équations numériques}
+      \field{year}{1807}
+      \field{dateera}{ce}
+    \endentry
   \endsortlist
+  \missing{halley}
 \endrefsection
 \endinput
 
