@@ -16,23 +16,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}\rmfamily Bisection method}{4}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily Speed of convergence}{6}{section*.6}
+\contentsline {paragraph}{\rmfamily Speed of convergence}{7}{section*.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}\rmfamily Newton's method}{8}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\rmfamily Speed of convergence}{9}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily Error bounds}{11}{section*.8}
+\contentsline {paragraph}{\rmfamily Error bounds}{12}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{\rmfamily Mean value theorem}{12}{section*.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily The Newton algorithm}{14}{section*.10}
+\contentsline {paragraph}{\rmfamily The Newton algorithm}{13}{section*.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.3}\rmfamily Halley's method}{15}{subsection.2.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily Speed of convergence}{16}{section*.11}
+\contentsline {paragraph}{\rmfamily Speed of convergence}{16}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily Halley's algorithm}{17}{section*.12}
+\contentsline {paragraph}{\rmfamily Halley's algorithm}{16}{section*.11}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}\bfseries Solving polynomials}{19}{chapter.3}
 \defcounter {refsection}{0}\relax 
@@ -44,15 +42,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}\rmfamily Isolation of roots using Vincent's theorem}{25}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\rmfamily \textbf {Vincent\IeC {\textendash }Akritas\IeC {\textendash }Strzebo\IeC {\'n}ski (VAS)} \parencite {vas}}{26}{section*.13}
+\contentsline {subsubsection}{\rmfamily \textbf {Vincent\IeC {\textendash }Akritas\IeC {\textendash }Strzebo\IeC {\'n}ski (VAS)} \parencite {vas}}{26}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\rmfamily \textbf {Vincent\IeC {\textendash }Collins\IeC {\textendash }Akritas (VCA)} \parencite {vca}}{28}{section*.15}
+\contentsline {subsubsection}{\rmfamily \textbf {Vincent\IeC {\textendash }Collins\IeC {\textendash }Akritas (VCA)} \parencite {vca}}{28}{section*.14}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}\bfseries Implementation}{31}{chapter.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}\bfseries Experiments}{33}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{35}{chapter*.16}
+\contentsline {chapter}{Bibliography}{35}{chapter*.15}
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
@@ -90,6 +88,10 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{39}{section*.17}
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index}{39}{section*.16}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}\bfseries An appendix}{39}{appendix.A}

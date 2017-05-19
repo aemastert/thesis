@@ -119,14 +119,26 @@
       \field{dateera}{ce}
     \endentry
     \entry{polyCont}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d84427f9eae8ed3d3beace6296493759}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
       \list{location}{1}{%
         {Berkeley}%
       }
       \list{publisher}{1}{%
         {The University of California, Berkeley}%
       }
+      \strng{namehash}{d84427f9eae8ed3d3beace6296493759}
+      \strng{fullhash}{d84427f9eae8ed3d3beace6296493759}
+      \strng{authornamehash}{d84427f9eae8ed3d3beace6296493759}
+      \strng{authorfullhash}{d84427f9eae8ed3d3beace6296493759}
       \field{sortinit}{4}
       \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{endyear}{2014}
       \field{langid}{english}
@@ -166,6 +178,41 @@
       \field{pagetotal}{xvi, 693}
       \field{title}{An Introduction to Numerical Analysis}
       \field{year}{1989}
+      \field{dateera}{ce}
+    \endentry
+    \entry{meanValue}{book}{}
+      \name{author}{2}{}{%
+        {{hash=1298a9c6d8f2a3e0a753970a3e7564a6}{%
+           family={Jeffreys},
+           familyi={J\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=6360be702278fbb05a88cde2c52524ec}{%
+           family={Jeffreys},
+           familyi={J\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{a51f820e172d83f146add3872d6745b8}
+      \strng{fullhash}{a51f820e172d83f146add3872d6745b8}
+      \strng{authornamehash}{a51f820e172d83f146add3872d6745b8}
+      \strng{authorfullhash}{a51f820e172d83f146add3872d6745b8}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{isbn}{0521664020}
+      \field{langid}{english}
+      \field{pagetotal}{730}
+      \field{title}{Methods of Mathematical Physics}
+      \field{year}{2000}
       \field{dateera}{ce}
     \endentry
     \entry{10.2307/2975033}{article}{}
@@ -227,6 +274,64 @@
       \verb{url}
       \verb http://mathfaculty.fullerton.edu/mathews/n2003/Halley'sMethodProof.html
       \endverb
+    \endentry
+    \entry{10.2307/2321760}{article}{}
+      \name{author}{1}{}{%
+        {{hash=488d1bab7e0d86d00f75064ab62b42ba}{%
+           family={Alefeld},
+           familyi={A\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mathematical Association of America}%
+      }
+      \strng{namehash}{488d1bab7e0d86d00f75064ab62b42ba}
+      \strng{fullhash}{488d1bab7e0d86d00f75064ab62b42ba}
+      \strng{authornamehash}{488d1bab7e0d86d00f75064ab62b42ba}
+      \strng{authorfullhash}{488d1bab7e0d86d00f75064ab62b42ba}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00029890, 19300972}
+      \field{journaltitle}{The American Mathematical Monthly}
+      \field{number}{7}
+      \field{title}{On the Convergence of Halley's Method}
+      \field{volume}{88}
+      \field{year}{1981}
+      \field{pages}{530\bibrangedash 536}
+      \range{pages}{7}
+      \verb{url}
+      \verb http://www.jstor.org/stable/2321760
+      \endverb
+    \endentry
+    \entry{fundam}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3d68949bd1d5bb3416f3b30185bcd8f5}{%
+           family={Cauchy},
+           familyi={C\bibinitperiod},
+           given={A.\bibnamedelimi L.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Paris}%
+      }
+      \list{publisher}{1}{%
+        {Jacques Gabay}%
+      }
+      \strng{namehash}{3d68949bd1d5bb3416f3b30185bcd8f5}
+      \strng{fullhash}{3d68949bd1d5bb3416f3b30185bcd8f5}
+      \strng{authornamehash}{3d68949bd1d5bb3416f3b30185bcd8f5}
+      \strng{authorfullhash}{3d68949bd1d5bb3416f3b30185bcd8f5}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{2-87647-053-5}
+      \field{title}{Analyse Algebrique}
+      \field{year}{1989}
+      \field{dateera}{ce}
     \endentry
     \entry{horner}{article}{}
       \name{author}{1}{}{%
@@ -538,8 +643,8 @@
       \strng{fullhash}{c2dad93fee909905f0caa92a7c0639ef}
       \strng{authornamehash}{c2dad93fee909905f0caa92a7c0639ef}
       \strng{authorfullhash}{c2dad93fee909905f0caa92a7c0639ef}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{La Géométrie}
@@ -603,8 +708,49 @@
       \field{year}{1807}
       \field{dateera}{ce}
     \endentry
+    \entry{DBLP:conf/mascots/KorenciakKR16}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=ad40d1be6c0bead459a6e4cfdeaf4fc0}{%
+           family={Korenciak},
+           familyi={K\bibinitperiod},
+           given={Lubos},
+           giveni={L\bibinitperiod}}}%
+        {{hash=60cb087855abb080c5b530c16e0cf2b4}{%
+           family={Kucera},
+           familyi={K\bibinitperiod},
+           given={Antonín},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2ab8513d1cd701b75b6164a57354894a}{%
+           family={Rehák},
+           familyi={R\bibinitperiod},
+           given={Vojtech},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{IEEE} Computer Society}%
+      }
+      \strng{namehash}{822d1aaf1d0e38adc631895349a739f8}
+      \strng{fullhash}{822d1aaf1d0e38adc631895349a739f8}
+      \strng{authornamehash}{822d1aaf1d0e38adc631895349a739f8}
+      \strng{authorfullhash}{822d1aaf1d0e38adc631895349a739f8}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{24th {IEEE} International Symposium on Modeling, Analysis and Simulation of Computer and Telecommunication Systems, {MASCOTS} 2016, London, United Kingdom, September 19-21, 2016}
+      \field{isbn}{978-1-5090-3432-1}
+      \field{title}{Efficient Timeout Synthesis in Fixed-Delay {CTMC} Using Policy Iteration}
+      \field{year}{2016}
+      \field{pages}{367\bibrangedash 372}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/MASCOTS.2016.34
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1109/MASCOTS.2016.34
+      \endverb
+    \endentry
   \endsortlist
-  \missing{halley}
 \endrefsection
 \endinput
 
