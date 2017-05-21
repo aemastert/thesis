@@ -2172,7 +2172,9 @@
     <bcf:citekey order="31">vca</bcf:citekey>
     <bcf:citekey order="32">budan</bcf:citekey>
     <bcf:citekey order="33">budan</bcf:citekey>
-    <bcf:citekey order="34">DBLP:conf/mascots/KorenciakKR16</bcf:citekey>
+    <bcf:citekey order="34">KNP11</bcf:citekey>
+    <bcf:citekey order="35">DBLP:conf/mascots/KorenciakKR16</bcf:citekey>
+    <bcf:citekey order="36">kojima</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global/" type="entry" sortscheme="none" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

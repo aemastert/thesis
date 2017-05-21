@@ -708,6 +708,61 @@
       \field{year}{1807}
       \field{dateera}{ce}
     \endentry
+    \entry{KNP11}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=c9a4f92593b05c9575b6990dd92124b6}{%
+           family={Kwiatkowska},
+           familyi={K\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d6a84e35fa153bb78dd8becda6818f25}{%
+           family={Norman},
+           familyi={N\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=19d29e5033a4aab5a83e8abb4960a28f}{%
+           family={Parker},
+           familyi={P\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=9b0cdb4cb53d25682523222e4c516f72}{%
+           family={Gopalakrishnan},
+           familyi={G\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=aed0a729d976b95fc3a58b462b04a5fc}{%
+           family={Qadeer},
+           familyi={Q\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{0}{%
+      }
+      \list{organization}{0}{%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{1ec38626fb675e7b2ff87a6569f7d1d2}
+      \strng{fullhash}{1ec38626fb675e7b2ff87a6569f7d1d2}
+      \strng{authornamehash}{1ec38626fb675e7b2ff87a6569f7d1d2}
+      \strng{authorfullhash}{1ec38626fb675e7b2ff87a6569f7d1d2}
+      \strng{editornamehash}{88f3144ffb155365398e224917bbd910}
+      \strng{editorfullhash}{88f3144ffb155365398e224917bbd910}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. 23rd International Conference on Computer Aided Verification (CAV'11)}
+      \field{series}{LNCS}
+      \field{title}{{PRISM} 4.0: Verification of Probabilistic Real-time Systems}
+      \field{volume}{6806}
+      \field{year}{2011}
+      \field{pages}{585\bibrangedash 591}
+      \range{pages}{7}
+    \endentry
     \entry{DBLP:conf/mascots/KorenciakKR16}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=ad40d1be6c0bead459a6e4cfdeaf4fc0}{%
@@ -748,6 +803,32 @@
       \endverb
       \verb{url}
       \verb http://dx.doi.org/10.1109/MASCOTS.2016.34
+      \endverb
+    \endentry
+    \entry{kojima}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a073446b9663727075531a33d299e796}{%
+           family={Kojima},
+           familyi={K\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a073446b9663727075531a33d299e796}
+      \strng{fullhash}{a073446b9663727075531a33d299e796}
+      \strng{authornamehash}{a073446b9663727075531a33d299e796}
+      \strng{authorfullhash}{a073446b9663727075531a33d299e796}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Tohoku Mathematical Journal}
+      \field{title}{On the limits of the roots of an algebraic equation}
+      \field{volume}{11}
+      \field{year}{1917}
+      \field{pages}{119\bibrangedash 127}
+      \range{pages}{9}
+      \verb{url}
+      \verb https://www.jstage.jst.go.jp/article/tmj1911/11/0/11_0_119/_pdf
       \endverb
     \endentry
   \endsortlist

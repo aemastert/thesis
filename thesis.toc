@@ -16,15 +16,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}\rmfamily Bisection method}{4}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily Speed of convergence}{7}{section*.6}
+\contentsline {paragraph}{\rmfamily Speed of convergence}{6}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}\rmfamily Newton's method}{8}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}\rmfamily Newton's method}{7}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\rmfamily Speed of convergence}{9}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily Error bounds}{12}{section*.8}
+\contentsline {paragraph}{\rmfamily Error bounds}{11}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\rmfamily The Newton algorithm}{13}{section*.9}
+\contentsline {paragraph}{\rmfamily The Newton algorithm}{12}{section*.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.3}\rmfamily Halley's method}{15}{subsection.2.2.3}
 \defcounter {refsection}{0}\relax 
@@ -48,9 +48,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}\bfseries Implementation}{31}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}\bfseries Experiments}{33}{chapter.5}
+\contentsline {section}{\numberline {4.1}\slshape State of the art}{31}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{35}{chapter*.15}
+\contentsline {section}{\numberline {4.2}\slshape Implementation}{32}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}\bfseries Experiments}{35}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}\bfseries Conclusion}{39}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{41}{chapter*.15}
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
@@ -91,7 +97,3 @@
 \select@language {english}
 \defcounter {refsection}{0}\relax 
 \select@language {english}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{39}{section*.16}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\bfseries An appendix}{39}{appendix.A}

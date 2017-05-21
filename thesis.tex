@@ -12,7 +12,7 @@
            %% digital version of a document. Replace with `printed`
            %% to enable the default options for the printed version
            %% of a document.
-  table,   %% Causes the coloring of tables. Replace with `notable`
+  notable,   %% Causes the coloring of tables. Replace with `notable`
            %% to restore plain tables.
   nolof,     %% Prints the List of Figures. Replace with lof/`nolof` to
            %% hide the List of Figures.
@@ -81,9 +81,16 @@
   stringstyle     = \color{teal},%
   commentstyle    = \itshape\color{magenta}}
 %%begin, pridane
+\usepackage{booktabs}
 \usepackage{placeins}
 \usepackage{pgfplots}
-\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes,pgfplots.statistics}
+\begin{filecontents*}{trial.dat}
+    
+\end{filecontents*}
+\usepackage[simplified]{pgf-umlcd}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -99,7 +106,7 @@
 \newtheorem{theorem}{Theorem}[section] %% The numbering of theorems will be reset after each section.
 \newtheorem{corollary}[theorem]{Corollary}
 \chapter{Introduction}
-Intro
+
 
 \chapter{Approximation of a single root}
 \section{Definitions}
@@ -161,7 +168,7 @@ with the precision $\varepsilon = 0.000001$.
 It is fairly straightforward to show that there is a root located between $1 < \alpha < 2$, so we will use this interval as our initial guess. The iterations of the bisection algorithm are shown in the table \ref{tab:bis}.
 %vysvetlit preco je to straightforward
 \begin{table}
-  \begin{tabularx}{\textwidth}{lll}
+  \begin{tabular*}{\textwidth}{lll}
     \toprule
     Iteration & $x_{n}$ & $f(x_{n})$\\
     \midrule
@@ -186,7 +193,7 @@ It is fairly straightforward to show that there is a root located between $1 < \
 		19 & 1.312659 & -0.000019 \\
 		20 & 1.312660 & -0.000004 \\
     \bottomrule
-  \end{tabularx}
+  \end{tabular*}
   \caption{Bisection algorithm on Example \ref{exampleBis}}
   \label{tab:bis}
 \end{table}
@@ -451,7 +458,7 @@ with the precision $\varepsilon = 0.000001$.
 The initial interval is the same as in bisection algorithm to make results comparable, i.e. $a=1, b=2$.
 \FloatBarrier
 \begin{table}[H]
-  \begin{tabularx}{\textwidth}{lll}
+  \begin{tabular*}{\textwidth}{lll}
     \toprule
     Iteration & $c_{n}$ & $f(c_{n})$\\
     \midrule
@@ -461,7 +468,7 @@ The initial interval is the same as in bisection algorithm to make results compa
 			4 & 1.312664 & 0.000060 \\
 			5 & 1.312660 & 0.000001 \\
     \bottomrule
-  \end{tabularx}
+  \end{tabular*}
   \caption{Newton's algorithm on Example \ref{exampleNewt}}
   \label{tab:newt}
 \end{table}
@@ -496,6 +503,7 @@ In addition, if the second derivative is close to or exactly $0$ then the conver
 \paragraph{Halley's algorithm}
 The Halley's algorithm has similar structure to Algorithm \ref{alg:newton}, only replacing lines 5 and 9 with the equation \ref{hal}.
 \begin{example}
+\label{exampleHall}
 Find a root $\alpha$ of 
 \begin{align}
       2x^{4} - 3x - 2
@@ -505,15 +513,15 @@ with the precision $\varepsilon = 0.000001$.
 The initial interval remains the same (i.e. $a=1, b=2$) as in the previous algorithms to make the results comparable.
 \FloatBarrier
 \begin{table}[H]
-  \begin{tabularx}{\textwidth}{lll}
+  \begin{tabular*}{\textwidth}{lll}
     \toprule
     Iteration & $c_{n}$ & $f(c_{n})$\\
     \midrule
 				1 & 1.318039 & 0.081800 \\
 				2 & 1.312660 & 0.000001 \\
     \bottomrule
-  \end{tabularx}
-  \caption{Halley's algorithm on example}
+  \end{tabular*}
+  \caption{Halley's algorithm on Example \ref{exampleHall}}
   \label{tab:hall}
 \end{table}
 The algorithm finishes with the same result as the result provided by the bisection algorithm and the Newton's algorithm while ending in only 2 iterations, as opposed to 21 in Algorithm \ref{alg:bisect} (as seen in Table \ref{tab:bis}) and 5 in Algorithm \ref{alg:newton} (as seen in Table \ref{tab:newt}).
@@ -539,7 +547,7 @@ Any univariate polynomial $f$ of degree $n \geq 1$ can be factored as $f=(x-z_{1
 Any real univariate polynomial $f$ of degree $n \geq 1$ can be factored as $f=(x-z_{1})(x-z_{2})\ldots(x-z_{m})g(x)$, where $z_{1},\ldots,z_{m}$ are the real roots of $f$, $m\leq n$ and $g(x)$ is irreducible in $\R$.
 \end{corollary}
 \begin{definition}
-Let $f$ be a real univariate polynomial and $f=(x-z_{1})^{k_{1}}(x-z_{2})^{k_{2}}\ldots(x-z_{m})^{k_{m}}g(x)$ factorization of $f$ such that $z_{1}, z_{2},\ldots,z_{m}$ are pairwise distinct, $m\leq n$, $\forall 1\leq{i}\leq{m}: k_{i}\leq{1}$ and $g(x)$ is irreducible in $\R$. Then if $k_{i} > 1$, $i \leq m$, we say that $z_{i}$ is \emph{multiple root} and if $k_{i} = 1$, we say that $z_{i}$ is \emph{simple root}.
+Let $f$ be a real univariate polynomial and $f=(x-z_{1})^{k_{1}}(x-z_{2})^{k_{2}}\ldots(x-z_{m})^{k_{m}}g(x)$ factorization of $f$ such that $z_{1}, z_{2},\ldots, z_{m}$ are pairwise distinct, $m\leq n$, $\forall 1\leq{i}\leq{m}: k_{i}\leq{1}$ and $g(x)$ is irreducible in $\R$. Then if $k_{i} > 1$, $i \leq m$, we say that $z_{i}$ is \emph{multiple root} and if $k_{i} = 1$, we say that $z_{i}$ is \emph{simple root}.
 \end{definition}
 The implication of Corollary \ref{coro} is that we can start by finding any root $\alpha$ of $f(x)$, then divide $f(x)$ by factor $(x-\alpha)$ to obtain $f_{1}(x)$ such that $f(x)=(x-\alpha)f_{1}(x)$ and repeat the process for $f_{1}(x)$ until we reach $f_{m}(x)$ such that it is irreducible in $\R$ (i.e. has no real roots).
 
@@ -820,20 +828,139 @@ Since the second solution is much simpler and in line with the fact that we are 
 \end{algorithm}
 
 \chapter{Implementation}
-All of the methods presented are implemented in the programming language Java. The reason behind this choice is that the probabilistic model checker Prism \footnote{http://www.prismmodelchecker.org} and its extension Prism-fdCTMC (currently under development) are implemented in Java as well. The fdCTMC branch contains timeout synthesis \parencite{DBLP:conf/mascots/KorenciakKR16} which requires finding local extremes of polynomial function within an interval. This problem then reduces to finding the roots of the first derivative of the polynomial. In the current implementation, the computation of the roots is done externally, either by connecting to a remote server, which computes the roots via Maple or by outputting Maple input data on screen (which requires the user to have a copy of Maple installed). This is quite impractical and thus my implementation can be used to replace the current one, so that the user doesn't have to rely on the internet connection, the stability of server or ownership of an external program.
+All of the methods presented are implemented in the programming language Java. The main reason for this choice is that the extension of the probabilistic model checker Prism \parencite{KNP11} - Prism-fdCTMC (currently under development) is implemented in Java as well. The fdCTMC branch contains timeout synthesis \parencite{DBLP:conf/mascots/KorenciakKR16} which requires finding local extremes of polynomial function within an interval. This problem then reduces to finding the roots of the first derivative of the polynomial. In the current implementation, the computation of the roots is done externally, either by connecting to a remote server, which computes the roots via Maple or by outputting Maple input data on screen (which requires the user to have a copy of Maple installed). This is quite impractical and thus my implementation can be used to replace the current one, so that the user doesn't have to rely on the internet connection, the stability of server or ownership of an external program.
 
-The decimal numbers are represented by the class \texttt{BigDecimal} \footnote{https://docs.oracle.com/javase/7/docs/api/java/math/BigDecimal.html}, which allows an arbitrary precision. A \texttt{BigDecimal} consists of an arbitrary precision integer unscaled value and a 32-bit integer scale. If the scale is zero or positive, the scale represents the number of digits to the right of the decimal point. If the scale negative, the unscaled value of the number is multiplied by $10^{-scale}$.
+\section{State of the art}
+After the choice of programming language fell on Java, I first tried to find a mathematical library that already contains root finding of polynomials and supports arbitrary precision. The most notable mathematical or scientific libraries I found were Commons Math: The Apache Commons Mathematics Library\footnote{\url{http://commons.apache.org/proper/commons-math/}}, Jsience\footnote{\url{http://jscience.org}} and Efficient Java Matrix Library\footnote{\url{http://ejml.org/wiki/index.php?title=Main_Page}}. The criteria that the libraries needed to satisfy were arbitrary precision, root finding of polynomials and preferably representation of polynomials (with basic operations). As Figure \ref{tab:sota} shows, none of the libraries satisfied all criteria and thus the choice was made to create an implementation which satisfies all of them.
 
-The \texttt{BigDecimal} class provides basic mathematical operations and operations for comparison, rounding and manipulation of scale. With almost every division made must be associated a scale and type of rounding. In my implementation, I chose standard rounding (i.e. $<.5$ is rounded down, $\geq.5$ is rounded up) and the scale was chosen as scale of $\varepsilon$ (if the algorithm contained one).
+\FloatBarrier
+\begin{table}[H]
+  \begin{tabular*}{\textwidth}{llll}
+    \toprule
+    Library & Repr. of pol. & Root finding & Precision accuracy\\
+    \midrule
+				JScience & yes & no & arbitrary \\
+				EJML & no & yes & double \\
+				Commons Math & yes & yes & double \\
+    \bottomrule
+  \end{tabular*}
+  \caption{Comparison of Java libraries}
+  \label{tab:sota}
+\end{table}
+
+\section{Implementation}
+The decimal numbers are represented by the class \texttt{BigDecimal}\footnote{\url{https://docs.oracle.com/javase/7/docs/api/java/math/BigDecimal.html}}, which allows an arbitrary precision. A \texttt{BigDecimal} consists of an arbitrary precision integer unscaled value and a 32-bit integer scale. The value of the number represented by \texttt{BigDecimal} is unscaled value multiplied by $10^{-scale}$.
+
+The \texttt{BigDecimal} class provides basic mathematical operations and operations for comparison, rounding and manipulation of scale. With almost every division made, a scale and a type of rounding must be associated. In my implementation, I chose standard rounding (i.e. $<.5$ is rounded down, $\geq.5$ is rounded up) and the scale was chosen as scale of $\varepsilon$ (if the algorithm contained one).
 
 To represent the polynomials, I created the class \texttt{Polynomial}. The class provides basic operations with polynomials, such as addition or multiplication, or computing the first derivative. Full information can be found in the Javadoc documentation.
 
-The implemented methods can be found in the class \texttt{PolynomialRootFinding}. During the implementation, I tried to avoid the duplication of code by reusing the methods I implemented. E.g. since the \texttt{BigDecimal} class doesn't provide $\sqrt[n]{a}$, where $a$ is \texttt{BigDecimal}, I used Newton's algorithm to find the root of $x^{n}-a=0$, with starting point in $1$. Or to compute the square-free factorization of the polynomial, I used the Sturm's chain to find the $GCD$ of $f$ and $f'$ and subsequently used the polynomial long division to remove the $GCD$ factor from $f$.
+The implemented methods can be found in the class \texttt{PolynomialRo}-\texttt{otFinding}. During the implementation, I tried to avoid the duplication of code by reusing the methods I implemented. E.g. since the \texttt{BigDecimal} class doesn't provide $\sqrt[n]{a}$, where $a$ is \texttt{BigDecimal}, I used Newton's algorithm to find the root of $x^{n}-a=0$, with starting point in $1$. Or to compute the square-free factorization of the polynomial, I used the Sturm's chain to find the $GCD$ of $f$ and $f'$ and subsequently used the polynomial long division to remove the $GCD$ factor from $f$.
 
 Also when possible, I tried to evaluate some expressions efficiently. E.g. the computing the Sturm's chain in Algorithm \ref{alg:rfs} can be done only once, by creating a class representing the chain instead of calling Algorithm \ref{alg:sturm} and computing the chain every time. Or when performing the Budan's test in Algorithm \ref{alg:vas}, instead of performing substitution $\frac{1}{1+x}$, expanding it and subsequently multiplying it by $(x+1)^{deg(f)}$, the more efficient way is to simply reverse the coefficients and perform substitution $(x+1)$.
 
+The source code and Javadoc providing the full description of all implemented methods can be found in the attachment.
+
+%\newpage
+%\paragraph{Class diagram}
+%\mbox{}\newline
+%\FloatBarrier
+%\begin{tikzpicture}
+%\renewcommand{\umldrawcolor}{black}
+%\renewcommand{\umlfillcolor}{white}
+%	\begin{class}[text width=6cm]{Mobius}{0, 0}
+%		\attribute{- a : BigDecimal}
+%		\attribute{- b : BigDecimal}
+%		\attribute{- c : BigDecimal}
+%		\attribute{- d : BigDecimal}
+%		
+%		\operation{+ getA ( ) : BigDecimal}
+%		\operation{+ getB ( ) : BigDecimal}
+%		\operation{+ getC ( ) : BigDecimal}
+%		\operation{+ getD ( ) : BigDecimal}
+%		\operation{+ getValue ( x : BigDecimal , scale : int) : BigDecimal}
+%		\operation{+ getValueInfinity ( b : BigDecimal , scale : int) : BigDecimal}
+%	\end{class}
+%\end{tikzpicture}
+
 \chapter{Experiments}
-%ake boundy som pouzil na VAS, na "nase" je asi lepsie pouzit ko
+The implemented methods were tested with on a set of 40 polynomials with varying degrees from 34 up to 101. The polynomials were obtained as the output of the synthesis algorithm implemented in the fdCTMC branch of Prism. Thus, they have certain common characteristics - with the increasing degree, the coefficients shrink by approximately one decimal point (i.e. if the absolute coefficient $a_{0}$ is $1$, the leading coefficient $a_{n}$ is approximately $10^{-n}$). All tested polynomials can be found in the attachment.
+
+The tested algorithms were Algorithm \ref{alg:rfs}, Algorithm \ref{alg:vas} with combination of Newton's method, and Algorithm \ref{alg:vca} with combination of Newton's and Halley's method. The Algorithm \ref{alg:rhn} proved to be unreliable, as the rounding after division caused the latter roots to be not sufficiently precise and thus is not included.
+
+The upper bounds used in Algorithm \ref{alg:vas} were Kojima bounds \parencite{kojima}, because they are very fast to compute, while providing reasonable bounds. The search interval for Algorithms \ref{alg:rfs} and \ref{alg:vca} was $(-100, 100)$.
+
+Tables \ref{tab:coa1} and \ref{tab:coa2} compare the computation time of polynomials with degree 34-67 and 68-101 respectively, with allowed error of precision $\varepsilon = 10^{-20}$. 
+
+Tables \ref{tab:coa3} and \ref{tab:coa4} compare the computation time of polynomials with degree 34-67 and 68-101 respectively, with allowed error of precision $\varepsilon = 10^{-50}$. 
+
+\begin{table}
+  \begin{tabular*}{\textwidth}{lllll}
+    \toprule
+     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm(Newton) \\
+    \midrule
+			Minimum & 61 & 63 & 76 & 119 \\
+			Median & 235 & 240 & 297 & 716 \\
+			Maximum & 633 & 647 & 387 & 3158 \\
+			Average & 285 & 286 & 259 & 1075 \\
+    \bottomrule
+  \end{tabular*}
+  \caption{Polynomials with degree 34-67, precision $\varepsilon = 10^{-20}$ (time in miliseconds)}
+  \label{tab:coa1}
+\end{table}
+
+\begin{table}
+  \begin{tabular*}{\textwidth}{lllll}
+    \toprule
+     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm(Newton) \\
+    \midrule
+			Minimum & 838 & 861 & 102 & 697 \\
+			Median & 997 & 1007 & 240 & 4434 \\
+			Maximum & 1362 & 1361 & 369 & 7173 \\
+			Average & 1021 & 1020 & 252 & 3901 \\
+    \bottomrule
+  \end{tabular*}
+  \caption{Polynomials with degree 68-101, precision $\varepsilon = 10^{-20}$ (time in miliseconds)}
+  \label{tab:coa2}
+\end{table}
+
+\begin{table}
+  \begin{tabular*}{\textwidth}{lllll}
+    \toprule
+     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm(Newton) \\
+    \midrule
+			Minimum & 160 & 167 & 168 & 435 \\
+			Median & 631 & 648 & 988 & 2717 \\
+			Maximum & 1631 & 1657 & 1309 & 12559 \\
+			Average & 732 & 745 & 775 & 4209 \\
+    \bottomrule
+  \end{tabular*}
+  \caption{Polynomials with degree 34-67, precision $\varepsilon = 10^{-50}$ (time in miliseconds)}
+  \label{tab:coa3}
+\end{table}
+
+\begin{table}
+  \begin{tabular*}{\textwidth}{lllll}
+    \toprule
+     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm(Newton) \\
+    \midrule
+			Minimum & 2283 & 2355 & 325 & 2735 \\
+			Median & 2897 & 2761 & 685 & 17534 \\
+			Maximum & 3572 & 3571 & 1252 & 28358 \\
+			Average & 2846 & 2870 & 741 & 15378 \\
+    \bottomrule
+  \end{tabular*}
+  \caption{Polynomials with degree 68-101, precision $\varepsilon = 10^{-50}$ (time in miliseconds)}
+  \label{tab:coa4}
+\end{table}
+
+\FloatBarrier
+From Tables \ref{tab:coa1}-\ref{tab:coa4} we can see that the difference between Newton's and Halley's method is insignificant. For the smaller degrees (i.e. 34-67) VCA method (Algorithm \ref{alg:vca}) provides similar results to VAS method (Algorithm \ref{alg:vas}). However as the degree of polynomials rises, the difference between VCA and VAS starts to increase. Sturm's method proved to be the slowest one, by a large margin.
+
+\chapter{Conclusion}
+
+
+
 \printbibliography[heading=bibintoc]
 
 
@@ -842,8 +969,8 @@ Also when possible, I tried to evaluate some expressions efficiently. E.g. the c
   \addcontentsline{toc}{chapter}{\indexname} %% table of contents.
   \printindex
 
-\appendix %% Start the appendices.
-\chapter{An appendix}
-Here you can insert the appendices of your thesis.
+%\appendix %% Start the appendices.
+%\chapter{An appendix}
+%Here you can insert the appendices of your thesis.
 
 \end{document}

@@ -13,7 +13,8 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{\040Isolation\040of\040roots\040using\040Sturm's\040theorem}{section.3.2}% 13
 \BOOKMARK [2][-]{subsection.3.2.2}{\040Isolation\040of\040roots\040using\040Vincent's\040theorem}{section.3.2}% 14
 \BOOKMARK [0][-]{chapter.4}{Implementation}{}% 15
-\BOOKMARK [0][-]{chapter.5}{Experiments}{}% 16
-\BOOKMARK [0][-]{chapter*.15}{Bibliography}{}% 17
-\BOOKMARK [0][-]{section*.16}{Index}{}% 18
-\BOOKMARK [0][-]{appendix.A}{An\040appendix}{}% 19
+\BOOKMARK [1][-]{section.4.1}{\040State\040of\040the\040art}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.2}{\040Implementation}{chapter.4}% 17
+\BOOKMARK [0][-]{chapter.5}{Experiments}{}% 18
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 19
+\BOOKMARK [0][-]{chapter*.15}{Bibliography}{}% 20
