@@ -20,7 +20,7 @@
            %% hide the List of Tables.
   %% More options are listed in the user guide at
   %% <http://mirrors.ctan.org/macros/latex/contrib/fithesis/guide/mu/fi.pdf>.
-	draft, %% ked bude napisane, tak zmenit na final
+	final, %% ked bude napisane, tak zmenit na final
 ]{fithesis3}
 %% The following section sets up the locales used in the thesis.
 \usepackage[resetfonts]{cmap} %% We need to load the T2A font encoding
@@ -50,14 +50,10 @@
     advisor       = {RNDr. Vojt{\v e}ch {\v R}eh{\'a}k, Ph.D},
     title         = {Root Isolation of High-Degree Polynomials},
     TeXtitle      = {Root Isolation of High-Degree Polynomials},
-    keywords      = {keyword1, keyword2, ...},
-    TeXkeywords   = {keyword1, keyword2, \ldots},
-    abstract      = {This is the abstract of my thesis, which can
-
-                     span multiple paragraphs.},
-    thanks        = {This is the acknowledgement for my thesis, which can
-
-                     span multiple paragraphs.},
+    keywords      = {polynomials, high-degree, root isolation, root finding, arbitrary precision, root approximation},
+    TeXkeywords   = {polynomials, high-degree, root isolation, root finding, arbitrary precision, root approximation},
+    abstract      = {Solving polynomials is one of the oldest mathematical problems. Over the centuries, there have been many discoveries which led to fast and efficient root finding methods. With the progress of technology, we are now able to solve high degree polynomials in a very short time, using these well known algorithms. In this thesis we present methods for finding root mainly using numerical approximation. We also implement these methods in programming language Java. Lastly, we compare the implemented methods by solving a set of polynomials and comparing computation time. },
+    thanks        = {I would like to thank my advisor RNDr. Vojt{\v e}ch {\v R}eh{\'a}k, Ph.D for his invaluable guidance, advice and patience during writing this thesis. I also want to thank {\v L}ubo{\v s} Koren{\v c}iak, for his helpful suggestions and advice.},
     bib           = bibliothesis.bib,
 }
 \usepackage{makeidx}      %% The `makeidx` package contains
@@ -106,7 +102,20 @@
 \newtheorem{theorem}{Theorem}[section] %% The numbering of theorems will be reset after each section.
 \newtheorem{corollary}[theorem]{Corollary}
 \chapter{Introduction}
+Finding the roots of polynomials is one of the oldest problems in mathematics. Over the centuries, many mathematicians pushed the boundaries on solving polynomials and algebraic equations including Ren{\'e} Descartes in his book \emph{La G{\'e}om{\'e}trie} and Isaac Newton in \emph{De analysi per aequationes numero terminorum infinitas} and his many other publications. The advancement hasn't stopped and new discoveries and improvements are being made even in the present. In the past few decades, the technology has advanced rapidly, which allows us to implement these methods and use them to find roots of polynomials of very high degree. 
 
+Polynomials and root finding have many uses not only in mathematics, but in many other areas, including physics and computer science. One of the uses of polynomials is in the probabilistic model checker \emph{PRISM} \parencite{KNP11}. PRISM provides model checking for for several types of probabilistic models including, but not limited to discrete-time and continuous-time Markov chains and Markov decision processes \parencite{KNP11}. PRISM is open source, released under the GNU General Public License and thus there exist several branches of the program. One of the branches, fdCTMC PRISM, which stands for fixed-delay Continuous-time Markov chains implements algorithm \emph{Efficient Timeout Synthesis in Fixed-Delay CTMC Using Policy Iteration} \parencite{DBLP:conf/mascots/KorenciakKR16}, which requires to find a local extremes on an interval of a polynomial function. This can be done by differentiating the function and finding its roots. However, the current implementation relies on an external program to compute the roots. Thus the goal of this thesis is to create a library, which can be later used in the synthesis algorithm that provides a time efficient algorithm, which solves the polynomials of high degree, with arbitrary precision.
+
+\paragraph{Structure of the thesis}
+Chapter 2 introduces basic notions and we present three methods for a root approximation. Each of the methods is presented in a way to show how it was created. We show the convergence rate of each of the methods and describe their properties.
+
+In the Chapter 3 we present several methods for isolating the roots, such that each interval contains exactly one root. We describe each method in detail and provide advantages and disadvantages for each method.
+
+Chapter 4 describes the implementation of the presented methods.
+
+Chapter 5 contains the experimental results and compares the algorithms.
+
+Finally, Chapter 6 concludes the thesis and provides suggestions for future work.
 
 \chapter{Approximation of a single root}
 \section{Definitions}
@@ -626,7 +635,7 @@ Assume $f(x)$ is a real polynomial without a root of multiplicity greater than o
 \begin{remark}
   The theorem can be strengthened (as proven in \cite{sturmGeneral}) to any polynomial, including the ones with roots with higher multiplicity. Then the difference of sign changes $\sigma(f,a) - \sigma(f,b)$ provides the number of \textit{distinct} roots in $(a,b]$.
 \end{remark}
-Using this theorem and combining it with Newton's method and bisection, I created the algorithm \ref{alg:rfs}.
+Using this theorem and combining it with Newton's method and bisection, we can create Algorithm \ref{alg:rfs}.
 \begin{algorithm}
   \caption{Sturm's algorithm
     \label{alg:sturm}}
@@ -831,7 +840,7 @@ Since the second solution is much simpler and in line with the fact that we are 
 All of the methods presented are implemented in the programming language Java. The main reason for this choice is that the extension of the probabilistic model checker Prism \parencite{KNP11} - Prism-fdCTMC (currently under development) is implemented in Java as well. The fdCTMC branch contains timeout synthesis \parencite{DBLP:conf/mascots/KorenciakKR16} which requires finding local extremes of polynomial function within an interval. This problem then reduces to finding the roots of the first derivative of the polynomial. In the current implementation, the computation of the roots is done externally, either by connecting to a remote server, which computes the roots via Maple or by outputting Maple input data on screen (which requires the user to have a copy of Maple installed). This is quite impractical and thus my implementation can be used to replace the current one, so that the user doesn't have to rely on the internet connection, the stability of server or ownership of an external program.
 
 \section{State of the art}
-After the choice of programming language fell on Java, I first tried to find a mathematical library that already contains root finding of polynomials and supports arbitrary precision. The most notable mathematical or scientific libraries I found were Commons Math: The Apache Commons Mathematics Library\footnote{\url{http://commons.apache.org/proper/commons-math/}}, Jsience\footnote{\url{http://jscience.org}} and Efficient Java Matrix Library\footnote{\url{http://ejml.org/wiki/index.php?title=Main_Page}}. The criteria that the libraries needed to satisfy were arbitrary precision, root finding of polynomials and preferably representation of polynomials (with basic operations). As Figure \ref{tab:sota} shows, none of the libraries satisfied all criteria and thus the choice was made to create an implementation which satisfies all of them.
+After the choice of programming language fell on Java, I first tried to find a mathematical library that already contains root finding of polynomials and supports arbitrary precision. The most notable mathematical or scientific libraries we found were Commons Math: The Apache Commons Mathematics Library\footnote{\url{http://commons.apache.org/proper/commons-math/}}, Jsience\footnote{\url{http://jscience.org}} and Efficient Java Matrix Library\footnote{\url{http://ejml.org/wiki/index.php?title=Main_Page}}. The criteria that the libraries needed to satisfy were arbitrary precision, root finding of polynomials and preferably representation of polynomials (with basic operations). As Figure \ref{tab:sota} shows, none of the libraries satisfied all criteria and thus the choice was made to create an implementation which satisfies all of them.
 
 \FloatBarrier
 \begin{table}[H]
@@ -851,13 +860,13 @@ After the choice of programming language fell on Java, I first tried to find a m
 \section{Implementation}
 The decimal numbers are represented by the class \texttt{BigDecimal}\footnote{\url{https://docs.oracle.com/javase/7/docs/api/java/math/BigDecimal.html}}, which allows an arbitrary precision. A \texttt{BigDecimal} consists of an arbitrary precision integer unscaled value and a 32-bit integer scale. The value of the number represented by \texttt{BigDecimal} is unscaled value multiplied by $10^{-scale}$.
 
-The \texttt{BigDecimal} class provides basic mathematical operations and operations for comparison, rounding and manipulation of scale. With almost every division made, a scale and a type of rounding must be associated. In my implementation, I chose standard rounding (i.e. $<.5$ is rounded down, $\geq.5$ is rounded up) and the scale was chosen as scale of $\varepsilon$ (if the algorithm contained one).
+The \texttt{BigDecimal} class provides basic mathematical operations and operations for comparison, rounding and manipulation of scale. With almost every division made, a scale and a type of rounding must be associated. In my implementation, we chose standard rounding (i.e. $<.5$ is rounded down, $\geq.5$ is rounded up) and the scale was chosen as scale of $\varepsilon$ (if the algorithm contained one).
 
-To represent the polynomials, I created the class \texttt{Polynomial}. The class provides basic operations with polynomials, such as addition or multiplication, or computing the first derivative. Full information can be found in the Javadoc documentation.
+To represent the polynomials, we created the class \texttt{Polynomial}. The class provides basic operations with polynomials, such as addition or multiplication, or computing the first derivative. Full information can be found in the Javadoc documentation.
 
-The implemented methods can be found in the class \texttt{PolynomialRo}-\texttt{otFinding}. During the implementation, I tried to avoid the duplication of code by reusing the methods I implemented. E.g. since the \texttt{BigDecimal} class doesn't provide $\sqrt[n]{a}$, where $a$ is \texttt{BigDecimal}, I used Newton's algorithm to find the root of $x^{n}-a=0$, with starting point in $1$. Or to compute the square-free factorization of the polynomial, I used the Sturm's chain to find the $GCD$ of $f$ and $f'$ and subsequently used the polynomial long division to remove the $GCD$ factor from $f$.
+The implemented methods can be found in the class \texttt{PolynomialRo}-\texttt{otFinding}. During the implementation, I tried to avoid the duplication of code by reusing the methods we implemented. E.g. since the \texttt{BigDecimal} class doesn't provide $\sqrt[n]{a}$, where $a$ is \texttt{BigDecimal}, we used Newton's algorithm to find the root of $x^{n}-a=0$, with starting point in $1$. Or to compute the square-free factorization of the polynomial, we used the Sturm's chain to find the $GCD$ of $f$ and $f'$ and subsequently used the polynomial long division to remove the $GCD$ factor from $f$.
 
-Also when possible, I tried to evaluate some expressions efficiently. E.g. the computing the Sturm's chain in Algorithm \ref{alg:rfs} can be done only once, by creating a class representing the chain instead of calling Algorithm \ref{alg:sturm} and computing the chain every time. Or when performing the Budan's test in Algorithm \ref{alg:vas}, instead of performing substitution $\frac{1}{1+x}$, expanding it and subsequently multiplying it by $(x+1)^{deg(f)}$, the more efficient way is to simply reverse the coefficients and perform substitution $(x+1)$.
+Also when possible, we tried to evaluate some expressions efficiently. E.g. the computing the Sturm's chain in Algorithm \ref{alg:rfs} can be done only once, by creating a class representing the chain instead of calling Algorithm \ref{alg:sturm} and computing the chain every time. Or when performing the Budan's test in Algorithm \ref{alg:vas}, instead of performing substitution $\frac{1}{1+x}$, expanding it and subsequently multiplying it by $(x+1)^{deg(f)}$, the more efficient way is to simply reverse the coefficients and perform substitution $(x+1)$.
 
 The source code and Javadoc providing the full description of all implemented methods can be found in the attachment.
 
@@ -897,7 +906,7 @@ Tables \ref{tab:coa3} and \ref{tab:coa4} compare the computation time of polynom
 \begin{table}
   \begin{tabular*}{\textwidth}{lllll}
     \toprule
-     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm(Newton) \\
+     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm \\
     \midrule
 			Minimum & 61 & 63 & 76 & 119 \\
 			Median & 235 & 240 & 297 & 716 \\
@@ -912,7 +921,7 @@ Tables \ref{tab:coa3} and \ref{tab:coa4} compare the computation time of polynom
 \begin{table}
   \begin{tabular*}{\textwidth}{lllll}
     \toprule
-     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm(Newton) \\
+     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm \\
     \midrule
 			Minimum & 838 & 861 & 102 & 697 \\
 			Median & 997 & 1007 & 240 & 4434 \\
@@ -927,7 +936,7 @@ Tables \ref{tab:coa3} and \ref{tab:coa4} compare the computation time of polynom
 \begin{table}
   \begin{tabular*}{\textwidth}{lllll}
     \toprule
-     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm(Newton) \\
+     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm \\
     \midrule
 			Minimum & 160 & 167 & 168 & 435 \\
 			Median & 631 & 648 & 988 & 2717 \\
@@ -942,7 +951,7 @@ Tables \ref{tab:coa3} and \ref{tab:coa4} compare the computation time of polynom
 \begin{table}
   \begin{tabular*}{\textwidth}{lllll}
     \toprule
-     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm(Newton) \\
+     & VCA(Newton) & VCA(Halley) & VAS(Newton) & Sturm \\
     \midrule
 			Minimum & 2283 & 2355 & 325 & 2735 \\
 			Median & 2897 & 2761 & 685 & 17534 \\
@@ -957,9 +966,15 @@ Tables \ref{tab:coa3} and \ref{tab:coa4} compare the computation time of polynom
 \FloatBarrier
 From Tables \ref{tab:coa1}-\ref{tab:coa4} we can see that the difference between Newton's and Halley's method is insignificant. For the smaller degrees (i.e. 34-67) VCA method (Algorithm \ref{alg:vca}) provides similar results to VAS method (Algorithm \ref{alg:vas}). However as the degree of polynomials rises, the difference between VCA and VAS starts to increase. Sturm's method proved to be the slowest one, by a large margin.
 
+The computation time of VCA and Sturm's method could be further improved by providing a smaller search interval. On the other hand the computation of VAS could be reduced by providing a tighter bound.
+
+Based on the results, the VAS algorithm provides the best solution for root finding, as even the computation of roots of the highest degree with precision of 50 decimal digits barely exceeded one second, with average being \approx 0.7 seconds.
+
 \chapter{Conclusion}
+In this thesis, we presented, implemented and compared several methods and algorithms for root approximation and the isolation of roots. First, we presented three algorithms for approximation of a single root and described each of them in detail. Then, we presented four methods for finding all roots of the polynomial, either by factoring the polynomial or isolating the roots. Later, we implemented all of the methods in Java. Finally, we concluded experiments and compared the efficiency of the algorithms.
 
-
+\paragraph{Future work}
+For future work, the implemented methods can be further optimized, e.g. by computing tighter and faster upper and lower bounds of positive roots, as well as some of the operations performed on polynomials. There are also many other methods for finding the roots of polynomials that could be implemented and compared, such as root finding through the eigenvalue decomposition. Further, the methods could be implemented in a faster programming language such as C++. 
 
 \printbibliography[heading=bibintoc]
 

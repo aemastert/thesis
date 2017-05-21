@@ -147,7 +147,7 @@
       \field{enddateera}{ce}
       \field{dateera}{ce}
       \verb{url}
-      \verb https://math.berkeley.edu/~kmill/math1afa2014/poly.pdf
+      \verb %5Curl%7Bhttps://math.berkeley.edu/~kmill/math1afa2014/poly.pdf%7D
       \endverb
     \endentry
     \entry{rootApproxMeth}{book}{}
@@ -248,7 +248,7 @@
       \field{pages}{417\bibrangedash 426}
       \range{pages}{10}
       \verb{url}
-      \verb http://www.jstor.org/stable/2975033
+      \verb %5Curl%7Bhttp://www.jstor.org/stable/2975033%7D
       \endverb
     \endentry
     \entry{halleyCnvg}{online}{}
@@ -272,7 +272,7 @@
       \field{year}{2003}
       \field{dateera}{ce}
       \verb{url}
-      \verb http://mathfaculty.fullerton.edu/mathews/n2003/Halley'sMethodProof.html
+      \verb %5Curl%7Bhttp://mathfaculty.fullerton.edu/mathews/n2003/Halley'sMethodProof.html%7D
       \endverb
     \endentry
     \entry{10.2307/2321760}{article}{}
@@ -303,7 +303,7 @@
       \field{pages}{530\bibrangedash 536}
       \range{pages}{7}
       \verb{url}
-      \verb http://www.jstor.org/stable/2321760
+      \verb %5Curl%7Bhttp://www.jstor.org/stable/2321760%7D
       \endverb
     \endentry
     \entry{fundam}{book}{}
@@ -358,7 +358,7 @@
       \field{pages}{30\bibrangedash 37}
       \range{pages}{8}
       \verb{url}
-      \verb https://eprints.soton.ac.uk/168861/1/FLH_article_on_polynomial_division.pdf
+      \verb %5Curl%7Bhttps://eprints.soton.ac.uk/168861/1/FLH_article_on_polynomial_division.pdf%7D
       \endverb
     \endentry
     \entry{sturm}{article}{}
@@ -412,7 +412,7 @@
       \field{year}{2010}
       \field{dateera}{ce}
       \verb{url}
-      \verb https://www.e-ce.uth.gr/cced/wp-content/uploads/formidable/phd_thesis_vigklas.pdf
+      \verb %5Curl%7Bhttps://www.e-ce.uth.gr/cced/wp-content/uploads/formidable/phd_thesis_vigklas.pdf%7D
       \endverb
     \endentry
     \entry{sturmGeneral}{online}{}
@@ -436,7 +436,7 @@
       \field{year}{2013}
       \field{dateera}{ce}
       \verb{url}
-      \verb http://web.math.ucsb.edu/~padraic/mathcamp_2013/root_find_alg/Mathcamp_2013_Root-Finding_Algorithms_Day_2.pdf
+      \verb %5Curl%7Bhttp://web.math.ucsb.edu/~padraic/mathcamp_2013/root_find_alg/Mathcamp_2013_Root-Finding_Algorithms_Day_2.pdf%7D
       \endverb
     \endentry
     \entry{vincentT1}{article}{}
@@ -461,7 +461,7 @@
       \field{pages}{1\bibrangedash 34}
       \range{pages}{34}
       \verb{url}
-      \verb http://gallica.bnf.fr/ark:/12148/bpt6k57787134/f4.image.r=Agence%20Rol.langEN
+      \verb %5Curl%7Bhttp://gallica.bnf.fr/ark:/12148/bpt6k57787134/f4.image.r=Agence%20Rol.langEN%7D
       \endverb
     \endentry
     \entry{vincentT2}{article}{}
@@ -543,7 +543,7 @@
       \field{pages}{179\bibrangedash 191}
       \range{pages}{13}
       \verb{url}
-      \verb http://inf-server.inf.uth.gr/~akritas/Alessina_Galuzzi_b.pdf
+      \verb %5Curl%7Bhttp://inf-server.inf.uth.gr/~akritas/Alessina_Galuzzi_b.pdf%7D
       \endverb
     \endentry
     \entry{vincentA}{article}{}
@@ -570,7 +570,7 @@
       \field{pages}{309\bibrangedash 325}
       \range{pages}{17}
       \verb{url}
-      \verb https://link.springer.com/article/10.1007/s10958-010-9982-1
+      \verb %5Curl%7Bhttps://link.springer.com/article/10.1007/s10958-010-9982-1%7D
       \endverb
     \endentry
     \entry{vas}{article}{}
@@ -602,7 +602,7 @@
       \field{pages}{297\bibrangedash 304}
       \range{pages}{8}
       \verb{url}
-      \verb http://www.lana.lt/journal/19/Akritas.pdf
+      \verb %5Curl%7Bhttp://www.lana.lt/journal/19/Akritas.pdf%7D
       \endverb
     \endentry
     \entry{mobius}{article}{}
@@ -628,7 +628,7 @@
       \field{pages}{292\bibrangedash 310}
       \range{pages}{19}
       \verb{url}
-      \verb https://people.mpi-inf.mpg.de/~mehlhorn/ftp/VikramContinuedFractions.pdf
+      \verb %5Curl%7Bhttps://people.mpi-inf.mpg.de/~mehlhorn/ftp/VikramContinuedFractions.pdf%7D
       \endverb
     \endentry
     \entry{descart}{book}{}
@@ -680,7 +680,7 @@
       \field{pages}{33\bibrangedash 50}
       \range{pages}{18}
       \verb{url}
-      \verb http://www.sciencedirect.com/science/article/pii/S0377042703007271
+      \verb %5Curl%7Bhttp://www.sciencedirect.com/science/article/pii/S0377042703007271%7D
       \endverb
     \endentry
     \entry{budan}{book}{}
@@ -802,7 +802,7 @@
       \verb 10.1109/MASCOTS.2016.34
       \endverb
       \verb{url}
-      \verb http://dx.doi.org/10.1109/MASCOTS.2016.34
+      \verb %5Curl%7Bhttp://dx.doi.org/10.1109/MASCOTS.2016.34%7D
       \endverb
     \endentry
     \entry{kojima}{article}{}
@@ -828,7 +828,7 @@
       \field{pages}{119\bibrangedash 127}
       \range{pages}{9}
       \verb{url}
-      \verb https://www.jstage.jst.go.jp/article/tmj1911/11/0/11_0_119/_pdf
+      \verb %5Curl%7Bhttps://www.jstage.jst.go.jp/article/tmj1911/11/0/11_0_119/_pdf%7D
       \endverb
     \endentry
   \endsortlist

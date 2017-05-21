@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  21 MAY 2017 17:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  21 MAY 2017 20:14
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1325,7 +1325,7 @@ Now handling font encoding PD1 ...
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `draft' set `true' on input line 4362.
+Package hyperref Info: Option `final' set `true' on input line 4362.
 Package hyperref Info: Hyper figures OFF on input line 4486.
 Package hyperref Info: Link nesting OFF on input line 4491.
 Package hyperref Info: Hyper index ON on input line 4494.
@@ -1366,8 +1366,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip58
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 101.
-Package hyperref Info: Option `final' set `true' on input line 102.
+Package hyperref Info: Option `colorlinks' set `true' on input line 97.
+Package hyperref Info: Option `final' set `true' on input line 98.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fithesis\locale\fithesis-english.def"
 File: fithesis/locale/fithesis-english.def 2016/05/25
@@ -1741,14 +1741,14 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\biblatex.cfg"
 File: biblatex.cfg 
 )))
-Package hyperref Info: Option `unicode' set `true' on input line 103.
+Package hyperref Info: Option `unicode' set `true' on input line 99.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
 File: puenc.def 2016/06/24 v6.83q Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `unicode' set `true' on input line 103.
+Package hyperref Info: Option `unicode' set `true' on input line 99.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\stringenc.sty"
 Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO)
@@ -1796,29 +1796,29 @@ File: czech.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 
 Package biblatex Warning: Conflicting options.
 (biblatex)                'urldate=edtf' requires 'seconds=true'.
-(biblatex)                Setting 'seconds=true' on input line 105.
+(biblatex)                Setting 'seconds=true' on input line 101.
 
 (thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count373
@@ -1848,10 +1848,10 @@ Package grfext Info: Graphics extension search list:
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider w
 riting \pgfplotsset{compat=1.14} into your preamble.
- on input line 105.
+ on input line 101.
 
 \AtBeginShipoutBox=\box72
-Package hyperref Info: Link coloring ON on input line 105.
+Package hyperref Info: Link coloring ON on input line 101.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1860,9 +1860,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count380
 )
-LaTeX Info: Redefining \ref on input line 105.
-LaTeX Info: Redefining \pageref on input line 105.
-LaTeX Info: Redefining \nameref on input line 105.
+LaTeX Info: Redefining \ref on input line 101.
+LaTeX Info: Redefining \pageref on input line 101.
+LaTeX Info: Redefining \nameref on input line 101.
  (thesis.out) (thesis.out)
 \@outlinefile=\write9
 \openout9 = `thesis.out'.
@@ -1876,7 +1876,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Info: Redefining \microtypecontext on input line 105.
+LaTeX Info: Redefining \microtypecontext on input line 101.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1899,8 +1899,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
  (thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 105.
-Package biblatex Info: Reference segment=0 on input line 105.
+Package biblatex Info: Reference section=0 on input line 101.
+Package biblatex Info: Reference segment=0 on input line 101.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/qpl/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1912,15 +1912,10 @@ Package microtype Info: Character `029' is missing
 (microtype)             Ignoring protrusion settings for this character.
 
 <fithesis/logo/mu/fithesis-fi.pdf, id=88, 291.0875pt x 292.09125pt>
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 105.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+File: fithesis/logo/mu/fithesis-fi.pdf Graphic file (type pdf)
+ <use fithesis/logo/mu/fithesis-fi.pdf>
+Package pdftex.def Info: fithesis/logo/mu/fithesis-fi.pdf used on input line 101.
+(pdftex.def)             Requested size: 113.81102pt x 114.20036pt.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/qpl/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1928,38 +1923,44 @@ Package microtype Info: Character `029' is missing
 
 
 
-{C:/Users/Ado/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX warning (ext4): destination with the same identi
-fier (name{page.}) has been already used, duplicate ignored
+{C:/Users/Ado/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Program Files (x86)/MiKTeX 2.9/tex/latex/fithesis/l
+ogo/mu/fithesis-fi.pdf>]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used,
+ duplicate ignored
 <to be read again> 
                    \relax 
-l.105 \begin{document}
+l.101 \begin{document}
                        [2
 
 
-] <fithesis/logo/mu/fithesis-fi-color.pdf, id=101, 291.0875pt x 292.09125pt>pdfTeX warning (ext4): destination with the 
-same identifier (name{page.}) has been already used, duplicate ignored
+] <fithesis/logo/mu/fithesis-fi-color.pdf, id=102, 291.0875pt x 292.09125pt>
+File: fithesis/logo/mu/fithesis-fi-color.pdf Graphic file (type pdf)
+
+<use fithesis/logo/mu/fithesis-fi-color.pdf>
+Package pdftex.def Info: fithesis/logo/mu/fithesis-fi-color.pdf used on input line 101.
+(pdftex.def)             Requested size: 113.81102pt x 114.20036pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 \begin{document}
-                       [3]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already use
-d, duplicate ignored
+l.101 \begin{document}
+                       [3 <C:/Program Files (x86)/MiKTeX 2.9/tex/latex/fithesis/logo/mu/fithesis-fi-color.pdf>]pdfTeX wa
+rning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 \begin{document}
+l.101 \begin{document}
                        [4
 
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 \begin{document}
+l.101 \begin{document}
                        [-1
 
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 \begin{document}
+l.101 \begin{document}
                        [0
 
 
@@ -2056,36 +2057,45 @@ Chapter 1.
 
 ]
 Chapter 2.
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 120.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 125.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ufplmbb.fd"
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 ) [3]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 143.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 148.
 \c@example=\count382
  [4]
-Underfull \hbox (badness 10000) in alignment at lines 171--196
+Underfull \hbox (badness 10000) in alignment at lines 176--201
 [][][] 
  []
 
 [5]
-Overfull \hbox (1.30994pt too wide) in paragraph at lines 249--250
+Overfull \hbox (1.30994pt too wide) in paragraph at lines 254--255
 [][]\T1/qpl/b/n/12 Definition 2.2.2. []\T1/qpl/m/n/12 (-20) Sup-pose we have a se-quence of real num-bers $\OML/zplm/m/i
-t/12 x[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 x[] []$|
+t/12 x[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 x[] []$
  []
 
 [6]
-Overfull \hbox (0.40721pt too wide) in paragraph at lines 273--274
+Overfull \hbox (0.40721pt too wide) in paragraph at lines 278--279
 \T1/qpl/b/n/12 Newton's met-hod \T1/qpl/m/n/12 (-20) (so-meti-mes also cal-led \T1/qpl/b/n/12 Newton-Raphson met-hod\T1/
-qpl/m/n/12 (-20) ),|
+qpl/m/n/12 (-20) ),
  []
 
-[7] [8] [9] [10] [11] [12] [13]
-Underfull \hbox (badness 10000) in alignment at lines 461--471
+[7] [8] [9] [10] [11]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 424.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [12] [13]
+Underfull \hbox (badness 10000) in alignment at lines 466--476
 [][][] 
  []
 
 [14] [15]
-Underfull \hbox (badness 10000) in alignment at lines 516--523
+Underfull \hbox (badness 10000) in alignment at lines 521--528
 [][][] 
  []
 
@@ -2095,22 +2105,22 @@ Underfull \hbox (badness 10000) in alignment at lines 516--523
 ]
 Chapter 3.
 
-Overfull \hbox (13.81113pt too wide) in paragraph at lines 550--551
+Overfull \hbox (13.81113pt too wide) in paragraph at lines 555--556
 \OML/zplm/m/it/12 z[]\OT1/zplm/m/n/12 )[](\OML/zplm/m/it/12 x \OMS/zplm/m/n/12   \OML/zplm/m/it/12 z[]\OT1/zplm/m/n/12 )
 [] [] (\OML/zplm/m/it/12 x \OMS/zplm/m/n/12   \OML/zplm/m/it/12 z[]\OT1/zplm/m/n/12 )[]\OML/zplm/m/it/12 g\OT1/zplm/m/n/
 12 (\OML/zplm/m/it/12 x\OT1/zplm/m/n/12 )$ \T1/qpl/m/n/12 (-20) fac-to-ri-za-tion of $\OML/zplm/m/it/12 f$ \T1/qpl/m/n/1
 2 (-20) such that $\OML/zplm/m/it/12 z[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 z[]\OT1/ppl/m/n/12 , [] , \OML/zplm/m/it/12 
-z[]$|
+z[]$
  []
 
 [19] [20]
-LaTeX Font Info:    Try loading font information for OMS+qpl on input line 592.
-LaTeX Font Info:    No file OMSqpl.fd. on input line 592.
+LaTeX Font Info:    Try loading font information for OMS+qpl on input line 597.
+LaTeX Font Info:    No file OMSqpl.fd. on input line 597.
 
 
 LaTeX Font Warning: Font shape `OMS/qpl/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 592.
+(Font)              for symbol `textbullet' on input line 597.
 
 
 Underfull \vbox (badness 2435) has occurred while \output is active []
@@ -2123,26 +2133,26 @@ duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.744 
+l.749 
       ] [27] [28] [29] [30
 
 
 ]
 Chapter 4.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 834.
+(Font)              scaled to size 10.42007pt on input line 839.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 834.
+(Font)              scaled to size 7.91925pt on input line 839.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 834.
+(Font)              scaled to size 6.25204pt on input line 839.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 834.
+(Font)              scaled to size 10.42007pt on input line 839.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 834.
+(Font)              scaled to size 7.91925pt on input line 839.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 834.
+(Font)              scaled to size 6.25204pt on input line 839.
 
-Overfull \hbox (1.91397pt too wide) in alignment at lines 838--846
+Overfull \hbox (1.91397pt too wide) in alignment at lines 843--851
 [][][][] 
  []
 
@@ -2150,7 +2160,7 @@ Overfull \hbox (1.91397pt too wide) in alignment at lines 838--846
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
-Underfull \hbox (badness 10000) in paragraph at lines 852--852
+Underfull \hbox (badness 10000) in paragraph at lines 857--857
 [][][][][][]$\T1/lmtt/m/n/10 https : / / docs . oracle . com / javase / 7 / docs / api / java / math / BigDecimal .
  []
 
@@ -2160,22 +2170,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 852--852
 ]
 Chapter 5.
 
-Overfull \hbox (55.45787pt too wide) in alignment at lines 898--907
+Overfull \hbox (4.82993pt too wide) in alignment at lines 903--912
 [][][][][] 
  []
 
 
-Overfull \hbox (55.45787pt too wide) in alignment at lines 913--922
+Overfull \hbox (4.82993pt too wide) in alignment at lines 918--927
 [][][][][] 
  []
 
 
-Overfull \hbox (55.45787pt too wide) in alignment at lines 928--937
+Overfull \hbox (4.82993pt too wide) in alignment at lines 933--942
 [][][][][] 
  []
 
 
-Overfull \hbox (55.45787pt too wide) in alignment at lines 943--952
+Overfull \hbox (4.82993pt too wide) in alignment at lines 948--957
 [][][][][] 
  []
 
@@ -2191,11 +2201,11 @@ Chapter 6.
 
 
 ] (thesis.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 976.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 976.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 983.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 983.
  (thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 976.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 976.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 983.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 983.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 4B94736A187477E3614C0E1B9322349C;1507.
 
@@ -2207,10 +2217,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46102 strings out of 493366
- 1004009 string characters out of 3137313
- 1572609 words of memory out of 3000000
- 48444 multiletter control sequences out of 15000+200000
+ 46103 strings out of 493366
+ 1004072 string characters out of 3137313
+ 1573510 words of memory out of 3000000
+ 48445 multiletter control sequences out of 15000+200000
  86319 words of font info for 157 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
  62i,13n,100p,1086b,4275s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2225,9 +2235,9 @@ ype1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 KTeX 2.9/fonts/type1/public/tex-gyre/qplb.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplr.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplri.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (58 pages, 419534 bytes).
+Output written on thesis.pdf (58 pages, 443179 bytes).
 PDF statistics:
- 729 PDF objects out of 1000 (max. 8388607)
+ 735 PDF objects out of 1000 (max. 8388607)
  204 named destinations out of 1000 (max. 500000)
  23247 words of extra memory for PDF output out of 24883 (max. 10000000)
 
