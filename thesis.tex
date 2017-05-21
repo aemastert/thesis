@@ -240,11 +240,11 @@ It is fairly straightforward to show that there is a root located between $1 < \
 
 The approximation of root on 14 decimal digits is
 \begin{align}
-      \alpha \doteq 1.31265975467417
+      \alpha \approx 1.31265975467417
 \end{align}
 The error of the final iteration is
 \begin{align}
-      |\alpha - x_{20}| \doteq 0.00000024532583
+      |\alpha - x_{20}| \approx 0.00000024532583
 \end{align}
 which is smaller than the required error bound ($0.000001$). Upon closer inspection, it can be noticed that the algorithm already found a solution with enough precision in an earlier iteration (for example $x_{19}$) and it may seem as the computation could have been stopped right then. However, this fact was not known beforehand, because there is no possibility to predict the accuracy in an earlier iteration during computation.
 
@@ -371,13 +371,13 @@ x_{n+1} &= x_{n} - \frac{(x_{n} - \alpha)^{m}g(x_{n})}{m(x_{n}-\alpha)^{m-1}g(x_
 &= \frac{x_{n}(mg(x_{n}) + (x_{n}-\alpha)g'(x_{n})) - (x_{n} - \alpha)g(x_{n})}{mg(x_{n}) + (x_{n}-\alpha)g'(x_{n})} \\
 &= \frac{x_{n}(m - 1)g(x_{n}) + x_{n}(x_{n}-\alpha)g'(x_{n}) + {\alpha}g(x_{n})}{mg(x_{n}) + (x_{n}-\alpha)g'(x_{n})}
 \end{align}
-which, as we get closer to the root, i.e. $x_{n} \doteq \alpha$, gives us
+which, as we get closer to the root, i.e. $x_{n} \approx \alpha$, gives us
 \begin{align}
-x_{n+1} &\doteq x_{n}\frac{(m - 1)}{m}+\frac{\alpha}{m}
+x_{n+1} &\approx x_{n}\frac{(m - 1)}{m}+\frac{\alpha}{m}
 \end{align}
 or put differently
 \begin{align}
-x_{n+1} &\doteq (x_{n}-\alpha)\frac{(m - 1)}{m}+\alpha
+x_{n+1} &\approx (x_{n}-\alpha)\frac{(m - 1)}{m}+\alpha
 \end{align}
 from which we can conclude
 \begin{align}
@@ -403,17 +403,17 @@ where $\xi_{n}$ being between $\alpha$ and $x_{n}$. Since $\alpha$ is the root o
 \begin{align}
 \alpha - x_{n} = \frac{-f(x_{n})}{f'(\xi_n)}.
 \end{align}
-Similarly, if $x_{n} < \alpha$, we arrive to the same formula. If $f'(x)$ is not changing rapidly between $x_{n}$ and $\alpha$, then $f'(\xi_{n}) \doteq f'(x_{n})$. Combining this with the definition of Newton's method we get
+Similarly, if $x_{n} < \alpha$, we arrive to the same formula. If $f'(x)$ is not changing rapidly between $x_{n}$ and $\alpha$, then $f'(\xi_{n}) \approx f'(x_{n})$. Combining this with the definition of Newton's method we get
 \begin{align}
-\alpha - x_{n} \doteq \frac{-f(x_{n})}{f'(x_{n})} = x_{n+1} - x_{n}.
+\alpha - x_{n} \approx \frac{-f(x_{n})}{f'(x_{n})} = x_{n+1} - x_{n}.
 \end{align}
 This gives us an absolute error estimate
 \begin{align}
-\alpha - x_{n} \doteq x_{n+1} - x_{n} \label{eq:newtabser}
+\alpha - x_{n} \approx x_{n+1} - x_{n} \label{eq:newtabser}
 \end{align}
 and a relative error estimate
 \begin{align}
-\frac{\alpha - x_{n}}{\alpha} \doteq \frac{x_{n+1} - x_{n}}{x_{n+1}}.\label{eq:newtreler}
+\frac{\alpha - x_{n}}{\alpha} \approx \frac{x_{n+1} - x_{n}}{x_{n+1}}.\label{eq:newtreler}
 \end{align}
 \paragraph{The Newton algorithm}
 Using the Newton formula \eqref{eq:newt} and the error estimates \eqref{eq:newtabser}, \eqref{eq:newtreler} provided above, we can create  Algorithm \ref{alg:newton}.
@@ -482,7 +482,7 @@ The initial interval is the same as in bisection algorithm to make results compa
   \label{tab:newt}
 \end{table}
 
-With correct approximation being $\alpha \doteq 1.31265975467417$, the error of the final iteration is $|\alpha - x_{5}|\doteq0.00000024532583$ which is within the allowed precision error.
+With correct approximation being $\alpha \approx 1.31265975467417$, the error of the final iteration is $|\alpha - x_{5}|\approx0.00000024532583$ which is within the allowed precision error.
 
 While the Newton's algorithm solves some of the deficiencies of the bisection method, some remain. The method might sometimes fail (when the first derivative of $x_{n}$ is zero) and the convergence for the roots of higher multiplicity is only linear.
 
@@ -968,7 +968,7 @@ From Tables \ref{tab:coa1}-\ref{tab:coa4} we can see that the difference between
 
 The computation time of VCA and Sturm's method could be further improved by providing a smaller search interval. On the other hand the computation of VAS could be reduced by providing a tighter bound.
 
-Based on the results, the VAS algorithm provides the best solution for root finding, as even the computation of roots of the highest degree with precision of 50 decimal digits barely exceeded one second, with average being \approx 0.7 seconds.
+Based on the results, the VAS algorithm provides the best solution for root finding, as even the computation of roots of the highest degree with precision of 50 decimal digits barely exceeded one second, with average being $\approx 0.7$ seconds.
 
 \chapter{Conclusion}
 In this thesis, we presented, implemented and compared several methods and algorithms for root approximation and the isolation of roots. First, we presented three algorithms for approximation of a single root and described each of them in detail. Then, we presented four methods for finding all roots of the polynomial, either by factoring the polynomial or isolating the roots. Later, we implemented all of the methods in Java. Finally, we concluded experiments and compared the efficiency of the algorithms.
@@ -985,7 +985,7 @@ For future work, the implemented methods can be further optimized, e.g. by compu
   \printindex
 
 %\appendix %% Start the appendices.
-%\chapter{An appendix}
-%Here you can insert the appendices of your thesis.
+\chapter{Appendix}
+The source code and Javadoc documentation can be found in the attachment.
 
 \end{document}

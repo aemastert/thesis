@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  21 MAY 2017 20:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  21 MAY 2017 22:35
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1984,48 +1984,48 @@ l.101 \begin{document}
 ] (thesis.toc
 
 LaTeX Font Warning: Font shape `T1/qpl/m/sl' in size <12> not available
-(Font)              Font shape `T1/qpl/m/it' tried instead on input line 9.
+(Font)              Font shape `T1/qpl/m/it' tried instead on input line 11.
 
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 9.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 11.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ppl.fd"
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )<<ot1.cmap>>
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 9.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlzplm.fd"
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )<<oml.cmap>>
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 9.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omszplm.fd"
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )<<oms.cmap>>
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 9.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omxzplm.fd"
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )<<omx.cmap>>
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 9.
+(Font)              scaled to size 12.50409pt on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 9.
+(Font)              scaled to size 9.37807pt on input line 11.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 9.
+(Font)              scaled to size 7.29405pt on input line 11.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 9.
+(Font)              scaled to size 12.50409pt on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 9.
+(Font)              scaled to size 9.37807pt on input line 11.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 9.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 9.
+(Font)              scaled to size 7.29405pt on input line 11.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1zplm.fd"
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -2052,36 +2052,36 @@ Chapter 1.
 [1
 
 
-] [2
+] [2]
+Chapter 2.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 129.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ufplmbb.fd"
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+) [3
 
 
 ]
-Chapter 2.
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 125.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ufplmbb.fd"
-File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [3]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 148.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 152.
 \c@example=\count382
  [4]
-Underfull \hbox (badness 10000) in alignment at lines 176--201
+Underfull \hbox (badness 10000) in alignment at lines 180--205
 [][][] 
  []
 
 [5]
-Overfull \hbox (1.30994pt too wide) in paragraph at lines 254--255
+Overfull \hbox (1.30994pt too wide) in paragraph at lines 258--259
 [][]\T1/qpl/b/n/12 Definition 2.2.2. []\T1/qpl/m/n/12 (-20) Sup-pose we have a se-quence of real num-bers $\OML/zplm/m/i
 t/12 x[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 x[] []$
  []
 
 [6]
-Overfull \hbox (0.40721pt too wide) in paragraph at lines 278--279
+Overfull \hbox (0.40721pt too wide) in paragraph at lines 282--283
 \T1/qpl/b/n/12 Newton's met-hod \T1/qpl/m/n/12 (-20) (so-meti-mes also cal-led \T1/qpl/b/n/12 Newton-Raphson met-hod\T1/
 qpl/m/n/12 (-20) ),
  []
 
 [7] [8] [9] [10] [11]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 424.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 428.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -2090,12 +2090,12 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [12] [13]
-Underfull \hbox (badness 10000) in alignment at lines 466--476
+Underfull \hbox (badness 10000) in alignment at lines 470--480
 [][][] 
  []
 
 [14] [15]
-Underfull \hbox (badness 10000) in alignment at lines 521--528
+Underfull \hbox (badness 10000) in alignment at lines 525--532
 [][][] 
  []
 
@@ -2105,7 +2105,7 @@ Underfull \hbox (badness 10000) in alignment at lines 521--528
 ]
 Chapter 3.
 
-Overfull \hbox (13.81113pt too wide) in paragraph at lines 555--556
+Overfull \hbox (13.81113pt too wide) in paragraph at lines 559--560
 \OML/zplm/m/it/12 z[]\OT1/zplm/m/n/12 )[](\OML/zplm/m/it/12 x \OMS/zplm/m/n/12   \OML/zplm/m/it/12 z[]\OT1/zplm/m/n/12 )
 [] [] (\OML/zplm/m/it/12 x \OMS/zplm/m/n/12   \OML/zplm/m/it/12 z[]\OT1/zplm/m/n/12 )[]\OML/zplm/m/it/12 g\OT1/zplm/m/n/
 12 (\OML/zplm/m/it/12 x\OT1/zplm/m/n/12 )$ \T1/qpl/m/n/12 (-20) fac-to-ri-za-tion of $\OML/zplm/m/it/12 f$ \T1/qpl/m/n/1
@@ -2114,13 +2114,13 @@ z[]$
  []
 
 [19] [20]
-LaTeX Font Info:    Try loading font information for OMS+qpl on input line 597.
-LaTeX Font Info:    No file OMSqpl.fd. on input line 597.
+LaTeX Font Info:    Try loading font information for OMS+qpl on input line 601.
+LaTeX Font Info:    No file OMSqpl.fd. on input line 601.
 
 
 LaTeX Font Warning: Font shape `OMS/qpl/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 597.
+(Font)              for symbol `textbullet' on input line 601.
 
 
 Underfull \vbox (badness 2435) has occurred while \output is active []
@@ -2133,26 +2133,26 @@ duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.749 
+l.753 
       ] [27] [28] [29] [30
 
 
 ]
 Chapter 4.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 839.
+(Font)              scaled to size 10.42007pt on input line 843.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 839.
+(Font)              scaled to size 7.91925pt on input line 843.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 839.
+(Font)              scaled to size 6.25204pt on input line 843.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 839.
+(Font)              scaled to size 10.42007pt on input line 843.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 839.
+(Font)              scaled to size 7.91925pt on input line 843.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 839.
+(Font)              scaled to size 6.25204pt on input line 843.
 
-Overfull \hbox (1.91397pt too wide) in alignment at lines 843--851
+Overfull \hbox (1.91397pt too wide) in alignment at lines 847--855
 [][][][] 
  []
 
@@ -2160,7 +2160,7 @@ Overfull \hbox (1.91397pt too wide) in alignment at lines 843--851
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
-Underfull \hbox (badness 10000) in paragraph at lines 857--857
+Underfull \hbox (badness 10000) in paragraph at lines 861--861
 [][][][][][]$\T1/lmtt/m/n/10 https : / / docs . oracle . com / javase / 7 / docs / api / java / math / BigDecimal .
  []
 
@@ -2170,22 +2170,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 857--857
 ]
 Chapter 5.
 
-Overfull \hbox (4.82993pt too wide) in alignment at lines 903--912
+Overfull \hbox (4.82993pt too wide) in alignment at lines 907--916
 [][][][][] 
  []
 
 
-Overfull \hbox (4.82993pt too wide) in alignment at lines 918--927
+Overfull \hbox (4.82993pt too wide) in alignment at lines 922--931
 [][][][][] 
  []
 
 
-Overfull \hbox (4.82993pt too wide) in alignment at lines 933--942
+Overfull \hbox (4.82993pt too wide) in alignment at lines 937--946
 [][][][][] 
  []
 
 
-Overfull \hbox (4.82993pt too wide) in alignment at lines 948--957
+Overfull \hbox (4.82993pt too wide) in alignment at lines 952--961
 [][][][][] 
  []
 
@@ -2201,14 +2201,25 @@ Chapter 6.
 
 
 ] (thesis.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 983.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 983.
- (thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 983.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 983.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4B94736A187477E3614C0E1B9322349C;1507.
+Chapter 7.
+[45
 
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 991.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 991.
+ (thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 991.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 991.
+
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 936F9D54AD531093A919C6DCB0EED997;1507
+(rerunfilecheck)             After:  6FDF1E5C301F02C2072E8D48DF686E3F;1596.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2217,13 +2228,13 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46103 strings out of 493366
- 1004072 string characters out of 3137313
- 1573510 words of memory out of 3000000
+ 46108 strings out of 493366
+ 1004121 string characters out of 3137313
+ 1573554 words of memory out of 3000000
  48445 multiletter control sequences out of 15000+200000
  86319 words of font info for 157 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
- 62i,13n,100p,1086b,4275s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,13n,100p,1332b,4275s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/bas
 e/8r.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/e
 nc/dvips/tex-gyre/q-ec-sc.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program F
@@ -2235,9 +2246,9 @@ ype1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 KTeX 2.9/fonts/type1/public/tex-gyre/qplb.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplr.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplri.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (58 pages, 443179 bytes).
+Output written on thesis.pdf (59 pages, 448354 bytes).
 PDF statistics:
- 735 PDF objects out of 1000 (max. 8388607)
- 204 named destinations out of 1000 (max. 500000)
+ 747 PDF objects out of 1000 (max. 8388607)
+ 209 named destinations out of 1000 (max. 500000)
  23247 words of extra memory for PDF output out of 24883 (max. 10000000)
 
