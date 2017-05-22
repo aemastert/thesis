@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=thesis.tex
 
 [Frame0_View0,0]
-TopLine=1204
-Cursor=68732
+TopLine=1254
+Cursor=71209
 
 [Frame1]
 Flags=0
@@ -53,8 +53,8 @@ Class=BibTeXView
 Document=bibliothesis.bib
 
 [Frame2_View0,0]
-TopLine=290
-Cursor=8541
+TopLine=319
+Cursor=9937
 
 [SessionInfo]
 FrameCount=3

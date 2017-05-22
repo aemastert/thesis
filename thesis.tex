@@ -103,7 +103,7 @@
 \newtheorem{theorem}{Theorem}[section] %% The numbering of theorems will be reset after each section.
 \newtheorem{corollary}[theorem]{Corollary}
 \chapter{Introduction}
-Finding the roots of polynomials is one of the oldest problems in mathematics. Over the centuries, many mathematicians pushed the boundaries on solving polynomials and algebraic equations including Ren{\'e} Descartes in his book \emph{La G{\'e}om{\'e}trie} \ref{descart} and Isaac Newton in \emph{De analysi per aequationes numero terminorum infinitas} and his many other publications. The advancement hasn't stopped and new discoveries and improvements are being made even in the present. In the past few decades, the technology has advanced rapidly, which allows us to implement these methods and use them to find roots of polynomials of very high degree. 
+Finding the roots of polynomials is one of the oldest problems in mathematics. Over the centuries, many mathematicians pushed the boundaries on solving polynomials and algebraic equations including Ren{\'e} Descartes in his book \emph{La G{\'e}om{\'e}trie} \parencite{descart} and Isaac Newton in \emph{De analysi per aequationes numero terminorum infinitas} and his many other publications. The advancement hasn't stopped and new discoveries and improvements are being made even in the present. In the past few decades, the technology has advanced rapidly, which allows us to implement these methods and use them to find roots of polynomials of very high degree. 
 
 Polynomials and root finding have many uses not only in mathematics, but in many other areas, including physics and computer science. One of the uses of polynomials can be found in the probabilistic model checker \emph{PRISM} \parencite{KNP11}. PRISM provides model checking for several types of probabilistic models including, but not limited to, discrete-time and continuous-time Markov chains and Markov decision processes \parencite{KNP11}. PRISM is open source software, released under the GNU General Public License and thus there exist several branches of the program. One of the branches, fdCTMC PRISM, which stands for fixed-delay Continuous-time Markov chains, implements algorithm \emph{Efficient Timeout Synthesis in Fixed-Delay CTMC Using Policy Iteration} \parencite{DBLP:conf/mascots/KorenciakKR16}, which requires to find the local extremes on an interval of a polynomial function. This can be done by differentiating the function and finding its roots. However, the current implementation relies on an external program to compute the roots. Thus the goal of this thesis is to create a library, which can be later used in the synthesis algorithm, that provides one or more time efficient algorithms, which solve the polynomials of high degree, with an arbitrary precision.
 
@@ -364,7 +364,10 @@ Secondly, for some polynomial functions, the method may enter an infinite cycle.
 Thirdly, if the initial guess is not close enough or the first derivative does not behave well in the neighbourhood of a specific root, the method may skip this root as the tangent line will intercept the $x$-axis close to another root. This may pose a problem, if someone is looking for a root located specifically in an interval $[a,b]$, but does not pose a problem if one is simply looking for any root of a polynomial function.
 %obrazok, example, neskor sa vyriesi
 
-Lastly, if the root (of the polynomial function) has a multiplicity greater than one (i.e. the first derivative of the root is also zero), then the convergence to this root is only linear.
+Lastly, if the root (of the polynomial function) has a multiplicity greater than one (i.e. the first derivative of the polynomial function at the root is also zero), then the convergence to this root is only linear.
+\begin{theorem}
+If the root of a polynomial function $f(x)$ has a multiplicity greater than one, then the convergence to this root is only linear.
+\end{theorem}
 \begin{proof}
 Let $f(x)$ be a polynomial function with a root $\alpha$ of multiplicity $m > 1$, i.e. $f(x) = (x-\alpha)^{m}g(x)$. Assume that $x_{0}$ is sufficiently close to $\alpha$ as stated in Theorem \ref{rootApproxSpeed}. Then
 \begin{align}
@@ -543,7 +546,7 @@ While the previous chapter focused on getting better approximation of a single r
 \section{Ruffini-Horner's method}
 The \textbf{Ruffini-Horner's} method relies on what is known as \textit{fundamental theorem of algebra}.
 \begin{theorem}[Fundamental theorem of algebra \parencite{fundam}]
-Given any positive integer $n \geq 1$ and any univariate polynomial $f$ with complex coefficients such that the degree of $f$ is $n$, the polynomial $f$ has at least 1 complex root.
+Given any positive integer $n \geq 1$ and any univariate polynomial $f$ with complex coefficients such that the degree of $f$ is $n$, the polynomial $f$ has at least one complex root.
 \end{theorem}
 
 This theorem has few important corollaries.
@@ -551,14 +554,14 @@ This theorem has few important corollaries.
 Every univariate polynomial $f$ of degree $n \geq 1$ has exactly $n$ complex roots.
 \end{corollary}
 \begin{corollary}
-Any univariate polynomial $f$ of degree $n \geq 1$ can be factored as $f=(x-z_{1})(x-z_{2})\ldots(x-z_{n})$, where $z_{1},\ldots,z_{n}$ are the complex roots of $f$.
+Any univariate polynomial $f$ of degree $n \geq 1$ can be factored as $f=(x-z_{1})(x-z_{2})\ldots(x-z_{n})$, where $z_{1},\ldots,$$ z_{n}$ are the complex roots of $f$.
 \end{corollary}
 \begin{corollary}
 \label{coro}
 Any real univariate polynomial $f$ of degree $n \geq 1$ can be factored as $f=(x-z_{1})(x-z_{2})\ldots(x-z_{m})g(x)$, where $z_{1},\ldots,z_{m}$ are the real roots of $f$, $m\leq n$ and $g(x)$ is irreducible in $\R$.
 \end{corollary}
 \begin{definition}
-Let $f$ be a real univariate polynomial and $f=(x-z_{1})^{k_{1}}(x-z_{2})^{k_{2}}\ldots(x-z_{m})^{k_{m}}g(x)$ factorization of $f$ such that $z_{1}, z_{2},\ldots, z_{m}$ are pairwise distinct, $m\leq n$, $\forall 1\leq{i}\leq{m}: k_{i}\leq{1}$ and $g(x)$ is irreducible in $\R$. Then if $k_{i} > 1$, $i \leq m$, we say that $z_{i}$ is \emph{multiple root} and if $k_{i} = 1$, we say that $z_{i}$ is \emph{simple root}.
+Let $f$ be a real univariate polynomial and $f=(x-z_{1})^{k_{1}}(x-z_{2})^{k_{2}}\ldots(x-z_{m})^{k_{m}}g(x)$ factorization of $f$ such that $z_{1}, z_{2},\ldots,$ $z_{m}$ are pairwise distinct, $m\leq n$, $\forall 1\leq{i}\leq{m}: k_{i}\leq{1}$ and $g(x)$ is irreducible in $\R$. Then if $k_{i} > 1$, $i \leq m$, we say that $z_{i}$ is \emph{multiple root} and if $k_{i} = 1$, we say that $z_{i}$ is \emph{simple root}.
 \end{definition}
 The implication of Corollary \ref{coro} is that we can start by finding any root $\alpha$ of $f(x)$, then divide $f(x)$ by factor $(x-\alpha)$ to obtain $f_{1}(x)$ such that $f(x)=(x-\alpha)f_{1}(x)$ and repeat the process for $f_{1}(x)$ until we reach $f_{m}(x)$ such that it is irreducible in $\R$ (i.e. has no real roots).
 
@@ -617,7 +620,7 @@ The Sturm chain of $f$ can be created by applying Euclid's algorithm to $f(x)$ a
  f_{m}(x)&=-r(f_{m-2},f_{m-1})=f_{m-1}(x)q_{m-2}(x)-f_{1}(x), \\
 0&=-r(f_{m-1},f_{m}).
 \end{align*}
-The $r(f_{i},f_{i+1})$ represents the remainder and the $q_{i}$ represents the quotient of the polynomial long division $\frac{f_{i}}{f_{i+1}}=q_{i}(x)f_{i}(x)+r(f_{i},f_{i+1})$ for every $0 \leq i < m$. As the degree of the remainder $deg(r(f_{i},f_{i+1}))$ is at most $deg(f_{i+1})-1$, the maximum length of the chain is $m \leq deg(f_{0})$.
+The $r(f_{i},f_{i+1})$ represents the remainder and the $q_{i}$ represents the quotient of the polynomial long division ${f_{i}(x)}=q_{i}(x)f_{i+1}(x)+r(f_{i},f_{i+1})$ for every $0 \leq i < m$. As the degree of the remainder $deg(r(f_{i},f_{i+1}))$ is at most $deg(f_{i+1})-1$, the maximum length of the chain is $m \leq deg(f_{0})$.
 
 \begin{definition}\label{def:signvar}
 Let $\lambda_{0}, \lambda_{1}, \lambda_{2},\ldots$ be a finite or infinite sequence of real numbers. Suppose $a < b$; $a, b\in\N$ and the following condition holds
@@ -749,7 +752,7 @@ represent the finite continuous fraction that substitutes $x$ in $f(x)$ such tha
 \label{eq:mobius2}
 g(x)=(cx+d)^{deg(f)}f\left(\frac{ax+b}{cx+d}\right)
 \end{equation} with one sign change. Then the positive root of $f(x)$ (located in $(0,\infty)$) corresponds to the root of $g(x)$ in $(min(\frac{a}{c},\frac{b}{d}), max(\frac{a}{c},\frac{b}{d}))$. Thus, to isolate the positive roots, one needs to compute $a,b,c,d$ such that they result in the polynomial \eqref{eq:mobius2} with one sign change.
-The Descartes' rule of signs \parencite{descart}, states that the number of positive roots of $f(x)$ is equal to the number of sign changes of the coefficients $\sigma(f)$ or less than it by an even number. We can use this simple test to determine (line 2 and 4) if the $f$ has exactly zero or one positive root or if it has more. If there are more, we first transform the polynomial by moving the lowest positive closer to 0 and then we split the polynomial into two transformed ones - the first representing the interval between $(0,1)$ and the second representing the interval $(1,\infty)$. Every time we perform substitution, we perform corresponding substitution on M. This allows us to retroactively compute the corresponding interval in the original polynomial.
+The Descartes' rule of signs \parencite{descart}, states that the number of positive roots of $f(x)$ is equal to the number of sign changes of the coefficients $\sigma(f)$ or less than it by an even number. We can use this simple test to determine (line 2 and 4) if the $f$ has exactly zero or one positive root or if it has more. If there are more, we first transform the polynomial by moving the lowest positive closer to 0 and then we split the polynomial into two transformed ones - the first representing the interval between $(0,1)$ and the second representing the interval $(1,\infty)$. Every time we perform a substitution on $f$, we perform the corresponding substitution on M. This allows us to retroactively compute the corresponding interval in the original polynomial.
 
 Thus Algorithm \ref{alg:vas} returns intervals such that each contains exactly one positive root. To isolate the negative intervals, we simply substitute $x\leftarrow -x$, execute the algorithm again and then unite the sets of intervals. Then we can use one of the approximation algorithms (e.g. Newton's algorithm (\ref{alg:newton})) and approximate the root in every interval.
 
@@ -799,7 +802,7 @@ The Budan's test \parencite{budan} is a version of the test \eqref{eq:a_b_test} 
 \end{equation}
 If $\sigma_{\left(0,1\right)}(f)$ is equal to 0, there is no root located within $(0,1)$, while if $\sigma_{\left(0,1\right)}(f) = 1$, there is precisely 1 root. Any number higher than 1 gives upper bound on the roots located within the interval $(0,1)$ such that the exact number is equal to the $\sigma_{\left(0,1\right)}(f)$ or less by an even number (multiplicities counted), meaning if the upper bound is equal to even number, they may be zero roots in the interval.
 
-The first step is then to make sure that all roots of $f(x)$ we want to isolate are within the entered interval $(a,b)$. To do this, we first perform a substitution $x\leftarrow x+a$ on $f$ to obtain $f_{a}$. Then we perform a substitution $x\leftarrow x*(b-a)$ on $f_{a}$ to obtain $f_{ab}$. This gives us a bijection of the interval $(a,b)$ of $f$ on $(0,1)$ of $f_{ab}$. We use this as the initial input of \ref{alg:vca}, along with $a, b$.
+The first step is then to make sure that all roots of $f(x)$ we want to isolate are within the entered interval $(a,b)$. To do this, we first perform a substitution $x\leftarrow x+a$ on $f$ to obtain $f_{a}$. Then we perform a substitution $x\leftarrow x\cdot(b-a)$ on $f_{a}$ to obtain $f_{ab}$. This gives us a bijection of the interval $(a,b)$ of $f$ on $(0,1)$ of $f_{ab}$. We use this as the initial input of \ref{alg:vca}, along with $a, b$.
 
 Afterwards we perform the Budan's test \eqref{eq:0_1_test} on the transformed polynomial $f_{ab}$. If there is 0 or 1 root, we can finish the search. Otherwise we split the $f_{ab}$ into two polynomials, $f_{0\frac{1}{2}}$ and $f_{\frac{1}{2}1}$ such that there is bijection between the intervals $(0,\frac{1}{2})$ and $(\frac{1}{2},1)$ of $f_{ab}$ and the intervals $(0,1)$ of $f_{0\frac{1}{2}}$ and $f_{\frac{1}{2}1}$, respectively. Then we can use these new polynomials recursively.
 
@@ -839,7 +842,7 @@ Since the second solution is much simpler and in line with the fact that we are 
 \end{algorithm}
 
 \chapter{Implementation}
-All of the methods presented are implemented in the programming language Java. The main reason for this choice is that the extension of the probabilistic model checker Prism \parencite{KNP11} - Prism-fdCTMC (currently under development) is implemented in Java as well. The fdCTMC branch contains timeout synthesis \parencite{DBLP:conf/mascots/KorenciakKR16} which requires finding local extremes of polynomial function within an interval. This problem then reduces to finding the roots of the first derivative of the polynomial. In the current implementation, the computation of the roots is done externally, either by connecting to a remote server, which computes the roots via Maple or by outputting Maple input data on screen (which requires the user to have a copy of Maple installed). This is quite impractical and thus my implementation can be used to replace the current one, so that the user doesn't have to rely on the internet connection, the stability of server or ownership of an external program.
+All of the methods presented are implemented in the programming language Java. The main reason for this choice is that the extension of the probabilistic model checker Prism \parencite{KNP11} - Prism-fdCTMC (currently under development) is implemented in Java as well. The fdCTMC branch contains timeout synthesis \parencite{DBLP:conf/mascots/KorenciakKR16} which requires finding local extremes of polynomial function within an interval. This problem then reduces to finding the roots of the first derivative of the polynomial. In the current implementation, the computation of the roots is done externally, either by connecting to a remote server, which computes the roots via Maple or by outputting Maple input data on screen (which requires the user to have a copy of Maple installed). This is quite impractical and thus our implementation can be used to replace the current one, so that the user doesn't have to rely on the internet connection, the stability of server or ownership of an external program.
 
 \section{State of the art}
 After the choice of programming language fell on Java, I first tried to find a mathematical library that already contains root finding of polynomials and supports arbitrary precision. The most notable mathematical or scientific libraries we found were Commons Math: The Apache Commons Mathematics Library\footnote{\url{http://commons.apache.org/proper/commons-math/}}, Jsience\footnote{\url{http://jscience.org}} and Efficient Java Matrix Library\footnote{\url{http://ejml.org/wiki/index.php?title=Main_Page}}. The criteria that the libraries needed to satisfy were arbitrary precision, root finding of polynomials and preferably representation of polynomials (with basic operations). As Figure \ref{tab:sota} shows, none of the libraries satisfied all criteria and thus the choice was made to create an implementation which satisfies all of them.
@@ -862,11 +865,11 @@ After the choice of programming language fell on Java, I first tried to find a m
 \section{PolynomialRoots implementation}
 The decimal numbers are represented by the class \texttt{BigDecimal}\footnote{\url{https://docs.oracle.com/javase/7/docs/api/java/math/BigDecimal.html}}, which allows an arbitrary precision. A \texttt{BigDecimal} consists of an arbitrary precision integer unscaled value and a 32-bit integer scale. The value of the number represented by \texttt{BigDecimal} is unscaled value multiplied by $10^{-scale}$.
 
-The \texttt{BigDecimal} class provides basic mathematical operations and operations for comparison, rounding and manipulation of scale. With almost every division made, a scale and a type of rounding must be associated. In my implementation, we chose standard rounding (i.e. $<.5$ is rounded down, $\geq.5$ is rounded up) and the scale was chosen as scale of $\varepsilon$ (if the algorithm contained one).
+The \texttt{BigDecimal} class provides basic mathematical operations and operations for comparison, rounding and manipulation of scale. With almost every division made, a scale and a type of rounding must be associated. In our implementation, we chose standard rounding (i.e. $<.5$ is rounded down, $\geq.5$ is rounded up) and the scale was chosen as scale of $\varepsilon$ (if the algorithm contained one).
 
 To represent the polynomials, we created the class \texttt{Polynomial}. The class provides basic operations with polynomials, such as addition or multiplication, or computing the first derivative. Full information can be found in the Javadoc documentation.
 
-The implemented methods can be found in the class \texttt{PolynomialRo}-\texttt{otFinding}. During the implementation, I tried to avoid the duplication of code by reusing the methods we implemented. E.g. since the \texttt{BigDecimal} class doesn't provide $\sqrt[n]{a}$, where $a$ is \texttt{BigDecimal}, we used Newton's algorithm to find the root of $x^{n}-a=0$, with starting point in $1$. Or to compute the square-free factorization of the polynomial, we used the Sturm's chain to find the $GCD$ of $f$ and $f'$ and subsequently used the polynomial long division to remove the $GCD$ factor from $f$.
+The implemented methods can be found in the class \texttt{PolynomialRo}-\texttt{otFinding}. During the implementation, we tried to avoid the duplication of code by reusing the methods we implemented. E.g. since the \texttt{BigDecimal} class doesn't provide $\sqrt[n]{a}$, where $a$ is \texttt{BigDecimal}, we used Newton's algorithm to find the root of $x^{n}-a=0$, with starting point in $1$. Or to compute the square-free factorization of the polynomial, we used the Sturm's chain to find the $GCD$ of $f$ and $f'$ and subsequently used the polynomial long division to remove the $GCD$ factor from $f$.
 
 Also when possible, we tried to evaluate some expressions efficiently. E.g. the computing the Sturm's chain in Algorithm \ref{alg:rfs} can be done only once, by creating a class representing the chain instead of calling Algorithm \ref{alg:sturm} and computing the chain every time. Or when performing the Budan's test in Algorithm \ref{alg:vas}, instead of performing substitution $\frac{1}{1+x}$, expanding it and subsequently multiplying it by $(x+1)^{deg(f)}$, the more efficient way is to simply reverse the coefficients and perform substitution $(x+1)$.
 
@@ -1015,7 +1018,7 @@ Tables \ref{tab:coa3} and \ref{tab:coa4} compare the computation time of polynom
 \end{table}
 
 \FloatBarrier
-From Tables \ref{tab:coa1}-\ref{tab:coa4} we can see that the difference between Newton's and Halley's method is insignificant. The reason behind this is the characteristic of tested polynomials. For the smaller degrees (i.e. 34-67) VCA method (Algorithm \ref{alg:vca}) provides similar results to VAS method (Algorithm \ref{alg:vas}). However as the degree of polynomials rises, the difference between VCA and VAS starts to increase. Sturm's method proved to be the slowest one, by a large margin.
+From Tables \ref{tab:coa1}-\ref{tab:coa4} we can see that the difference between Newton's and Halley's method is insignificant. The reason behind this is the characteristic of the tested polynomials. For the smaller degrees (i.e. 34-67) VCA method (Algorithm \ref{alg:vca}) provides similar results to VAS method (Algorithm \ref{alg:vas}). However as the degree of polynomials rises, the difference between VCA and VAS starts to increase. Sturm's method proved to be the slowest one, by a large margin.
 
 The computation time of VCA and Sturm's method could be further improved by providing a smaller search interval. On the other hand the computation of VAS could be reduced by providing a tighter bound.
 

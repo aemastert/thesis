@@ -19,6 +19,26 @@
 
 \refsection{0}
   \sortlist[entry]{none/global/}
+    \entry{descart}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c2dad93fee909905f0caa92a7c0639ef}{%
+           family={Descartes},
+           familyi={D\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c2dad93fee909905f0caa92a7c0639ef}
+      \strng{fullhash}{c2dad93fee909905f0caa92a7c0639ef}
+      \strng{authornamehash}{c2dad93fee909905f0caa92a7c0639ef}
+      \strng{authorfullhash}{c2dad93fee909905f0caa92a7c0639ef}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{La Géométrie}
+      \field{year}{1637}
+      \field{dateera}{ce}
+    \endentry
     \entry{KNP11}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=c9a4f92593b05c9575b6990dd92124b6}{%
@@ -62,8 +82,8 @@
       \strng{authorfullhash}{1ec38626fb675e7b2ff87a6569f7d1d2}
       \strng{editornamehash}{88f3144ffb155365398e224917bbd910}
       \strng{editorfullhash}{88f3144ffb155365398e224917bbd910}
-      \field{sortinit}{1}
-      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proc. 23rd International Conference on Computer Aided Verification (CAV'11)}
@@ -99,8 +119,8 @@
       \strng{fullhash}{822d1aaf1d0e38adc631895349a739f8}
       \strng{authornamehash}{822d1aaf1d0e38adc631895349a739f8}
       \strng{authorfullhash}{822d1aaf1d0e38adc631895349a739f8}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{24th {IEEE} International Symposium on Modeling, Analysis and Simulation of Computer and Telecommunication Systems, {MASCOTS} 2016, London, United Kingdom, September 19-21, 2016}
@@ -113,7 +133,7 @@
       \verb 10.1109/MASCOTS.2016.34
       \endverb
       \verb{url}
-      \verb %5Curl%7Bhttp://dx.doi.org/10.1109/MASCOTS.2016.34%7D
+      \verb http://dx.doi.org/10.1109/MASCOTS.2016.34
       \endverb
     \endentry
     \entry{polynomialsChina}{book}{}
@@ -144,8 +164,8 @@
       \strng{fullhash}{589e98f26cec3738817b2871606e09a5}
       \strng{authornamehash}{589e98f26cec3738817b2871606e09a5}
       \strng{authorfullhash}{589e98f26cec3738817b2871606e09a5}
-      \field{sortinit}{4}
-      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{962-209-271-3}
@@ -173,8 +193,8 @@
       \strng{fullhash}{2fa71b1c7a777506fd7d0f26ba04a7ff}
       \strng{authornamehash}{2fa71b1c7a777506fd7d0f26ba04a7ff}
       \strng{authorfullhash}{2fa71b1c7a777506fd7d0f26ba04a7ff}
-      \field{sortinit}{5}
-      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{sortinit}{6}
+      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{4}
@@ -203,8 +223,8 @@
       \strng{fullhash}{76fc1513e24e5983e497b539a1eb6020}
       \strng{authornamehash}{76fc1513e24e5983e497b539a1eb6020}
       \strng{authorfullhash}{76fc1513e24e5983e497b539a1eb6020}
-      \field{sortinit}{6}
-      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{sortinit}{7}
+      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780521288828}
@@ -233,8 +253,8 @@
       \strng{fullhash}{d84427f9eae8ed3d3beace6296493759}
       \strng{authornamehash}{d84427f9eae8ed3d3beace6296493759}
       \strng{authorfullhash}{d84427f9eae8ed3d3beace6296493759}
-      \field{sortinit}{7}
-      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{endyear}{2014}
@@ -244,7 +264,7 @@
       \field{enddateera}{ce}
       \field{dateera}{ce}
       \verb{url}
-      \verb %5Curl%7Bhttps://math.berkeley.edu/~kmill/math1afa2014/poly.pdf%7D
+      \verb https://math.berkeley.edu/~kmill/math1afa2014/poly.pdf
       \endverb
     \endentry
     \entry{rootApproxMeth}{book}{}
@@ -265,8 +285,8 @@
       \strng{fullhash}{1aee766019798cc6113a3dcb8f90e0d9}
       \strng{authornamehash}{1aee766019798cc6113a3dcb8f90e0d9}
       \strng{authorfullhash}{1aee766019798cc6113a3dcb8f90e0d9}
-      \field{sortinit}{8}
-      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{sortinit}{9}
+      \field{sortinithash}{2999ebab86052e6d71b434385f8b4ed2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -345,7 +365,7 @@
       \field{pages}{417\bibrangedash 426}
       \range{pages}{10}
       \verb{url}
-      \verb %5Curl%7Bhttp://www.jstor.org/stable/2975033%7D
+      \verb http://www.jstor.org/stable/2975033
       \endverb
     \endentry
     \entry{halleyCnvg}{online}{}
@@ -369,7 +389,7 @@
       \field{year}{2003}
       \field{dateera}{ce}
       \verb{url}
-      \verb %5Curl%7Bhttp://mathfaculty.fullerton.edu/mathews/n2003/Halley'sMethodProof.html%7D
+      \verb http://mathfaculty.fullerton.edu/mathews/n2003/Halley'sMethodProof.html
       \endverb
     \endentry
     \entry{10.2307/2321760}{article}{}
@@ -400,7 +420,7 @@
       \field{pages}{530\bibrangedash 536}
       \range{pages}{7}
       \verb{url}
-      \verb %5Curl%7Bhttp://www.jstor.org/stable/2321760%7D
+      \verb http://www.jstor.org/stable/2321760
       \endverb
     \endentry
     \entry{fundam}{book}{}
@@ -442,8 +462,8 @@
       \strng{fullhash}{f7470d4b0e1ac5c8b0a7e6b83ca3d1a2}
       \strng{authornamehash}{f7470d4b0e1ac5c8b0a7e6b83ca3d1a2}
       \strng{authorfullhash}{f7470d4b0e1ac5c8b0a7e6b83ca3d1a2}
-      \field{sortinit}{1}
-      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0217-2976}
@@ -455,7 +475,7 @@
       \field{pages}{30\bibrangedash 37}
       \range{pages}{8}
       \verb{url}
-      \verb %5Curl%7Bhttps://eprints.soton.ac.uk/168861/1/FLH_article_on_polynomial_division.pdf%7D
+      \verb https://eprints.soton.ac.uk/168861/1/FLH_article_on_polynomial_division.pdf
       \endverb
     \endentry
     \entry{sturm}{article}{}
@@ -509,7 +529,7 @@
       \field{year}{2010}
       \field{dateera}{ce}
       \verb{url}
-      \verb %5Curl%7Bhttps://www.e-ce.uth.gr/cced/wp-content/uploads/formidable/phd_thesis_vigklas.pdf%7D
+      \verb https://www.e-ce.uth.gr/cced/wp-content/uploads/formidable/phd_thesis_vigklas.pdf
       \endverb
     \endentry
     \entry{sturmGeneral}{online}{}
@@ -533,7 +553,7 @@
       \field{year}{2013}
       \field{dateera}{ce}
       \verb{url}
-      \verb %5Curl%7Bhttp://web.math.ucsb.edu/~padraic/mathcamp_2013/root_find_alg/Mathcamp_2013_Root-Finding_Algorithms_Day_2.pdf%7D
+      \verb http://web.math.ucsb.edu/~padraic/mathcamp_2013/root_find_alg/Mathcamp_2013_Root-Finding_Algorithms_Day_2.pdf
       \endverb
     \endentry
     \entry{vincentT1}{article}{}
@@ -558,7 +578,7 @@
       \field{pages}{1\bibrangedash 34}
       \range{pages}{34}
       \verb{url}
-      \verb %5Curl%7Bhttp://gallica.bnf.fr/ark:/12148/bpt6k57787134/f4.image.r=Agence%20Rol.langEN%7D
+      \verb http://gallica.bnf.fr/ark:/12148/bpt6k57787134/f4.image.r=Agence%20Rol.langEN
       \endverb
     \endentry
     \entry{vincentT2}{article}{}
@@ -640,7 +660,7 @@
       \field{pages}{179\bibrangedash 191}
       \range{pages}{13}
       \verb{url}
-      \verb %5Curl%7Bhttp://inf-server.inf.uth.gr/~akritas/Alessina_Galuzzi_b.pdf%7D
+      \verb http://inf-server.inf.uth.gr/~akritas/Alessina_Galuzzi_b.pdf
       \endverb
     \endentry
     \entry{vincentA}{article}{}
@@ -667,7 +687,7 @@
       \field{pages}{309\bibrangedash 325}
       \range{pages}{17}
       \verb{url}
-      \verb %5Curl%7Bhttps://link.springer.com/article/10.1007/s10958-010-9982-1%7D
+      \verb https://link.springer.com/article/10.1007/s10958-010-9982-1
       \endverb
     \endentry
     \entry{vas}{article}{}
@@ -687,8 +707,8 @@
       \strng{fullhash}{73c295794cc0957ccfaea47462c5d4dd}
       \strng{authornamehash}{73c295794cc0957ccfaea47462c5d4dd}
       \strng{authorfullhash}{73c295794cc0957ccfaea47462c5d4dd}
-      \field{sortinit}{2}
-      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nonlinear Analysis: Modelling and Control}
@@ -699,7 +719,7 @@
       \field{pages}{297\bibrangedash 304}
       \range{pages}{8}
       \verb{url}
-      \verb %5Curl%7Bhttp://www.lana.lt/journal/19/Akritas.pdf%7D
+      \verb http://www.lana.lt/journal/19/Akritas.pdf
       \endverb
     \endentry
     \entry{mobius}{article}{}
@@ -725,28 +745,8 @@
       \field{pages}{292\bibrangedash 310}
       \range{pages}{19}
       \verb{url}
-      \verb %5Curl%7Bhttps://people.mpi-inf.mpg.de/~mehlhorn/ftp/VikramContinuedFractions.pdf%7D
+      \verb https://people.mpi-inf.mpg.de/~mehlhorn/ftp/VikramContinuedFractions.pdf
       \endverb
-    \endentry
-    \entry{descart}{book}{}
-      \name{author}{1}{}{%
-        {{hash=c2dad93fee909905f0caa92a7c0639ef}{%
-           family={Descartes},
-           familyi={D\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{c2dad93fee909905f0caa92a7c0639ef}
-      \strng{fullhash}{c2dad93fee909905f0caa92a7c0639ef}
-      \strng{authornamehash}{c2dad93fee909905f0caa92a7c0639ef}
-      \strng{authorfullhash}{c2dad93fee909905f0caa92a7c0639ef}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{La Géométrie}
-      \field{year}{1637}
-      \field{dateera}{ce}
     \endentry
     \entry{vca}{article}{}
       \name{author}{2}{}{%
@@ -777,7 +777,7 @@
       \field{pages}{33\bibrangedash 50}
       \range{pages}{18}
       \verb{url}
-      \verb %5Curl%7Bhttp://www.sciencedirect.com/science/article/pii/S0377042703007271%7D
+      \verb http://www.sciencedirect.com/science/article/pii/S0377042703007271
       \endverb
     \endentry
     \entry{budan}{book}{}
@@ -817,8 +817,8 @@
       \strng{fullhash}{a073446b9663727075531a33d299e796}
       \strng{authornamehash}{a073446b9663727075531a33d299e796}
       \strng{authorfullhash}{a073446b9663727075531a33d299e796}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Tohoku Mathematical Journal}
@@ -828,7 +828,7 @@
       \field{pages}{119\bibrangedash 127}
       \range{pages}{9}
       \verb{url}
-      \verb %5Curl%7Bhttps://www.jstage.jst.go.jp/article/tmj1911/11/0/11_0_119/_pdf%7D
+      \verb https://www.jstage.jst.go.jp/article/tmj1911/11/0/11_0_119/_pdf
       \endverb
     \endentry
   \endsortlist
