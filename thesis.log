@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  22 MAY 2017 10:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  22 MAY 2017 10:49
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -2229,7 +2229,7 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 Here is how much of TeX's memory you used:
  46196 strings out of 493366
  1006186 string characters out of 3137313
- 1572996 words of memory out of 3000000
+ 1572899 words of memory out of 3000000
  48534 multiletter control sequences out of 15000+200000
  86019 words of font info for 156 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
@@ -2245,7 +2245,7 @@ ype1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 KTeX 2.9/fonts/type1/public/tex-gyre/qplb.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplr.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplri.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (59 pages, 455765 bytes).
+Output written on thesis.pdf (59 pages, 455758 bytes).
 PDF statistics:
  762 PDF objects out of 1000 (max. 8388607)
  212 named destinations out of 1000 (max. 500000)
