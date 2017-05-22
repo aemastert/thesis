@@ -52,7 +52,7 @@
     TeXtitle      = {Root Isolation of High-Degree Polynomials},
     keywords      = {polynomials, high-degree, root isolation, root finding, arbitrary precision, root approximation},
     TeXkeywords   = {polynomials, high-degree, root isolation, root finding, arbitrary precision, root approximation},
-    abstract      = {Solving polynomials is one of the oldest mathematical problems. Over the centuries, there have been many discoveries which led to fast and efficient root finding methods. With the progress of technology, we are now able to solve high degree polynomials in a very short time, using these well known algorithms. In this thesis we present methods for finding root mainly using numerical approximation. We also implement these methods in programming language Java. Lastly, we compare the implemented methods by solving a set of polynomials and comparing computation time. },
+    abstract      = {Solving polynomials is one of the oldest mathematical problems. Over the centuries, there have been many discoveries which led to fast and efficient root finding methods. With the progress of technology, we are now able to solve high degree polynomials in a very short time, using these well known algorithms. In this thesis we present methods for finding a root mainly using numerical approximation. We also implement these methods in the programming language Java. Lastly, we compare the implemented methods by solving a set of polynomials and comparing the computation time. },
     thanks        = {I would like to thank my advisor RNDr. Vojt{\v e}ch {\v R}eh{\'a}k, Ph.D for his invaluable guidance, advice and patience during writing this thesis. I also want to thank {\v L}ubo{\v s} Koren{\v c}iak, for his helpful suggestions and advice.},
     bib           = bibliothesis.bib,
 }
@@ -103,9 +103,9 @@
 \newtheorem{theorem}{Theorem}[section] %% The numbering of theorems will be reset after each section.
 \newtheorem{corollary}[theorem]{Corollary}
 \chapter{Introduction}
-Finding the roots of polynomials is one of the oldest problems in mathematics. Over the centuries, many mathematicians pushed the boundaries on solving polynomials and algebraic equations including Ren{\'e} Descartes in his book \emph{La G{\'e}om{\'e}trie} and Isaac Newton in \emph{De analysi per aequationes numero terminorum infinitas} and his many other publications. The advancement hasn't stopped and new discoveries and improvements are being made even in the present. In the past few decades, the technology has advanced rapidly, which allows us to implement these methods and use them to find roots of polynomials of very high degree. 
+Finding the roots of polynomials is one of the oldest problems in mathematics. Over the centuries, many mathematicians pushed the boundaries on solving polynomials and algebraic equations including Ren{\'e} Descartes in his book \emph{La G{\'e}om{\'e}trie} \ref{descart} and Isaac Newton in \emph{De analysi per aequationes numero terminorum infinitas} and his many other publications. The advancement hasn't stopped and new discoveries and improvements are being made even in the present. In the past few decades, the technology has advanced rapidly, which allows us to implement these methods and use them to find roots of polynomials of very high degree. 
 
-Polynomials and root finding have many uses not only in mathematics, but in many other areas, including physics and computer science. One of the uses of polynomials is in the probabilistic model checker \emph{PRISM} \parencite{KNP11}. PRISM provides model checking for for several types of probabilistic models including, but not limited to discrete-time and continuous-time Markov chains and Markov decision processes \parencite{KNP11}. PRISM is open source, released under the GNU General Public License and thus there exist several branches of the program. One of the branches, fdCTMC PRISM, which stands for fixed-delay Continuous-time Markov chains implements algorithm \emph{Efficient Timeout Synthesis in Fixed-Delay CTMC Using Policy Iteration} \parencite{DBLP:conf/mascots/KorenciakKR16}, which requires to find a local extremes on an interval of a polynomial function. This can be done by differentiating the function and finding its roots. However, the current implementation relies on an external program to compute the roots. Thus the goal of this thesis is to create a library, which can be later used in the synthesis algorithm that provides a time efficient algorithm, which solves the polynomials of high degree, with arbitrary precision.
+Polynomials and root finding have many uses not only in mathematics, but in many other areas, including physics and computer science. One of the uses of polynomials can be found in the probabilistic model checker \emph{PRISM} \parencite{KNP11}. PRISM provides model checking for several types of probabilistic models including, but not limited to, discrete-time and continuous-time Markov chains and Markov decision processes \parencite{KNP11}. PRISM is open source software, released under the GNU General Public License and thus there exist several branches of the program. One of the branches, fdCTMC PRISM, which stands for fixed-delay Continuous-time Markov chains, implements algorithm \emph{Efficient Timeout Synthesis in Fixed-Delay CTMC Using Policy Iteration} \parencite{DBLP:conf/mascots/KorenciakKR16}, which requires to find the local extremes on an interval of a polynomial function. This can be done by differentiating the function and finding its roots. However, the current implementation relies on an external program to compute the roots. Thus the goal of this thesis is to create a library, which can be later used in the synthesis algorithm, that provides one or more time efficient algorithms, which solve the polynomials of high degree, with an arbitrary precision.
 
 \paragraph{Structure of the thesis}
 Chapter 2 introduces basic notions and we present three methods for a root approximation. Each of the methods is presented in a way to show how it was created. We show the convergence rate of each of the methods and describe their properties.
@@ -872,12 +872,12 @@ Also when possible, we tried to evaluate some expressions efficiently. E.g. the 
 
 The source code and Javadoc providing the full description of all implemented methods can be found in the attachment.
 
-Figure \ref{fig:classDia} shows the class diagram. $BD$ stands for \texttt{BigDecimal}, $poly$ has type \texttt{Polynomial} and $a, b, \varepsilon$ all have type \texttt{BigDecimal}.
+Figure \ref{fig:classDi} shows the class diagram. $BD$ stands for \texttt{BigDecimal}, $poly$ has type \texttt{Polynomial} and $a, b, \varepsilon$ all have type \texttt{BigDecimal}.
 
 \newpage
 \begin{figure}
-\label{fig:classDia}
 \caption{\textbf{Class diagram}}
+\label{fig:classDi}
 \begin{tikzpicture}
 \renewcommand{\umldrawcolor}{black}
 \renewcommand{\umlfillcolor}{white}

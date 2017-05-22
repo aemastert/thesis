@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  22 MAY 2017 06:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  22 MAY 2017 07:05
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1910,7 +1910,7 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/qpl/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 
-<fithesis/logo/mu/fithesis-fi.pdf, id=95, 291.0875pt x 292.09125pt>
+<fithesis/logo/mu/fithesis-fi.pdf, id=92, 291.0875pt x 292.09125pt>
 File: fithesis/logo/mu/fithesis-fi.pdf Graphic file (type pdf)
  <use fithesis/logo/mu/fithesis-fi.pdf>
 Package pdftex.def Info: fithesis/logo/mu/fithesis-fi.pdf used on input line 102.
@@ -1931,7 +1931,7 @@ l.102 \begin{document}
                        [2
 
 
-] <fithesis/logo/mu/fithesis-fi-color.pdf, id=109, 291.0875pt x 292.09125pt>
+] <fithesis/logo/mu/fithesis-fi-color.pdf, id=106, 291.0875pt x 292.09125pt>
 File: fithesis/logo/mu/fithesis-fi-color.pdf Graphic file (type pdf)
 
 <use fithesis/logo/mu/fithesis-fi-color.pdf>
@@ -2048,6 +2048,9 @@ Package microtype Info: Loading generic settings for font family
 \c@theorem=\count381
 
 Chapter 1.
+
+LaTeX Warning: Reference `descart' on page 1 undefined on input line 106.
+
 [1
 
 
@@ -2215,30 +2218,27 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1042.
  (thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1042.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1042.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: C693D8FBC0D557DBD17D88006D9A8B70;1571.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: 86EAC518735995F6E1A3CA447C2F1026;1615
-(rerunfilecheck)             After:  C693D8FBC0D557DBD17D88006D9A8B70;1571.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
 
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46192 strings out of 493366
- 1006141 string characters out of 3137313
- 1573745 words of memory out of 3000000
- 48532 multiletter control sequences out of 15000+200000
+ 46193 strings out of 493366
+ 1006149 string characters out of 3137313
+ 1572740 words of memory out of 3000000
+ 48533 multiletter control sequences out of 15000+200000
  86319 words of font info for 157 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
- 62i,13n,100p,1332b,4275s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,13n,100p,1365b,4275s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/bas
 e/8r.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/e
 nc/dvips/tex-gyre/q-ec-sc.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program F
@@ -2250,9 +2250,9 @@ ype1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 KTeX 2.9/fonts/type1/public/tex-gyre/qplb.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplr.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplri.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (59 pages, 454254 bytes).
+Output written on thesis.pdf (59 pages, 454005 bytes).
 PDF statistics:
- 759 PDF objects out of 1000 (max. 8388607)
+ 755 PDF objects out of 1000 (max. 8388607)
  209 named destinations out of 1000 (max. 500000)
- 23263 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 23255 words of extra memory for PDF output out of 24883 (max. 10000000)
 
