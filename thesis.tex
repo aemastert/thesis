@@ -1016,19 +1016,54 @@ Tables \ref{tab:coa3} and \ref{tab:coa4} compare the computation time of polynom
   \caption{Polynomials with degree 68-101, precision $\varepsilon = 10^{-50}$ (time in miliseconds)}
   \label{tab:coa4}
 \end{table}
-
 \FloatBarrier
 From Tables \ref{tab:coa1}-\ref{tab:coa4} we can see that the difference between Newton's and Halley's method is insignificant. The reason behind this is the characteristic of the tested polynomials. For the smaller degrees (i.e. 34-67) VCA method (Algorithm \ref{alg:vca}) provides similar results to VAS method (Algorithm \ref{alg:vas}). However as the degree of polynomials rises, the difference between VCA and VAS starts to increase. Sturm's method proved to be the slowest one, by a large margin.
 
-The computation time of VCA and Sturm's method could be further improved by providing a smaller search interval. On the other hand the computation of VAS could be reduced by providing a tighter bound.
+The computation time of VCA and Sturm's method could be further improved by providing a smaller search interval. Let us examine what happens if we restrict the search interval to $(-20,40)$, which still contains all previous roots.
 
-Based on the results, the VAS algorithm provides the best solution for root finding, as even the computation of roots of the highest degree with precision of 50 decimal digits barely exceeded one second, with average being $\approx 0.7$ seconds.
+\begin{table}
+  \begin{tabular*}{\textwidth}{lllll}
+    \toprule
+     & VCA+N & VCA+H & VAS+N & Sturm+N \\
+    \midrule
+			Minimum & 97 & 103 & 167 & 616 \\
+			Median & 456 & 489 & 985 & 4609 \\
+			Maximum & 1024 & 1057 & 1303 & 6862 \\
+			Average & 441 & 465 & 773 & 3871 \\
+    \bottomrule
+  \end{tabular*}
+  \caption{Polynomials with degree 34-67, precision $\varepsilon = 10^{-50}$ (time in miliseconds), interval $(-20,40)$}
+  \label{tab:coa5}
+\end{table}
+
+\begin{table}
+  \begin{tabular*}{\textwidth}{lllll}
+    \toprule
+     & VCA+N & VCA+H & VAS+N & Sturm+N \\
+    \midrule
+			Minimum & 1495 & 1562 & 327 & 2844 \\
+			Median & 1690 & 1753 & 719 & 13392 \\
+			Maximum & 1978 & 2316 & 1320 & 22682 \\
+			Average & 1724 & 1785 & 763 & 12836 \\
+    \bottomrule
+  \end{tabular*}
+  \caption{Polynomials with degree 68-101, precision $\varepsilon = 10^{-50}$ (time in miliseconds), interval $(-20,40)$}
+  \label{tab:coa6}
+\end{table}
+
+Table \ref{tab:coa5} shows that providing sufficient bounds for VCA can improve the computation time to the point it's significantly better than VAS. That's because VAS is not affected by the change of the search interval, as it computes the bounds itself every time (see Alg. \ref{alg:vas}).
+
+On the other hand, if the search interval is small enough, VCA can finish much faster, as the search interval can serve as an input to VCA (see Alg. \ref{alg:vca}).
+
+Sturm's method proved to be very inefficient in any case, since evaluation of up to 100 polynomials in every iteration (see Alg. \ref{alg:rfs}) takes too much time.
+
+Thus for finding roots without any restrictions on search interval, VAS is the fastest solution for root finding. In comparison, when locating the roots within an interval, VCA can provide faster solution.
 
 \chapter{Conclusion}
 In this thesis, we presented, implemented and compared several methods and algorithms for root approximation and the isolation of roots. First, we presented three algorithms for approximation of a single root and described each of them in detail. Then, we presented four methods for finding all roots of the polynomial, either by factoring the polynomial or isolating the roots. Later, we implemented all of the methods in Java. Finally, we concluded experiments and compared the efficiency of the algorithms. Thus we accomplished the goal of this thesis.
 
 \paragraph{Future work}
-For future work, the implemented methods can be further optimized, e.g. by computing tighter and faster upper and lower bounds of positive roots, as well as some of the operations performed on polynomials. There are also many other methods for finding the roots of polynomials that could be implemented and compared, such as root finding through the eigenvalue decomposition. Further, the methods could be implemented in a faster programming language such as C++. 
+For future work, the implemented methods can be further optimized, e.g. by computing tighter and faster upper and lower bounds of the positive roots, as well as some of the operations performed on polynomials. There are also many other methods for finding the roots of polynomials that could be implemented and compared, such as root finding through the eigenvalue decomposition. Furthermore, the methods could be implemented in a faster programming language such as C++. 
 
 \printbibliography[heading=bibintoc]
 

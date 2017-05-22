@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  22 MAY 2017 08:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210) (preloaded format=pdflatex 2017.2.5)  22 MAY 2017 10:25
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -2184,12 +2184,22 @@ Overfull \hbox (4.82993pt too wide) in alignment at lines 1006--1015
 [35
 
 
-] [36] [37] [38
+] [36]
+Underfull \hbox (badness 10000) in alignment at lines 1025--1034
+[][][][][] 
+ []
 
 
-]
+Underfull \hbox (badness 10000) in alignment at lines 1040--1049
+[][][][][] 
+ []
+
+[37] [38]
 Chapter 6.
-[39] [40
+[39
+
+
+] [40
 
 
 ] [41] [42] [43] [44
@@ -2201,11 +2211,11 @@ Chapter 7.
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1045.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1045.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1080.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1080.
  (thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1045.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1045.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1080.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1080.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: C693D8FBC0D557DBD17D88006D9A8B70;1571.
 
@@ -2217,10 +2227,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46192 strings out of 493366
- 1006148 string characters out of 3137313
- 1572748 words of memory out of 3000000
- 48532 multiletter control sequences out of 15000+200000
+ 46196 strings out of 493366
+ 1006186 string characters out of 3137313
+ 1572996 words of memory out of 3000000
+ 48534 multiletter control sequences out of 15000+200000
  86019 words of font info for 156 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
  62i,13n,100p,1365b,4275s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2235,9 +2245,9 @@ ype1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 KTeX 2.9/fonts/type1/public/tex-gyre/qplb.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplr.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplri.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (59 pages, 452950 bytes).
+Output written on thesis.pdf (59 pages, 455765 bytes).
 PDF statistics:
- 755 PDF objects out of 1000 (max. 8388607)
- 210 named destinations out of 1000 (max. 500000)
+ 762 PDF objects out of 1000 (max. 8388607)
+ 212 named destinations out of 1000 (max. 500000)
  23255 words of extra memory for PDF output out of 24883 (max. 10000000)
 
