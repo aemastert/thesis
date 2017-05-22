@@ -52,7 +52,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}\slshape State of the art}{31}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}\slshape Implementation}{32}{section.4.2}
+\contentsline {section}{\numberline {4.2}\slshape PolynomialRoots implementation}{32}{section.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}\bfseries Experiments}{35}{chapter.5}
 \defcounter {refsection}{0}\relax 
@@ -101,7 +101,5 @@
 \select@language {english}
 \defcounter {refsection}{0}\relax 
 \select@language {english}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{45}{section*.18}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}\bfseries Appendix}{45}{chapter.7}

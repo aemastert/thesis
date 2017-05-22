@@ -81,12 +81,13 @@
 \usepackage{placeins}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
+\usepackage{lscape}
 \usepgfplotslibrary{statistics}
 \usetikzlibrary{decorations.pathreplacing,angles,quotes,pgfplots.statistics}
 \begin{filecontents*}{trial.dat}
     
 \end{filecontents*}
-\usepackage[simplified]{pgf-umlcd}
+\usepackage{pgf-umlcd}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -304,6 +305,7 @@ The general formula is obtained by iterating the process, by replacing $x_{0}$ w
 Since all polynomial functions are differentiable, we can apply this formula to our problem. Newton's method is exceptionally powerful and one of the most well known techniques for finding the roots, since it is rather easy to implement and converges very quickly. 
 \paragraph{Speed of convergence}
 \begin{theorem}[{\parencite[p.~60]{rootApproxMeth}}]
+\label{rootApproxSpeed}
   Assume that $f(x), f'(x)$, and $f''(x)$ are all continuous for every $x$ in some neighbourhood $I = [\alpha - \varepsilon, \alpha + \varepsilon]$ of $\alpha$, $\alpha$ is a root of $f$, and $f'(x) \neq 0, \forall x \in I$. Then if $x_{0}$ is chosen sufficiently close to $\alpha$, the iterates $x_{n}, n \geq 0$ of \eqref{eq:newt} will converge to $\alpha$. 
 Furthermore,
 \begin{align} 
@@ -364,7 +366,7 @@ Thirdly, if the initial guess is not close enough or the first derivative does n
 
 Lastly, if the root (of the polynomial function) has a multiplicity greater than one (i.e. the first derivative of the root is also zero), then the convergence to this root is only linear.
 \begin{proof}
-Let $f(x)$ be a polynomial function with a root $\alpha$ of multiplicity $m$, $m > 1$, i.e. $f(x) = (x-\alpha)^{m}g(x)$. Assume that $x_{0}$ is sufficiently close to $\alpha$. Then
+Let $f(x)$ be a polynomial function with a root $\alpha$ of multiplicity $m > 1$, i.e. $f(x) = (x-\alpha)^{m}g(x)$. Assume that $x_{0}$ is sufficiently close to $\alpha$ as stated in Theorem \ref{rootApproxSpeed}. Then
 \begin{align}
 x_{n+1} &= x_{n} - \frac{(x_{n} - \alpha)^{m}g(x_{n})}{m(x_{n}-\alpha)^{m-1}g(x_{n}) + (x_{n}-\alpha)^{m}g'(x_{n})} \\
 &= x_{n} - \frac{(x_{n} - \alpha)g(x_{n})}{mg(x_{n}) + (x_{n}-\alpha)g'(x_{n})} \\
@@ -716,7 +718,7 @@ where $\alpha_{1}\geq 0$ is an arbitrary nonnegative integer and $\alpha_{2}, \a
 \end{align}
 \end{theorem}
 The negative root can be treated the same way, by simply performing substitution $x \leftarrow -x$ on $f(x)$.
-The requirement that the polynomial function $f(x)$ has no multiple roots does not restrict the generality of the theorem, because in the case that polynomial contains multiple roots, we can first apply square-free factorization and then isolate the roots of the square-free factor \parencite{vincentA}.
+The requirement that the polynomial function $f(x)$ has no multiple roots does not restrict the generality of the theorem, because in the case that polynomial contains multiple roots, we can first apply square-free factorization (e.g. by dividing the polynomial $f$ with GCD($f$, $f'$) to reduce all multiple roots to simple) and then isolate the roots of the square-free factor \parencite{vincentA}.
 
 \begin{theorem}[Vincent (bisection version) \parencite{vincentBis}]
 \label{theor:v2}
@@ -747,9 +749,9 @@ represent the finite continuous fraction that substitutes $x$ in $f(x)$ such tha
 \label{eq:mobius2}
 g(x)=(cx+d)^{deg(f)}f\left(\frac{ax+b}{cx+d}\right)
 \end{equation} with one sign change. Then the positive root of $f(x)$ (located in $(0,\infty)$) corresponds to the root of $g(x)$ in $(min(\frac{a}{c},\frac{b}{d}), max(\frac{a}{c},\frac{b}{d}))$. Thus, to isolate the positive roots, one needs to compute $a,b,c,d$ such that they result in the polynomial \eqref{eq:mobius2} with one sign change.
-The Descartes' rule of signs \parencite{descart}, states that the number of positive roots of $f(x)$ is equal to the number of sign changes of the coefficients $\sigma(f)$ or less than it by an even number. We can use this simple test to determine (line 2 and 4) if the $f$ has exactly 0 or 1 positive root or if it has more. If there are more, we first transform the polynomial by moving the lowest positive closer to 0 and then we split the polynomial into two transformed ones - the first representing the interval between $(0,1)$ and the second representing the interval $(0,\infty)$. Every time we perform substitution, we perform corresponding substitution on M. This allows us to retroactively compute the corresponding interval in the original polynomial.
+The Descartes' rule of signs \parencite{descart}, states that the number of positive roots of $f(x)$ is equal to the number of sign changes of the coefficients $\sigma(f)$ or less than it by an even number. We can use this simple test to determine (line 2 and 4) if the $f$ has exactly zero or one positive root or if it has more. If there are more, we first transform the polynomial by moving the lowest positive closer to 0 and then we split the polynomial into two transformed ones - the first representing the interval between $(0,1)$ and the second representing the interval $(1,\infty)$. Every time we perform substitution, we perform corresponding substitution on M. This allows us to retroactively compute the corresponding interval in the original polynomial.
 
-Thus Algorithm \ref{alg:vas} returns intervals such each contains exactly one positive root. To isolate the negative intervals, we simply substitute $x\leftarrow -x$, execute the algorithm again and then unite the sets of intervals. Then we can use one of the approximation algorithms (e.g. Newton's algorithm (\ref{alg:newton})) and approximate the root in every interval.
+Thus Algorithm \ref{alg:vas} returns intervals such that each contains exactly one positive root. To isolate the negative intervals, we simply substitute $x\leftarrow -x$, execute the algorithm again and then unite the sets of intervals. Then we can use one of the approximation algorithms (e.g. Newton's algorithm (\ref{alg:newton})) and approximate the root in every interval.
 
 The lower bound ($lb$) of $f$ can be computed by computing upper bound ($ub$) of $g(x)=x^{deg(f)}f(\frac{1}{x})$ and then $lb_{f} = \frac{1}{ub_{g}}$, as shown \parencite{vigklasphd}. \parencite{vigklasphd} also provides two efficient upper bounds.
 
@@ -806,7 +808,7 @@ If the original polynomial $f$ is not square-free, this, in theory, will cause a
 	\item perform a square free factorization on $f$,
 	\item select a tolerance $\varepsilon$ such that if $\left|a-b\right|<\varepsilon$ algorithm ends.
 \end{enumerate}
-Since the second solution is much simpler and in line with the fact that we are approximating the roots to a certain precision, we apply it to obtain Algorithm \ref{alg:vca}. If the upper bound is odd, there are either multiple roots or a single root with odd multiplicity. If there are multiple roots, then this does not influence the result, since they are closer to each other than the desired tolerance and thus we are unable to distinguish them. If the upper bound is even, then there is no guarantee that the interval contains root. This does not effect the final result, however, since afterwards we execute the Newton's algorithm (Alg. \ref{alg:newton}) in every interval, which gives us the desired approximation only if the root is located within the interval.%okecat ze moze dat false positive.
+Since the second solution is much simpler and in line with the fact that we are approximating the roots to a certain precision, we apply it to obtain Algorithm \ref{alg:vca}. If the upper bound is odd, there are either multiple roots or a single root with odd multiplicity. If there are multiple roots, then this does not influence the result, since they are closer to each other than the desired tolerance and thus we are unable to distinguish them. If the upper bound is even, then there is no guarantee that the interval contains root. To test if there is a root, we could try executing the Newton's algorithm (Alg. \ref{alg:newton}) in this interval. However, if the function approaches 0 very close (i.e. closer than $\varepsilon$), this could result in a false positive. Thus, one should be vary of this when using Algorithm \ref{alg:vca} on non square-free polynomial.
 
 \begin{algorithm}
   \caption{VCA
@@ -857,7 +859,7 @@ After the choice of programming language fell on Java, I first tried to find a m
   \label{tab:sota}
 \end{table}
 
-\section{Implementation}
+\section{PolynomialRoots implementation}
 The decimal numbers are represented by the class \texttt{BigDecimal}\footnote{\url{https://docs.oracle.com/javase/7/docs/api/java/math/BigDecimal.html}}, which allows an arbitrary precision. A \texttt{BigDecimal} consists of an arbitrary precision integer unscaled value and a 32-bit integer scale. The value of the number represented by \texttt{BigDecimal} is unscaled value multiplied by $10^{-scale}$.
 
 The \texttt{BigDecimal} class provides basic mathematical operations and operations for comparison, rounding and manipulation of scale. With almost every division made, a scale and a type of rounding must be associated. In my implementation, we chose standard rounding (i.e. $<.5$ is rounded down, $\geq.5$ is rounded up) and the scale was chosen as scale of $\varepsilon$ (if the algorithm contained one).
@@ -870,32 +872,81 @@ Also when possible, we tried to evaluate some expressions efficiently. E.g. the 
 
 The source code and Javadoc providing the full description of all implemented methods can be found in the attachment.
 
-%\newpage
-%\paragraph{Class diagram}
-%\mbox{}\newline
-%\FloatBarrier
-%\begin{tikzpicture}
-%\renewcommand{\umldrawcolor}{black}
-%\renewcommand{\umlfillcolor}{white}
-%	\begin{class}[text width=6cm]{Mobius}{0, 0}
-%		\attribute{- a : BigDecimal}
-%		\attribute{- b : BigDecimal}
-%		\attribute{- c : BigDecimal}
-%		\attribute{- d : BigDecimal}
-%		
-%		\operation{+ getA ( ) : BigDecimal}
-%		\operation{+ getB ( ) : BigDecimal}
-%		\operation{+ getC ( ) : BigDecimal}
-%		\operation{+ getD ( ) : BigDecimal}
-%		\operation{+ getValue ( x : BigDecimal , scale : int) : BigDecimal}
-%		\operation{+ getValueInfinity ( b : BigDecimal , scale : int) : BigDecimal}
-%	\end{class}
-%\end{tikzpicture}
+Figure \ref{fig:classDia} shows the class diagram. $BD$ stands for \texttt{BigDecimal}, $poly$ has type \texttt{Polynomial} and $a, b, \varepsilon$ all have type \texttt{BigDecimal}.
+
+\newpage
+\begin{figure}
+\label{fig:classDia}
+\caption{\textbf{Class diagram}}
+\begin{tikzpicture}
+\renewcommand{\umldrawcolor}{black}
+\renewcommand{\umlfillcolor}{white}
+\begin{class}{PolyRootFinding}{-3.5,0}
+\operation{+Sturm(poly, a, b)}
+\operation{+SturmRFN(poly, a, b, $\varepsilon$, sc)}
+\operation{+RuffiniH(poly, a, b, $\varepsilon$)}
+\operation{-budan01(poly)}
+\operation{-vca(poly, a, b, $\varepsilon$)}
+\operation{-vcaInt(poly, a, b, $\varepsilon$)}
+\operation{+VcaRFN(poly, a, b, $\varepsilon$)}
+\operation{+VcaRFH(poly, a, b, $\varepsilon$)}
+\operation{-vas(poly, Mobius, $\varepsilon$)}
+\operation{-vasPositive(poly, $\varepsilon$)}
+\operation{+VasRFN(poly, $\varepsilon$)}
+\end{class}
+\begin{class}{Polynomial}{4,0}
+\attribute{-coefficients}
+\attribute{-derivative}
+
+\operation{+Polynomial(coeffs)}
+\operation{+Polynomial(constant)}
+\operation{+Polynomial(string)}
+
+\operation{+derivative()}
+\operation{+value(x : BD) : BD}
+\operation{+degree() : int}
+\operation{+add(poly)}
+\operation{+subtr(poly)}
+\operation{+multi(poly)}
+\operation{+div(p1, p2) : <q, r>}
+\operation{+subst(poly) : Polynomial}
+\operation{+toString() : String}
+\end{class}
+\begin{class}{PolyRootAppr}{-3.5,-9}
+\operation{+bisection(poly, a, b, $\varepsilon$) : BD}
+\operation{+Newton(poly, a, b, $\varepsilon$, bool) : BD, bool}
+\operation{+Halley(poly, a, b, $\varepsilon$, bool) : BD, bool}
+\end{class}
+\begin{class}{SturmChain}{4,-9}
+\attribute{-chain : List<Poly>}
+\attribute{-$\varepsilon$ : BD}
+\operation{+SturmChain(p : Polynomial, $\varepsilon$ : BD)}
+\operation{+sigma(a : BD, b : BD)}
+\end{class}
+\begin{class}{Mobius}{2.5,-13}
+\attribute{-a : BD}
+\attribute{-b : BD}
+\attribute{-c : BD}
+\attribute{-d : BD}
+\operation{+Mobius(a : BD, b : BD, c : BD, d : BD)}
+\operation{+value(x : BD) : BD}
+\operation{+valueInfinity(b : BD) : BD}
+\end{class}
+\draw[umlcd style dashed line,->] (PolyRootFinding) --node[above,sloped,black]{$<$uses$>$} (Polynomial);
+\draw[umlcd style dashed line,->] (PolyRootFinding) --node[above,
+sloped,black]{$<$uses$>$} (PolyRootAppr);
+\draw[umlcd style dashed line,->] (PolyRootFinding) --node[above,
+sloped,black]{$<$uses$>$} (SturmChain);
+\draw[umlcd style dashed line,->] (PolyRootFinding) --node[above,sloped,black]{$<$uses$>$} (Mobius);
+%\draw[umlcd style dashed line,->] (ConcreteFactory2.south) ++(1,0) -- ++(0,-1) --node[above,sloped,black]{$<<$instantiate$>>$} ++(20,0) -|(ProductA2);
+
+\end{tikzpicture}
+\end{figure}
 
 \chapter{Experiments}
 The implemented methods were tested with on a set of 40 polynomials with varying degrees from 34 up to 101. The polynomials were obtained as the output of the synthesis algorithm implemented in the fdCTMC branch of Prism. Thus, they have certain common characteristics - with the increasing degree, the coefficients shrink by approximately one decimal point (i.e. if the absolute coefficient $a_{0}$ is $1$, the leading coefficient $a_{n}$ is approximately $10^{-n}$). All tested polynomials can be found in the attachment.
 
-The tested algorithms were Algorithm \ref{alg:rfs}, Algorithm \ref{alg:vas} with combination of Newton's method, and Algorithm \ref{alg:vca} with combination of Newton's and Halley's method. The Algorithm \ref{alg:rhn} proved to be unreliable, as the rounding after division caused the latter roots to be not sufficiently precise and thus is not included.
+The tested algorithms were Sturm's (Algorithm \ref{alg:rfs}), VAS (Algorithm \ref{alg:vas}) and VCA (Algorithm \ref{alg:vca}) to first isolate the roots within intervals. Subsequently, every isolated root was approximated using Newton's method. Algorithm \ref{alg:vca} was also tested with Halley's method. The Algorithm \ref{alg:rhn} proved to be unreliable, as the rounding after division caused the latter roots to be not sufficiently precise and thus is not included.
 
 The upper bounds used in Algorithm \ref{alg:vas} were Kojima bounds \parencite{kojima}, because they are very fast to compute, while providing reasonable bounds. The search interval for Algorithms \ref{alg:rfs} and \ref{alg:vca} was $(-100, 100)$.
 
@@ -964,14 +1015,14 @@ Tables \ref{tab:coa3} and \ref{tab:coa4} compare the computation time of polynom
 \end{table}
 
 \FloatBarrier
-From Tables \ref{tab:coa1}-\ref{tab:coa4} we can see that the difference between Newton's and Halley's method is insignificant. For the smaller degrees (i.e. 34-67) VCA method (Algorithm \ref{alg:vca}) provides similar results to VAS method (Algorithm \ref{alg:vas}). However as the degree of polynomials rises, the difference between VCA and VAS starts to increase. Sturm's method proved to be the slowest one, by a large margin.
+From Tables \ref{tab:coa1}-\ref{tab:coa4} we can see that the difference between Newton's and Halley's method is insignificant. The reason behind this is the characteristic of tested polynomials. For the smaller degrees (i.e. 34-67) VCA method (Algorithm \ref{alg:vca}) provides similar results to VAS method (Algorithm \ref{alg:vas}). However as the degree of polynomials rises, the difference between VCA and VAS starts to increase. Sturm's method proved to be the slowest one, by a large margin.
 
 The computation time of VCA and Sturm's method could be further improved by providing a smaller search interval. On the other hand the computation of VAS could be reduced by providing a tighter bound.
 
 Based on the results, the VAS algorithm provides the best solution for root finding, as even the computation of roots of the highest degree with precision of 50 decimal digits barely exceeded one second, with average being $\approx 0.7$ seconds.
 
 \chapter{Conclusion}
-In this thesis, we presented, implemented and compared several methods and algorithms for root approximation and the isolation of roots. First, we presented three algorithms for approximation of a single root and described each of them in detail. Then, we presented four methods for finding all roots of the polynomial, either by factoring the polynomial or isolating the roots. Later, we implemented all of the methods in Java. Finally, we concluded experiments and compared the efficiency of the algorithms.
+In this thesis, we presented, implemented and compared several methods and algorithms for root approximation and the isolation of roots. First, we presented three algorithms for approximation of a single root and described each of them in detail. Then, we presented four methods for finding all roots of the polynomial, either by factoring the polynomial or isolating the roots. Later, we implemented all of the methods in Java. Finally, we concluded experiments and compared the efficiency of the algorithms. Thus we accomplished the goal of this thesis.
 
 \paragraph{Future work}
 For future work, the implemented methods can be further optimized, e.g. by computing tighter and faster upper and lower bounds of positive roots, as well as some of the operations performed on polynomials. There are also many other methods for finding the roots of polynomials that could be implemented and compared, such as root finding through the eigenvalue decomposition. Further, the methods could be implemented in a faster programming language such as C++. 
@@ -980,9 +1031,9 @@ For future work, the implemented methods can be further optimized, e.g. by compu
 
 
   \makeatletter\thesis@blocks@clear\makeatother
-  \phantomsection %% Print the index and insert it into the
-  \addcontentsline{toc}{chapter}{\indexname} %% table of contents.
-  \printindex
+  %%\phantomsection %% Print the index and insert it into the
+  %%\addcontentsline{toc}{chapter}{\indexname} %% table of contents.
+  %%\printindex
 
 %\appendix %% Start the appendices.
 \chapter{Appendix}
